@@ -9,7 +9,7 @@
 </head>
 
 
-<body style="background-image: url('imageee/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
+<body style="background-image: url('/Content/Main/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
 
 <style>
     .labels{
@@ -36,7 +36,7 @@
 
     }
     .table{
-        background-image: url('imageee/28939169.jpg') ;
+        background-image: url('/Content/Main/28939169.jpg') ;
         display: block ;
         width: 400px ;
         height: 450px;
@@ -56,7 +56,7 @@
    <div style="margin: auto; text-align: center ; padding-bottom: 10px" >
         <div>
 
-             <img src="imageee/VLOGO.jpg" style="width: 200px" alt="">
+             <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
 
         </div>
 

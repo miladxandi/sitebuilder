@@ -11,7 +11,7 @@
 
 
 <body
-    style="background-image: url('imageee/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
+    style="background-image: url('/Content/Main/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
 
 <style>
 
@@ -42,7 +42,7 @@
     }
 
     .table {
-        background-image: url('imageee/28939169.jpg');
+        background-image: url('/Content/Main/28939169.jpg');
         display: block;
         width: 400px;
         height: 300px;
@@ -63,7 +63,7 @@
 <div style="margin: auto; text-align: center">
     <div>
 
-        <img src="imageee/VLOGO.jpg" style="width: 200px" alt="">
+        <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
 
     </div>
 
