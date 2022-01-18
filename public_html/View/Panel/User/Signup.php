@@ -1,75 +1,120 @@
-<?php \View\View\Shared\MainLayouts::_Header(); ?>
-
-    <title>SIMPLIST - SIGNUP</title>
-<?php
-$Add = new Core\Requirement\oLoad("../../..", "Style/Panel", "Script/Panel", "Style/Panel");
-$Add->Loader("css", "fonts/fontawesome/css/font-awesome.min");
-$Add->Loader("css", "fonts/linecons/css/linecons");
-$Add->Loader("css", "bootstrap.min", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css", false);
-$Add->Loader("css", "mytest");
-
-if ($Viewbag==null || $Viewbag=="" || isset($Viewbag['Error'])==false || $Viewbag['Error']==null ||$Viewbag['Error']== "")
-    $Viewbag==null;
-?>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 
-    </head>
-<?php \View\View\Shared\MainLayouts::_Menu(); ?>
+<html>
 
-    <div id="Index" style="margin-top:100px;margin-left:100px;margin-right:100px;">
-        <?php if (isset($_COOKIE['Username']) == false): ?>
-            <form method="Post" role="form" action="">
-                <div class="form-group">
-                    <label for="Firstname">Firstname</label>
-                    <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter your Email">
-                </div>
-                <div class="form-group">
-                    <label for="Lastname">Lastname</label>
-                    <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter your Lastname">
-                </div>
-                <div class="form-group">
-                    <label for="Username">Username</label>
-                    <input type="text" class="form-control" name="Username" id="Username" placeholder="Enter your Username">
-                </div>
-                <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="Password" class="form-control" name="Password" id="Password" placeholder="Enter your Password">
-                </div>
-                <div class="form-group">
-                    <label for="Email">Email</label>
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter your Email">
-                </div>
-                <?php if (isset($Viewbag['Error'])): ?>
-                    <span>
-                        <div class="alert alert-danger" role="alert"><?php echo $Viewbag['Error']; ?></div>
-                    </span>
-                <?php elseif(isset($_COOKIE['Success'])): ?>
-                    <span>
-                            <div class="alert alert-success" role="alert"><?php echo $Viewbag['Success']; ?></div>
-                        </span>
-                <?php elseif(isset($Viewbag['Result'])): ?>
-                    <span>
-                            <div class="alert alert-success" role="alert"><?php echo $Viewbag['Result']; ?></div>
-                        </span>
-                <?php endif; ?>
-                <button type="submit" name="submit" id="submit" class="btn btn-primary">Register</button>
-            </form>
-            <div style="margin-top:100px;"><a href="/Login" style="font-size: large">Back to login</a> - <a href="/FortgetPass" style="font-size: large">Forget your Password?</a></div>
-        <?php else: ?>
-            <h3 class="rotate font-normal" style="font-family: Kohinoor">Hi  <?php echo $_COOKIE['Firstname']; ?></h3>
+<head>
+
+    <title>  </title>
+
+</head>
+
+
+<body style="background-image: url('imageee/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
+
+<style>
+    .labels{
+
+        font-size: 18px;
+    }
+
+    .button{
+        background: black;
+        color: whitesmoke;
+        font-family: "Yu Gothic Light";
+        font-size: 20px;
+        border-radius: 20px;
+        width: 80px;
+        height: 50px;
+
+
+    }
+    .titr{
+
+        font-family: "Yu Gothic Medium";
+        color: whitesmoke ;
+        text-align: left;
+
+    }
+    .table{
+        background-image: url('imageee/28939169.jpg') ;
+        display: block ;
+        width: 400px ;
+        height: 450px;
+        text-align: center ;
+        border-radius: 40px;
+        box-shadow: black 20px 20px 30px;
+    }
+    .inputs {
+        border-radius: 20px;
+        width: 60%;
+        border: black solid thin;
+        text-align: center  ;
+    }
+
+</style>
+
+   <div style="margin: auto; text-align: center ; padding-bottom: 10px" >
+        <div>
+
+             <img src="imageee/VLOGO.jpg" style="width: 200px" alt="">
+
+        </div>
+
+    <div style=";display: block ; position:absolute;padding-left: 77vh">
+
+     <form action="Login.php"  method="post" class="table" >
+
+       <div>
+           <br>
+        <label for="name"  class="titr labels">Name</label><br>
+        <input type="text" name="name" id="name" class="inputs">
+           <br>
+           <br>
+        <label for="Fname" class="titr labels">Family</label><br>
+        <input type="text" name="Fname" id="Fname" class="inputs">
+           <br>
+           <br>
+        <label for="usen" class="titr labels">User Name</label><br>
+        <input type="text" name="Fname" id="usen" class="inputs">
+           <br>
+           <br>
+        <label for="num" class="labels titr">Number</label><br>
+        <input type="tel" name="num" id="num" class="inputs">
+           <br>
+           <br>
+        <label for="Email" class="titr labels">Email</label><br>
+        <input type="email" name="Email" id="Email" class="inputs">
+           <br>
+           <br>
+        <label for="pass"  class="titr labels">Password</label><br>
+        <input type="password" name="pass" id="pass" class="inputs">
+           </div>
+
+        <div style="display: block">
             <br>
-            <a href="/Panel">
-                <button class="btn btn-primary" tabindex="3" type="button">Panel
+
+            <button class="button"  type="submit">
+                Creat
+            </button>
+
+            <form action="Login.php" method="get" >
+                <button class="button" type="submit">
+                    Log in
                 </button>
-            </a>
-            <a href="/?Logout=True">
-                <button class="btn btn-primary" tabindex="3" type="button">Logout
-                </button>
-            </a>
-        <?php endif; ?>
+            </form>
+        </div>
+
+        </form>
+
+
+        </div>
 
     </div>
 
-<?php \View\View\Shared\MainLayouts::_Footer(); ?>
+</body>
+
+
+
+
+
+</html>
