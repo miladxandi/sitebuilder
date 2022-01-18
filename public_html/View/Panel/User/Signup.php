@@ -1,120 +1,80 @@
-
-
 <html>
 
 <head>
-
-    <title>  </title>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masoud Insurance | Signup</title>
+    <link rel="stylesheet" href="/Style/Main/bootstrap.min.css">
+    <link rel="stylesheet" href="/Style/Panel/signup.css">
 </head>
 
 
-<body style="background-image: url('/Content/Main/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
+<body>
 
-<style>
-    .labels{
-
-        font-size: 18px;
-    }
-
-    .button{
-        background: black;
-        color: whitesmoke;
-        font-family: "Yu Gothic Light";
-        font-size: 20px;
-        border-radius: 20px;
-        width: 80px;
-        height: 50px;
-
-
-    }
-    .titr{
-
-        font-family: "Yu Gothic Medium";
-        color: whitesmoke ;
-        text-align: left;
-
-    }
-    .table{
-        background-image: url('/Content/Main/28939169.jpg') ;
-        display: block ;
-        width: 400px ;
-        height: 450px;
-        text-align: center ;
-        border-radius: 40px;
-        box-shadow: black 20px 20px 30px;
-    }
-    .inputs {
-        border-radius: 20px;
-        width: 60%;
-        border: black solid thin;
-        text-align: center  ;
-    }
-
-</style>
-
-   <div style="margin: auto; text-align: center ; padding-bottom: 10px" >
-        <div>
-
-             <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
         </div>
 
-    <div style=";display: block ; position:absolute;padding-left: 77vh">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <form action="/signup" method="post" class="signup-from">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group m-5">
+                            <label for="Firstname" class="form-control">Firstname</label><br>
+                            <input type="text" required name="Firstname" id="Firstname" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Lastname" class="form-control">Lastname</label><br>
+                            <input type="text" name="Lastname" id="Lastname" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Username" class="form-control">Username</label><br>
+                            <input type="text" name="Username" id="Username" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Phone" class="form-control">Phone</label><br>
+                            <input type="tel" name="Phone" id="Phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group m-5">
+                            <label for="NationalCode" class="form-control">National Code</label><br>
+                            <input type="text" name="NationalCode" id="NationalCode" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Email" class="form-control">Email</label><br>
+                            <input type="text" name="Email" id="Email" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Password" class="form-control">Password</label><br>
+                            <input type="password" name="Password" id="Password" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="PasswordVerify" class="form-control">Password Verify</label><br>
+                            <input type="password" name="PasswordVerify" id="PasswordVerify" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-dark" type="submit" name="submit">
+                        Create
+                    </button>
+                    <a href="/login">
+                        <button class="btn btn-dark" type="submit">
+                            Log in
+                        </button>
+                    </a>
+                </div>
 
-     <form action="Login.php"  method="post" class="table" >
-
-       <div>
-           <br>
-        <label for="name"  class="titr labels">Name</label><br>
-        <input type="text" name="name" id="name" class="inputs">
-           <br>
-           <br>
-        <label for="Fname" class="titr labels">Family</label><br>
-        <input type="text" name="Fname" id="Fname" class="inputs">
-           <br>
-           <br>
-        <label for="usen" class="titr labels">User Name</label><br>
-        <input type="text" name="Fname" id="usen" class="inputs">
-           <br>
-           <br>
-        <label for="num" class="labels titr">Number</label><br>
-        <input type="tel" name="num" id="num" class="inputs">
-           <br>
-           <br>
-        <label for="Email" class="titr labels">Email</label><br>
-        <input type="email" name="Email" id="Email" class="inputs">
-           <br>
-           <br>
-        <label for="pass"  class="titr labels">Password</label><br>
-        <input type="password" name="pass" id="pass" class="inputs">
-           </div>
-
-        <div style="display: block">
-            <br>
-
-            <button class="button"  type="submit">
-                Creat
-            </button>
-
-            <form action="Login.php" method="get" >
-                <button class="button" type="submit">
-                    Log in
-                </button>
             </form>
         </div>
-
-        </form>
-
-
-        </div>
-
     </div>
+</div>
 
 </body>
-
-
-
 
 
 </html>
