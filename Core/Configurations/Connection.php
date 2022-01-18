@@ -16,4 +16,3 @@ class Connection
 	protected static $Username= "root";
 	protected static $Password= "";
 	protected static $Drivers= ['First'=>'PDO', 'Second'=>'MYSQL', 'Third'=>'Microsoft_SQL'];
-}

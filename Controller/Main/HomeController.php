@@ -22,15 +22,4 @@ class HomeController extends BaseController
         $Viewbag = ['PostInfo'=>$this->Function->Show()];
 		View::Process("Main.Home.Index",$Viewbag);
 	}
-
-	public function Signup()
-	{
-        $Viewbag = ['PostInfo'=>$this->Function->Show()];
-        View::Process("Main.Home.Signup",$Viewbag);
-	}
-    public function Login ()
-    {
-        $Viewbag = ['PostInfo'=>$this->Function->Show()];
-        View::Process("Main.Home.Login",$Viewbag);
-    }
 }

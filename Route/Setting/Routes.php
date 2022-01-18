@@ -19,5 +19,12 @@ return[
         'get'=> false,
         'post'=> true,
         'middleware'=>''
+    ],
+    '/aboutus' => [
+        'target'=>'Main.Home.Aboutus',
+        'get'=> true,
+        'post'=> false,
+        'middleware'=>'Main.Home.Aboutus'
+
     ]
 ];
