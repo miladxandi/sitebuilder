@@ -20,16 +20,6 @@ class HomeController extends BaseController
 	public function Index()
 	{
         $Viewbag = ['PostInfo'=>$this->Function->Show()];
-		View::Process("Main.Home.Index");
+		View::Process("Main.Home.Index",$Viewbag);
 	}
-
-	public function Aboutus()
-	{
-		View::Process("Main.Home.Aboutus");
-	}
-    public function Post(string $QuerryString)
-    {
-        $Viewbag = ['PostInfo'=>$this->Repository->GetPostByUrl(substr($QuerryString,16))];
-        View::Process("Main.Home.Post",$Viewbag);
-    }
 }
