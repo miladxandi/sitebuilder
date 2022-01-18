@@ -2,20 +2,14 @@
 
 ?>
 <html>
-
 <head>
-
     <title></title>
-
 </head>
-
-
 <body
-    style="background-image: url('imageee/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
-
+        style="background-image: url('imageee/pngwing.com.jpg');
+    background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
 <style>
-
-    .labels{
+    .labels {
 
         font-size: 18px;
     }
@@ -62,20 +56,15 @@
 
 <div style="margin: auto; text-align: center">
     <div>
-
         <img src="imageee/VLOGO.jpg" style="width: 200px" alt="">
-
     </div>
-
     <div style=";display: block ; position:absolute;padding-left: 77vh">
-
         <form action="" method="post" class="table">
             <div>
                 <br>
                 <br>
                 <br>
-
-                <label for="usen"  class="titr labels">User Name</label><br>
+                <label for="usen" class="titr labels">User Name</label><br>
                 <input type="text" name="usen" id="usen" class="inputs">
                 <br>
                 <br>
@@ -83,7 +72,6 @@
                 <input type="text" name="pass" id="pass" class="inputs">
                 <br>
                 <br>
-
             </div>
             <div style="display: block">
                 <br>
@@ -97,19 +85,11 @@
                     </button>
                 </form>
             </div>
-
         </form>
     </div>
-
     <div>
-
     </div>
-
-
 </div>
-
 </body>
-
-
 </html>
 

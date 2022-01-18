@@ -1,20 +1,12 @@
-    <html>
-
+<html>
     <head>
-
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="" href="../../../Style/Main/style1.css" type="text/css">
-
     </head>
-
     <body style="background-color: whitesmoke" >
-
-
     <div style="background-color: black ;display: flex;color: white;padding-bottom: 10px; height: 80px ">
-
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>
             $(document).ready (function (){
