@@ -25,6 +25,5 @@ return[
         'get'=> true,
         'post'=> false,
         'middleware'=>'Main.Home.Aboutus'
-
     ]
 ];
