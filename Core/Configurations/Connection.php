@@ -10,9 +10,10 @@ namespace Core\Configurations;
 
 class Connection
 {
-	protected static $Host= "localhost";
-	protected static $DatabaseName= "valens1";
-	protected static $Collation= "utf8";
-	protected static $Username= "root";
-	protected static $Password= "";
-	protected static $Drivers= ['First'=>'PDO', 'Second'=>'MYSQL', 'Third'=>'Microsoft_SQL'];
+    protected static $Host = "localhost";
+    protected static $DatabaseName = "valens1";
+    protected static $Collation = "utf8";
+    protected static $Username = "root";
+    protected static $Password = "";
+    protected static $Drivers = ['First' => 'PDO', 'Second' => 'MYSQL', 'Third' => 'Microsoft_SQL'];
+}
