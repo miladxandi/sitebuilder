@@ -1,6 +1,5 @@
 /node_modules
 /.idea
-/.vscode
 /.vagrant
 *.zip
 /public_html/Content/Shared/Posts
