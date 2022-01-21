@@ -1,0 +1,44 @@
+.labels {
+
+    font-size: 18px;
+}
+.button {
+    background: black;
+    color: whitesmoke;
+    font-family: "Yu Gothic Light";
+    font-size: 20px;
+    border-radius: 20px;
+    width: 80px;
+    height: 50px;
+
+
+}
+
+.titr {
+
+    font-family: "Yu Gothic Medium";
+    color: whitesmoke;
+    text-align: left;
+
+}
+
+.signup-from {
+    background-color: rgba(142, 142, 142, .72);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.inputs {
+    border-radius: 20px;
+    width: 60%;
+    border: black solid thin;
+    text-align: center;
+}
+
+body{
+    background-image: url('/Content/Main/pngwing.com.jpg');
+    background-size: 90%;
+    background-position-x: 90px ;
+    background-repeat: no-repeat
+}

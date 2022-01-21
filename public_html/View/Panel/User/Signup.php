@@ -1,75 +1,80 @@
-<?php \View\View\Shared\MainLayouts::_Header(); ?>
+<html>
 
-    <title>SIMPLIST - SIGNUP</title>
-<?php
-$Add = new Core\Requirement\oLoad("../../..", "Style/Panel", "Script/Panel", "Style/Panel");
-$Add->Loader("css", "fonts/fontawesome/css/font-awesome.min");
-$Add->Loader("css", "fonts/linecons/css/linecons");
-$Add->Loader("css", "bootstrap.min", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css", false);
-$Add->Loader("css", "mytest");
-
-if ($Viewbag==null || $Viewbag=="" || isset($Viewbag['Error'])==false || $Viewbag['Error']==null ||$Viewbag['Error']== "")
-    $Viewbag==null;
-?>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masoud Insurance | Signup</title>
+    <link rel="stylesheet" href="/Style/Main/bootstrap.min.css">
+    <link rel="stylesheet" href="/Style/Panel/signup.css">
+</head>
 
 
-    </head>
-<?php \View\View\Shared\MainLayouts::_Menu(); ?>
+<body>
 
-    <div id="Index" style="margin-top:100px;margin-left:100px;margin-right:100px;">
-        <?php if (isset($_COOKIE['Username']) == false): ?>
-            <form method="Post" role="form" action="">
-                <div class="form-group">
-                    <label for="Firstname">Firstname</label>
-                    <input type="text" class="form-control" name="Firstname" id="Firstname" placeholder="Enter your Email">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <form action="/signup" method="post" class="signup-from">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group m-5">
+                            <label for="Firstname" class="form-control">Firstname</label><br>
+                            <input type="text" required name="Firstname" id="Firstname" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Lastname" class="form-control">Lastname</label><br>
+                            <input type="text" name="Lastname" id="Lastname" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Username" class="form-control">Username</label><br>
+                            <input type="text" name="Username" id="Username" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Phone" class="form-control">Phone</label><br>
+                            <input type="tel" name="Phone" id="Phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group m-5">
+                            <label for="NationalCode" class="form-control">National Code</label><br>
+                            <input type="text" name="NationalCode" id="NationalCode" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Email" class="form-control">Email</label><br>
+                            <input type="text" name="Email" id="Email" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="Password" class="form-control">Password</label><br>
+                            <input type="password" name="Password" id="Password" class="form-control">
+                        </div>
+                        <div class="form-group m-5">
+                            <label for="PasswordVerify" class="form-control">Password Verify</label><br>
+                            <input type="password" name="PasswordVerify" id="PasswordVerify" class="form-control">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="Lastname">Lastname</label>
-                    <input type="text" class="form-control" name="Lastname" id="Lastname" placeholder="Enter your Lastname">
+                <div class="btn-group">
+                    <button class="btn btn-dark" type="submit" name="submit">
+                        Create
+                    </button>
+                    <a href="/login">
+                        <button class="btn btn-dark" type="submit">
+                            Log in
+                        </button>
+                    </a>
                 </div>
-                <div class="form-group">
-                    <label for="Username">Username</label>
-                    <input type="text" class="form-control" name="Username" id="Username" placeholder="Enter your Username">
-                </div>
-                <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="Password" class="form-control" name="Password" id="Password" placeholder="Enter your Password">
-                </div>
-                <div class="form-group">
-                    <label for="Email">Email</label>
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter your Email">
-                </div>
-                <?php if (isset($Viewbag['Error'])): ?>
-                    <span>
-                        <div class="alert alert-danger" role="alert"><?php echo $Viewbag['Error']; ?></div>
-                    </span>
-                <?php elseif(isset($_COOKIE['Success'])): ?>
-                    <span>
-                            <div class="alert alert-success" role="alert"><?php echo $Viewbag['Success']; ?></div>
-                        </span>
-                <?php elseif(isset($Viewbag['Result'])): ?>
-                    <span>
-                            <div class="alert alert-success" role="alert"><?php echo $Viewbag['Result']; ?></div>
-                        </span>
-                <?php endif; ?>
-                <button type="submit" name="submit" id="submit" class="btn btn-primary">Register</button>
+
             </form>
-            <div style="margin-top:100px;"><a href="/Login" style="font-size: large">Back to login</a> - <a href="/FortgetPass" style="font-size: large">Forget your Password?</a></div>
-        <?php else: ?>
-            <h3 class="rotate font-normal" style="font-family: Kohinoor">Hi  <?php echo $_COOKIE['Firstname']; ?></h3>
-            <br>
-            <a href="/Panel">
-                <button class="btn btn-primary" tabindex="3" type="button">Panel
-                </button>
-            </a>
-            <a href="/?Logout=True">
-                <button class="btn btn-primary" tabindex="3" type="button">Logout
-                </button>
-            </a>
-        <?php endif; ?>
-
+        </div>
     </div>
+</div>
 
-<?php \View\View\Shared\MainLayouts::_Footer(); ?>
+</body>
+
+
+</html>

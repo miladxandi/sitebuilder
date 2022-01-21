@@ -22,7 +22,8 @@ class UserController extends BaseController
     {
         if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])) {
             $this->Function->Login();
-        } else {
+        }
+        else {
             if (isset($_GET['Logout']) && strtolower($_GET['Logout']) == strtolower("True")) {
                 if (isset($_COOKIE['Username'])) {
                     setcookie("Username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
@@ -35,9 +36,9 @@ class UserController extends BaseController
                 } else {
                     View::Process("Panel.User.Login");
                 }
-            } else {
-                $Viewbag = $Input;
-                View::Process("Panel.User.Login",$Viewbag);
+            }
+            else {
+                View::Process("Panel.User.Login");
             }
         }
     }
