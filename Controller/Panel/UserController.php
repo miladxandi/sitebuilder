@@ -51,7 +51,6 @@ class UserController extends BaseController
         }
         else
         {
-
             View::Process("Panel.User.Signup");
         }
     }

@@ -53,10 +53,7 @@
                     <h2 style="color: white">|</h2>
                     <a href="Login.php" style="color: whitesmoke" >Log in</a>
                 </button>
-
-
             </div>
-
         </div>
         <br>
     </div>

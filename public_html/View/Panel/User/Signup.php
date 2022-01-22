@@ -17,7 +17,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
         </div>
-
+        <p><?php echo $Viewbag?$Viewbag[0]:''; ?></p>
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <form action="/signup" method="post" class="signup-from">
                 <div class="row">
