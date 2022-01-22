@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="" href="../../../Style/Main/style1.css" type="text/css">
+        <link rel="stylesheet" href="../../../Style/Main/style1.css" type="text/css">
 
     </head>
 
@@ -30,7 +30,7 @@
             <div id="titr" style="text-decoration-color: black">
                 <br>
                 <form action=""  method="post" style="display: flex" >
-                    <img src="imageee/search-icon-white-22.jpg" style="width: 20px;margin: 10px;margin-top: 20px" alt="">
+                    <img src="../../../Content/Main/search-icon-white-22.jpg" style="width: 20px;margin: 10px;margin-top: 20px" alt="">
                     <input type="search" name="search" id="" style=" height: 25px;width: 160px;margin-top: 20px;margin-right: 20px">
                 </form>
                 <br>
@@ -45,7 +45,7 @@
             </div>
 
             <div>
-                <a href="Index.php"><img src="imageee/logo.jpg" alt="" style="width: 24vh; padding-top: 10px;margin-left: 93vh;z-index: -100" ></a>
+                <img src="../../../Content/Main/loogo.jpg" alt="" style="width: 24vh; padding-top: 20px;margin-left: 93vh;z-index: -100" >
             </div>
 
             <div id="sidebar-btn" style="padding-top: 27px;padding-left: 20px">
