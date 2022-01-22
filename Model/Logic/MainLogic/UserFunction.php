@@ -30,6 +30,7 @@ final class UserFunction implements DataContract
         $Lastname = $_POST['Lastname'];
         $Username = $_POST['Username'];
         $Email = $_POST['Email'];
+        $NationalCode = $_POST['NationalCode'];
         if (strlen($_POST['Password'])>=4){
             $Password = password_hash( $_POST['Password'],1);
             if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
@@ -40,8 +41,12 @@ final class UserFunction implements DataContract
                 $Viewbag = ['email exists!',];
                 View::Process("Panel.User.Signup", $Viewbag);
             }
+            elseif ($this->User->FindByCustom('NationalCode',$NationalCode)['Rows'] == 1){
+                $Viewbag = ['ID number exists...',];
+                View::Process("Panel.User.Signup", $Viewbag);
+            }
             else{
-                $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
+                $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password, 'NationalCode'=>$NationalCode]);
                 if ($Insert== 1) {
                     setcookie("username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
