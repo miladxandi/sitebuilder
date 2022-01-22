@@ -30,7 +30,7 @@ final class UserFunction implements DataContract
         $Lastname = $_POST['Lastname'];
         $Username = $_POST['Username'];
         $Email = $_POST['Email'];
-        if (strlen($_POST['Password'])>4){
+        if (strlen($_POST['Password'])>=4){
             $Password = password_hash( $_POST['Password'],1);
             if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
                 $Viewbag = ['Username exists!',];
@@ -175,14 +175,19 @@ final class UserFunction implements DataContract
             $Username = addslashes($_POST['Username']);
             $Password = addslashes($_POST['Password']);
             $Login = $this->User->Login($Username, $Password, $Token);
-            if ($Login['Rows'] == "11") {
+            if ($Login && $Login['Rows'] == "11") {
                 setcookie("Username", $Login['Values']['Username'], time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("Firstname", $Login['Values']['Firstname'], time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("LoginToken", password_hash($Token, 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("lcsrn_Validation", password_hash("true", 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 $Viewbag = ['You are entered!!'];
                 View::Process("Panel.User.Login", $Viewbag);
-            } else {
+            }
+            elseif ($this->User->FindByUser($Username)['Rows']!=1){
+                $Viewbag = ["you don't have account.to create one , click on SIGNUP button below..."];
+                View::Process("Panel.User.Login", $Viewbag);
+            }
+            else {
                 $Viewbag = ['wrong password OR username!'];
                 View::Process("Panel.User.Login", $Viewbag);
             }

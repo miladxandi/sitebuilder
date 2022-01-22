@@ -17,7 +17,9 @@
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
         </div>
-        <p><?php echo $Viewbag?$Viewbag[0]:'';?></p>
+        <?php if ($Viewbag): ?>
+            <p><?php echo $Viewbag[0]; ?></p>
+        <?php endif;?>
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <form action="/login" method="post" class="signup-from">
                 <div class="row">
@@ -38,7 +40,7 @@
                     <button class="btn btn-dark" type="submit" name="submit">
                         Log in
                     </button>
-                    <a href="/signup">
+                    <a href="Signup.php">
                         <button class="btn btn-dark" type="submit">
                             sign up
                         </button>
