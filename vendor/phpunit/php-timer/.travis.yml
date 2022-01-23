@@ -6,6 +6,11 @@ php:
   - 7.3
   - 7.4snapshot
 
+<<<<<<< HEAD
+=======
+sudo: false
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 before_install:
   - composer self-update
   - composer clear-cache

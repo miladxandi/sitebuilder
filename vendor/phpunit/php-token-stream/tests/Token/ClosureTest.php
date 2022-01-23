@@ -19,13 +19,25 @@ class PHP_Token_ClosureTest extends TestCase
 
     protected function setUp()
     {
+<<<<<<< HEAD
         foreach (new PHP_Token_Stream(TEST_FILES_PATH . 'closure.php') as $token) {
+=======
+        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'closure.php');
+
+        foreach ($ts as $token) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if ($token instanceof PHP_Token_FUNCTION) {
                 $this->functions[] = $token;
             }
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_FUNCTION::getArguments
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetArguments()
     {
         $this->assertEquals(['$foo' => null, '$bar' => null], $this->functions[0]->getArguments());
@@ -36,6 +48,12 @@ class PHP_Token_ClosureTest extends TestCase
         $this->assertEquals([], $this->functions[5]->getArguments());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_FUNCTION::getName
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetName()
     {
         $this->assertEquals('anonymousFunction:2#5', $this->functions[0]->getName());
@@ -46,6 +64,12 @@ class PHP_Token_ClosureTest extends TestCase
         $this->assertEquals('anonymousFunction:7#106', $this->functions[5]->getName());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token::getLine
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetLine()
     {
         $this->assertEquals(2, $this->functions[0]->getLine());
@@ -54,6 +78,12 @@ class PHP_Token_ClosureTest extends TestCase
         $this->assertEquals(5, $this->functions[3]->getLine());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_TokenWithScope::getEndLine
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetEndLine()
     {
         $this->assertEquals(2, $this->functions[0]->getLine());

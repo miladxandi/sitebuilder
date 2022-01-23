@@ -23,6 +23,7 @@
         },
         {
             "name": "Bernhard Schussek",
+<<<<<<< HEAD
             "email": "bschussek@gmail.com"
         }
     ],
@@ -37,6 +38,17 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
+=======
+            "email": "bschussek@2bepublished.at"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "sebastian/recursion-context": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         "ext-mbstring": "*"
     },
     "autoload": {

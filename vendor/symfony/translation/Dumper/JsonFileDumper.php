@@ -25,7 +25,11 @@ class JsonFileDumper extends FileDumper
      */
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = [])
     {
+<<<<<<< HEAD
         $flags = $options['json_encoding'] ?? \JSON_PRETTY_PRINT;
+=======
+        $flags = $options['json_encoding'] ?? JSON_PRETTY_PRINT;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         return json_encode($messages->all($domain), $flags);
     }

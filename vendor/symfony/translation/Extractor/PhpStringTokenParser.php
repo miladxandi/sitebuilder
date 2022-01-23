@@ -106,7 +106,11 @@ class PhpStringTokenParser
         );
     }
 
+<<<<<<< HEAD
     private static function parseCallback(array $matches): string
+=======
+    private static function parseCallback($matches)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $str = $matches[1];
 
@@ -133,7 +137,11 @@ class PhpStringTokenParser
         $str = preg_replace('~(\r\n|\n|\r)$~', '', $str);
 
         // nowdoc string
+<<<<<<< HEAD
         if (str_contains($startToken, '\'')) {
+=======
+        if (false !== strpos($startToken, '\'')) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             return $str;
         }
 

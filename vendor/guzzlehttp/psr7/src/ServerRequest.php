@@ -4,9 +4,15 @@ namespace GuzzleHttp\Psr7;
 
 use InvalidArgumentException;
 use Psr\Http\Message\ServerRequestInterface;
+<<<<<<< HEAD
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UploadedFileInterface;
 use Psr\Http\Message\UriInterface;
+=======
+use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UploadedFileInterface;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 /**
  * Server-side HTTP request
@@ -35,7 +41,11 @@ class ServerRequest extends Request implements ServerRequestInterface
     private $cookieParams = [];
 
     /**
+<<<<<<< HEAD
      * @var array|object|null
+=======
+     * @var null|array|object
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     private $parsedBody;
 
@@ -58,7 +68,11 @@ class ServerRequest extends Request implements ServerRequestInterface
      * @param string                               $method       HTTP method
      * @param string|UriInterface                  $uri          URI
      * @param array                                $headers      Request headers
+<<<<<<< HEAD
      * @param string|resource|StreamInterface|null $body         Request body
+=======
+     * @param string|null|resource|StreamInterface $body         Request body
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param string                               $version      Protocol version
      * @param array                                $serverParams Typically the $_SERVER superglobal
      */
@@ -79,10 +93,15 @@ class ServerRequest extends Request implements ServerRequestInterface
      * Return an UploadedFile instance array.
      *
      * @param array $files A array which respect $_FILES structure
+<<<<<<< HEAD
      *
      * @return array
      *
      * @throws InvalidArgumentException for unrecognized values
+=======
+     * @throws InvalidArgumentException for unrecognized values
+     * @return array
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public static function normalizeFiles(array $files)
     {
@@ -111,7 +130,10 @@ class ServerRequest extends Request implements ServerRequestInterface
      * delegate to normalizeNestedFileSpec() and return that return value.
      *
      * @param array $value $_FILES struct
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return array|UploadedFileInterface
      */
     private static function createUploadedFileFromSpec(array $value)
@@ -136,7 +158,10 @@ class ServerRequest extends Request implements ServerRequestInterface
      * UploadedFileInterface instances.
      *
      * @param array $files
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return UploadedFileInterface[]
      */
     private static function normalizeNestedFileSpec(array $files = [])
@@ -172,7 +197,11 @@ class ServerRequest extends Request implements ServerRequestInterface
         $method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
         $headers = getallheaders();
         $uri = self::getUriFromGlobals();
+<<<<<<< HEAD
         $body = new CachingStream(new LazyOpenStream('php://input', 'r+'));
+=======
+        $body = new LazyOpenStream('php://input', 'r+');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $protocol = isset($_SERVER['SERVER_PROTOCOL']) ? str_replace('HTTP/', '', $_SERVER['SERVER_PROTOCOL']) : '1.1';
 
         $serverRequest = new ServerRequest($method, $uri, $headers, $body, $protocol, $_SERVER);
@@ -186,7 +215,11 @@ class ServerRequest extends Request implements ServerRequestInterface
 
     private static function extractHostAndPortFromAuthority($authority)
     {
+<<<<<<< HEAD
         $uri = 'http://' . $authority;
+=======
+        $uri = 'http://'.$authority;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $parts = parse_url($uri);
         if (false === $parts) {
             return [null, null];
@@ -247,6 +280,10 @@ class ServerRequest extends Request implements ServerRequestInterface
         return $uri;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     /**
      * {@inheritdoc}
      */

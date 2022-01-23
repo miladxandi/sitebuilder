@@ -3,11 +3,18 @@ language: php
 php:
   - 7.0
   - 7.1
+<<<<<<< HEAD
   - 7.2
   - 7.3
   - 7.4
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
 
+<<<<<<< HEAD
 script: ./vendor/bin/phpunit
+=======
+script: phpunit
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

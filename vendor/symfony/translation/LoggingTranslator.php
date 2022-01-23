@@ -31,11 +31,19 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
 
     /**
      * @param TranslatorInterface $translator The translator must implement TranslatorBagInterface
+<<<<<<< HEAD
+=======
+     * @param LoggerInterface     $logger
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function __construct($translator, LoggerInterface $logger)
     {
         if (!$translator instanceof LegacyTranslatorInterface && !$translator instanceof TranslatorInterface) {
+<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s()" must be an instance of "%s", "%s" given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+=======
+            throw new \TypeError(sprintf('Argument 1 passed to %s() must be an instance of %s, %s given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
         if (!$translator instanceof TranslatorBagInterface || !$translator instanceof LocaleAwareInterface) {
             throw new InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface, TranslatorBagInterface and LocaleAwareInterface.', \get_class($translator)));
@@ -63,7 +71,11 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
      */
     public function transChoice($id, $number, array $parameters = [], $domain = null, $locale = null)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.2, use the trans() one instead with a "%%count%%" parameter.', __METHOD__), \E_USER_DEPRECATED);
+=======
+        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.2, use the trans() one instead with a "%%count%%" parameter.', __METHOD__), E_USER_DEPRECATED);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         if ($this->translator instanceof TranslatorInterface) {
             $trans = $this->translator->trans($id, ['%count%' => $number] + $parameters, $domain, $locale);
@@ -81,6 +93,7 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
      */
     public function setLocale($locale)
     {
+<<<<<<< HEAD
         $prev = $this->translator->getLocale();
         $this->translator->setLocale($locale);
         if ($prev === $locale) {
@@ -88,6 +101,9 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
         }
 
         $this->logger->debug(sprintf('The locale of the translator has changed from "%s" to "%s".', $prev, $locale));
+=======
+        $this->translator->setLocale($locale);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -130,8 +146,17 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
 
     /**
      * Logs for missing translations.
+<<<<<<< HEAD
      */
     private function log(?string $id, ?string $domain, ?string $locale)
+=======
+     *
+     * @param string      $id
+     * @param string|null $domain
+     * @param string|null $locale
+     */
+    private function log($id, $domain, $locale)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         if (null === $domain) {
             $domain = 'messages';

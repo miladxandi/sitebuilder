@@ -25,17 +25,26 @@ class PluralizationRules
     /**
      * Returns the plural position to use for the given locale and number.
      *
+<<<<<<< HEAD
      * @param float  $number The number
+=======
+     * @param int    $number The number
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param string $locale The locale
      *
      * @return int The plural position
      */
     public static function get($number, $locale/*, bool $triggerDeprecation = true*/)
     {
+<<<<<<< HEAD
         $number = abs($number);
 
         if (3 > \func_num_args() || func_get_arg(2)) {
             @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2.', __CLASS__), \E_USER_DEPRECATED);
+=======
+        if (3 > \func_num_args() || \func_get_arg(2)) {
+            @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2.', __CLASS__), E_USER_DEPRECATED);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         if ('pt_BR' === $locale) {
@@ -43,7 +52,11 @@ class PluralizationRules
             $locale = 'xbr';
         }
 
+<<<<<<< HEAD
         if ('en_US_POSIX' !== $locale && \strlen($locale) > 3) {
+=======
+        if (\strlen($locale) > 3) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $locale = substr($locale, 0, -\strlen(strrchr($locale, '_')));
         }
 
@@ -88,7 +101,10 @@ class PluralizationRules
             case 'de':
             case 'el':
             case 'en':
+<<<<<<< HEAD
             case 'en_US_POSIX':
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             case 'eo':
             case 'es':
             case 'et':
@@ -147,7 +163,11 @@ class PluralizationRules
             case 'xbr':
             case 'ti':
             case 'wa':
+<<<<<<< HEAD
                 return ($number < 2) ? 0 : 1;
+=======
+                return ((0 == $number) || (1 == $number)) ? 0 : 1;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
             case 'be':
             case 'bs':
@@ -205,7 +225,11 @@ class PluralizationRules
      */
     public static function set(callable $rule, $locale)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2.', __CLASS__), \E_USER_DEPRECATED);
+=======
+        @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2.', __CLASS__), E_USER_DEPRECATED);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         if ('pt_BR' === $locale) {
             // temporary set a locale for brazilian

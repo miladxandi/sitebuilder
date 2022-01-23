@@ -41,10 +41,13 @@ class CsvFileLoader extends FileLoader
         $file->setCsvControl($this->delimiter, $this->enclosure, $this->escape);
 
         foreach ($file as $data) {
+<<<<<<< HEAD
             if (false === $data) {
                 continue;
             }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if ('#' !== substr($data[0], 0, 1) && isset($data[1]) && 2 === \count($data)) {
                 $messages[$data[0]] = $data[1];
             }

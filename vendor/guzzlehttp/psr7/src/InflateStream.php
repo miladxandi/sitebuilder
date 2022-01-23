@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -14,8 +17,11 @@ use Psr\Http\Message\StreamInterface;
  *
  * @link http://tools.ietf.org/html/rfc1952
  * @link http://php.net/manual/en/filters.compression.php
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class InflateStream implements StreamInterface
 {
@@ -36,7 +42,10 @@ class InflateStream implements StreamInterface
     /**
      * @param StreamInterface $stream
      * @param $header
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return int
      */
     private function getLengthOfPossibleFilenameHeader(StreamInterface $stream, $header)

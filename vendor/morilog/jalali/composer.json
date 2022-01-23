@@ -15,7 +15,11 @@
     ],
     "keywords": ["Laravel","Date","Datetime","Jalali", "Morilog"],
     "require": {
+<<<<<<< HEAD
         "php": "^7.0 | ^7.1 | ^7.2 | ^8.0",
+=======
+        "php": "^7.0 | ^7.1 | ^7.2",
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         "nesbot/carbon": "^1.21 || ^2.0",
         "beberlei/assert": "3.*"
     },

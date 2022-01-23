@@ -45,13 +45,16 @@ class UserController extends BaseController
 
     public function Signup()
     {
+<<<<<<< HEAD
         if (isset($_POST['submit']) )
+=======
+        if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname']) && isset($_POST['Email']) && isset($_POST['NationalCode']) )
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         {
             $this->Function->Register($_POST);
         }
         else
         {
-
             View::Process("Panel.User.Signup");
         }
     }

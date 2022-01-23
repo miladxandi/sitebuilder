@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -7,8 +10,11 @@ use Psr\Http\Message\StreamInterface;
 /**
  * Stream decorator that begins dropping data once the size of the underlying
  * stream becomes too full.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class DroppingStream implements StreamInterface
 {

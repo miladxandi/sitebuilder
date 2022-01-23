@@ -27,7 +27,11 @@ class ArrayConverter
 {
     /**
      * Converts linear messages array to tree-like array.
+<<<<<<< HEAD
      * For example this array('foo.bar' => 'value') will be converted to ['foo' => ['bar' => 'value']].
+=======
+     * For example this rray('foo.bar' => 'value') will be converted to ['foo' => ['bar' => 'value']].
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      *
      * @param array $messages Linear messages array
      *

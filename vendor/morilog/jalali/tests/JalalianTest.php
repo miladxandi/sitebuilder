@@ -55,7 +55,11 @@ final class JalalianTest extends TestCase
         $this->assertEquals($jDate->addYears(3)->getDay(), 31);
         $this->assertEquals($jDate->addMonths(36)->toString(), $jDate->addYears(3)->toString());
         $this->assertEquals($jDate->subYears(10)->toString(), (new Jalalian(1387, 1, 31))->toString());
+<<<<<<< HEAD
         $this->assertTrue($jDate->subYears(2)->subMonths(34)->equalsTo(new Jalalian(1392, 03, 31)));
+=======
+        $this->assertTrue($jDate->subYears(2)->subMonths(34)->equalsTo(new Jalalian(1393, 10, 30)));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         $jDate = (new Jalalian(1397, 6, 11))->subMonths(1);
         $this->assertEquals($jDate->getMonth(), 5);
@@ -103,6 +107,7 @@ final class JalalianTest extends TestCase
         $jDate = Jalalian::forge(1552608000);
         $this->assertEquals('1397-12-24', $jDate->format('Y-m-d'));
     }
+<<<<<<< HEAD
 
     public function testMaximumYearFormatting()
     {
@@ -114,4 +119,6 @@ final class JalalianTest extends TestCase
         $jDate = Jalalian::fromFormat('Y-m-d', '1416-12-01');
         $this->assertEquals(1416, $jDate->format('Y'));
     }
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }

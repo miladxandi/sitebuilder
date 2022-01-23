@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -9,8 +12,11 @@ use Psr\Http\Message\StreamInterface;
  *
  * Allows for easy testing and extension of a provided stream without needing
  * to create a concrete class for a simple extension point.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class FnStream implements StreamInterface
 {
@@ -37,7 +43,10 @@ class FnStream implements StreamInterface
 
     /**
      * Lazily determine which methods are not implemented.
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \BadMethodCallException
      */
     public function __get($name)
@@ -58,7 +67,10 @@ class FnStream implements StreamInterface
 
     /**
      * An unserialize would allow the __destruct to run when the unserialized value goes out of scope.
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \LogicException
      */
     public function __wakeup()

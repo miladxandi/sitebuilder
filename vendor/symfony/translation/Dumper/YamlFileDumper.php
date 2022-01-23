@@ -35,7 +35,11 @@ class YamlFileDumper extends FileDumper
      */
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = [])
     {
+<<<<<<< HEAD
         if (!class_exists(Yaml::class)) {
+=======
+        if (!class_exists('Symfony\Component\Yaml\Yaml')) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             throw new LogicException('Dumping translations in the YAML format requires the Symfony Yaml component.');
         }
 

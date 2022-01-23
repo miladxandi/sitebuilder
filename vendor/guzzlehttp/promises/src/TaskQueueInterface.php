@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 interface TaskQueueInterface
@@ -14,6 +17,11 @@ interface TaskQueueInterface
     /**
      * Adds a task to the queue that will be executed the next time run is
      * called.
+<<<<<<< HEAD
+=======
+     *
+     * @param callable $task
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function add(callable $task);
 

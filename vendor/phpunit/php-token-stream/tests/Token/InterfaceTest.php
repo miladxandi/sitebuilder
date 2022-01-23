@@ -37,6 +37,12 @@ class PHP_Token_InterfaceTest extends TestCase
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getName
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetName()
     {
         $this->assertEquals(
@@ -44,6 +50,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getParent
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetParentNotExists()
     {
         $this->assertFalse(
@@ -51,6 +63,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::hasParent
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testHasParentNotExists()
     {
         $this->assertFalse(
@@ -58,6 +76,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getParent
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetParentExists()
     {
         $this->assertEquals(
@@ -65,6 +89,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::hasParent
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testHasParentExists()
     {
         $this->assertTrue(
@@ -72,6 +102,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getInterfaces
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetInterfacesExists()
     {
         $this->assertEquals(
@@ -80,6 +116,12 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::hasInterfaces
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testHasInterfacesExists()
     {
         $this->assertTrue(
@@ -87,9 +129,19 @@ class PHP_Token_InterfaceTest extends TestCase
         );
     }
 
+<<<<<<< HEAD
     public function testGetPackageNamespace()
     {
         foreach (new PHP_Token_Stream(TEST_FILES_PATH . 'classInNamespace.php') as $token) {
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getPackage
+     */
+    public function testGetPackageNamespace()
+    {
+        $tokenStream = new PHP_Token_Stream(TEST_FILES_PATH . 'classInNamespace.php');
+        foreach ($tokenStream as $token) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if ($token instanceof PHP_Token_INTERFACE) {
                 $package = $token->getPackage();
                 $this->assertSame('Foo\\Bar', $package['namespace']);
@@ -97,6 +149,10 @@ class PHP_Token_InterfaceTest extends TestCase
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function provideFilesWithClassesWithinMultipleNamespaces()
     {
         return [
@@ -107,12 +163,19 @@ class PHP_Token_InterfaceTest extends TestCase
 
     /**
      * @dataProvider provideFilesWithClassesWithinMultipleNamespaces
+<<<<<<< HEAD
+=======
+     * @covers PHP_Token_INTERFACE::getPackage
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function testGetPackageNamespaceForFileWithMultipleNamespaces($filepath)
     {
         $tokenStream     = new PHP_Token_Stream($filepath);
         $firstClassFound = false;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         foreach ($tokenStream as $token) {
             if ($firstClassFound === false && $token instanceof PHP_Token_INTERFACE) {
                 $package = $token->getPackage();
@@ -141,11 +204,20 @@ class PHP_Token_InterfaceTest extends TestCase
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_INTERFACE::getPackage
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetPackageNamespaceWhenExtentingFromNamespaceClass()
     {
         $tokenStream     = new PHP_Token_Stream(TEST_FILES_PATH . 'classExtendsNamespacedClass.php');
         $firstClassFound = false;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         foreach ($tokenStream as $token) {
             if ($firstClassFound === false && $token instanceof PHP_Token_INTERFACE) {
                 $package = $token->getPackage();
@@ -154,7 +226,10 @@ class PHP_Token_InterfaceTest extends TestCase
                 $firstClassFound = true;
                 continue;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if ($token instanceof PHP_Token_INTERFACE) {
                 $package = $token->getPackage();
                 $this->assertSame('Extender', $token->getName());
@@ -163,7 +238,10 @@ class PHP_Token_InterfaceTest extends TestCase
                 return;
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $this->fail('Searching for 2 classes failed');
     }
 }

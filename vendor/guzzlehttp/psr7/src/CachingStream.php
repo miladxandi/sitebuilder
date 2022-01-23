@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -7,8 +10,11 @@ use Psr\Http\Message\StreamInterface;
 /**
  * Stream decorator that can cache previously read bytes from a sequentially
  * read stream.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class CachingStream implements StreamInterface
 {
@@ -23,7 +29,11 @@ class CachingStream implements StreamInterface
     /**
      * We will treat the buffer object as the body of the stream
      *
+<<<<<<< HEAD
      * @param StreamInterface $stream Stream to cache. The cursor is assumed to be at the beginning of the stream.
+=======
+     * @param StreamInterface $stream Stream to cache
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param StreamInterface $target Optionally specify where data is cached
      */
     public function __construct(
@@ -31,11 +41,16 @@ class CachingStream implements StreamInterface
         StreamInterface $target = null
     ) {
         $this->remoteStream = $stream;
+<<<<<<< HEAD
         $this->stream = $target ?: new Stream(Utils::tryFopen('php://temp', 'r+'));
+=======
+        $this->stream = $target ?: new Stream(fopen('php://temp', 'r+'));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     public function getSize()
     {
+<<<<<<< HEAD
         $remoteSize = $this->remoteStream->getSize();
 
         if (null === $remoteSize) {
@@ -43,6 +58,9 @@ class CachingStream implements StreamInterface
         }
 
         return max($this->stream->getSize(), $remoteSize);
+=======
+        return max($this->stream->getSize(), $this->remoteStream->getSize());
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     public function rewind()
@@ -140,7 +158,11 @@ class CachingStream implements StreamInterface
     private function cacheEntireStream()
     {
         $target = new FnStream(['write' => 'strlen']);
+<<<<<<< HEAD
         Utils::copyToStream($this, $target);
+=======
+        copy_to_stream($this, $target);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         return $this->tell();
     }

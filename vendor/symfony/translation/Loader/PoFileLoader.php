@@ -12,7 +12,11 @@
 namespace Symfony\Component\Translation\Loader;
 
 /**
+<<<<<<< HEAD
  * @copyright Copyright (c) 2010, Union of RAD https://github.com/UnionOfRAD/lithium
+=======
+ * @copyright Copyright (c) 2010, Union of RAD http://union-of-rad.org (http://lithify.me/)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  * @copyright Copyright (c) 2012, Clemens Tolboom
  */
 class PoFileLoader extends FileLoader
@@ -20,7 +24,11 @@ class PoFileLoader extends FileLoader
     /**
      * Parses portable object (PO) format.
      *
+<<<<<<< HEAD
      * From https://www.gnu.org/software/gettext/manual/gettext.html#PO-Files
+=======
+     * From http://www.gnu.org/software/gettext/manual/gettext.html#PO-Files
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * we should be able to parse files having:
      *
      * white-space
@@ -126,6 +134,7 @@ class PoFileLoader extends FileLoader
      */
     private function addMessage(array &$messages, array $item)
     {
+<<<<<<< HEAD
         if (!empty($item['ids']['singular'])) {
             $id = stripcslashes($item['ids']['singular']);
             if (isset($item['ids']['plural'])) {
@@ -144,6 +153,25 @@ class PoFileLoader extends FileLoader
             ksort($translated);
 
             $messages[$id] = stripcslashes(implode('|', $translated));
+=======
+        if (\is_array($item['translated'])) {
+            $messages[stripcslashes($item['ids']['singular'])] = stripcslashes($item['translated'][0]);
+            if (isset($item['ids']['plural'])) {
+                $plurals = $item['translated'];
+                // PO are by definition indexed so sort by index.
+                ksort($plurals);
+                // Make sure every index is filled.
+                end($plurals);
+                $count = key($plurals);
+                // Fill missing spots with '-'.
+                $empties = array_fill(0, $count + 1, '-');
+                $plurals += $empties;
+                ksort($plurals);
+                $messages[stripcslashes($item['ids']['plural'])] = stripcslashes(implode('|', $plurals));
+            }
+        } elseif (!empty($item['ids']['singular'])) {
+            $messages[stripcslashes($item['ids']['singular'])] = stripcslashes($item['translated']);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
     }
 }

@@ -1,5 +1,6 @@
 # CHANGELOG
 
+<<<<<<< HEAD
 ## 1.5.1 - 2021-10-22
 
 ### Fixed
@@ -38,6 +39,8 @@
 - Fixed `method_exists` crashes on PHP 8
 - Memory leak on exceptions
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 ## 1.3.1 - 2016-12-20
 

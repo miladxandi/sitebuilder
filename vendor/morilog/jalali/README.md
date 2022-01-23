@@ -8,9 +8,15 @@ morilog/jalali
 - CalendarUtils class was ported from [jalaali/jalaali-js](https://github.com/jalaali/jalaali-js)
 
 ## Version 3 features
+<<<<<<< HEAD
 - High human readable API
 - DateTime manipulating API
 - DateTime comparing API
+=======
+- High human readable api
+- DateTime manipulating api
+- DateTime comparing api
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 - Immutable
 
 ## Installation Version 3.*
@@ -18,18 +24,31 @@ morilog/jalali
 #### Requirements:
 - `php >= 7.0`
 
+<<<<<<< HEAD
 Run the Composer update command
+=======
+Run the Composer update comand
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
     $ composer require morilog/jalali:3.*
 
 <a name="basic-usage"></a>
 ## Basic Usage
+<<<<<<< HEAD
 In the current version, I introduced `Jalalian` class for manipulating Jalali date time
 ### Jalalian
 In version >= 1.1,  you can use `jdate()` instead of `Jalalian::forge()`;
 #### `now([$timestamp = null])`
 ``` php
 // the default timestamp is Now
+=======
+In current version i introduced `Jalalian` class for manipulating jalali date time
+### Jalalian
+In version >= 1.1,  You can use `jdate()` instead of `Jalalian::forge()`;
+#### `now([$timestamp = null])`
+``` php
+// default timestamp is now
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $date = \Morilog\Jalali\Jalalian::now()
 // OR
 $date = jdate();
@@ -39,15 +58,25 @@ $date = Jalalian::forge(1333857600);
 // OR
 $date = jdate(1333857600);
 
+<<<<<<< HEAD
 // pass human readable strings to make timestamps
+=======
+// pass strings to make timestamps
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $date = Jalalian::forge('last sunday');
 
 // get the timestamp
 $date = Jalalian::forge('last sunday')->getTimestamp(); // 1333857600
+<<<<<<< HEAD
 
 // format the timestamp
 $date = Jalalian::forge('last sunday')->format('%B %d، %Y'); // دی 02، 1391
 $date = Jalalian::forge('today')->format('%A, %d %B %y'); // جمعه، 23 اسفند 97
+=======
+سسس
+// format the timestamp
+$date = Jalalian::forge('last sunday')->format('%B %d، %Y'); // دی 02، 1391
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 // get a predefined format
 $date = Jalalian::forge('last sunday')->format('datetime'); // 1391-10-02 00:00:00
@@ -686,9 +715,17 @@ For help in building your formats, checkout the [PHP strftime() docs](http://php
 
 ## Notes ##
 
+<<<<<<< HEAD
 The class relies on ``strtotime()`` to make sense of your strings, and ``strftime()`` to handle the formatting. Always check the ``time()`` output to see if you get false timestamps, it which case, means the class couldn't understand what you were asking it to do.
+=======
+The class relies on ``strtotime()`` to make sense of your strings, and ``strftime()`` to make the format changes.  Just always check the ``time()`` output to see if you get false timestamps... which means the class couldn't understand what you were telling it.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 ## License ##
 - This bundle is created based on [Laravel-Date](https://github.com/swt83/laravel-date) by [Scott Travis](https://github.com/swt83) (MIT Licensed).
 - [Jalali (Shamsi) DateTime](https://github.com/sallar/CalendarUtils) class included in the package is created by [Sallar Kaboli](http://sallar.me) and is released under the MIT License.
+<<<<<<< HEAD
 -  This package is created and modified by [Morteza Parvini](http://morilog.ir) for Laravel >= 5 and is released under the MIT License.
+=======
+-  This package was created and modified by [Morteza Parvini](http://morilog.ir) for Laravel >= 5 and is released under the MIT License.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

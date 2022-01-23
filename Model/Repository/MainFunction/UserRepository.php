@@ -55,7 +55,6 @@ class UserRepository extends BaseRepository
 		    $Tokenize=$this->Tokenizer($Token,$Username);
 		    if ($Tokenize==1)
 		    {
-
 		    	return ['Values'=>$Result['Values'],'Rows'=>11];
 		    }
 		    else

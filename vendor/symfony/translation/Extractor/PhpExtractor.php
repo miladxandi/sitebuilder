@@ -21,9 +21,15 @@ use Symfony\Component\Translation\MessageCatalogue;
  */
 class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
 {
+<<<<<<< HEAD
     public const MESSAGE_TOKEN = 300;
     public const METHOD_ARGUMENTS_TOKEN = 1000;
     public const DOMAIN_TOKEN = 1001;
+=======
+    const MESSAGE_TOKEN = 300;
+    const METHOD_ARGUMENTS_TOKEN = 1000;
+    const DOMAIN_TOKEN = 1001;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
     /**
      * Prefix for new found message.
@@ -81,8 +87,14 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     {
         $files = $this->extractFiles($resource);
         foreach ($files as $file) {
+<<<<<<< HEAD
             $this->parseTokens(token_get_all(file_get_contents($file)), $catalog, $file);
 
+=======
+            $this->parseTokens(token_get_all(file_get_contents($file)), $catalog);
+
+            // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             gc_mem_caches();
         }
     }
@@ -100,7 +112,11 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
      *
      * @param mixed $token
      *
+<<<<<<< HEAD
      * @return string|null
+=======
+     * @return string
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     protected function normalizeToken($token)
     {
@@ -118,7 +134,11 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     {
         for (; $tokenIterator->valid(); $tokenIterator->next()) {
             $t = $tokenIterator->current();
+<<<<<<< HEAD
             if (\T_WHITESPACE !== $t[0]) {
+=======
+            if (T_WHITESPACE !== $t[0]) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 break;
             }
         }
@@ -166,17 +186,26 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
             }
 
             switch ($t[0]) {
+<<<<<<< HEAD
                 case \T_START_HEREDOC:
                     $docToken = $t[1];
                     break;
                 case \T_ENCAPSED_AND_WHITESPACE:
                 case \T_CONSTANT_ENCAPSED_STRING:
+=======
+                case T_START_HEREDOC:
+                    $docToken = $t[1];
+                    break;
+                case T_ENCAPSED_AND_WHITESPACE:
+                case T_CONSTANT_ENCAPSED_STRING:
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     if ('' === $docToken) {
                         $message .= PhpStringTokenParser::parse($t[1]);
                     } else {
                         $docPart = $t[1];
                     }
                     break;
+<<<<<<< HEAD
                 case \T_END_HEREDOC:
                     if ($indentation = strspn($t[1], ' ')) {
                         $docPartWithLineBreaks = $docPart;
@@ -191,11 +220,18 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
                         }
                     }
 
+=======
+                case T_END_HEREDOC:
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     $message .= PhpStringTokenParser::parseDocString($docToken, $docPart);
                     $docToken = '';
                     $docPart = '';
                     break;
+<<<<<<< HEAD
                 case \T_WHITESPACE:
+=======
+                case T_WHITESPACE:
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     break;
                 default:
                     break 2;
@@ -208,6 +244,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     /**
      * Extracts trans message from PHP tokens.
      *
+<<<<<<< HEAD
      * @param array  $tokens
      * @param string $filename
      */
@@ -218,6 +255,13 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
         }
         $filename = 2 < \func_num_args() ? func_get_arg(2) : '';
 
+=======
+     * @param array            $tokens
+     * @param MessageCatalogue $catalog
+     */
+    protected function parseTokens($tokens, MessageCatalogue $catalog)
+    {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $tokenIterator = new \ArrayIterator($tokens);
 
         for ($key = 0; $key < $tokenIterator->count(); ++$key) {
@@ -241,10 +285,14 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
                     } elseif (self::METHOD_ARGUMENTS_TOKEN === $item) {
                         $this->skipMethodArgument($tokenIterator);
                     } elseif (self::DOMAIN_TOKEN === $item) {
+<<<<<<< HEAD
                         $domainToken = $this->getValue($tokenIterator);
                         if ('' !== $domainToken) {
                             $domain = $domainToken;
                         }
+=======
+                        $domain = $this->getValue($tokenIterator);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
                         break;
                     } else {
@@ -254,10 +302,13 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
 
                 if ($message) {
                     $catalog->set($message, $this->prefix.$message, $domain);
+<<<<<<< HEAD
                     $metadata = $catalog->getMetadata($message, $domain) ?? [];
                     $normalizedFilename = preg_replace('{[\\\\/]+}', '/', $filename);
                     $metadata['sources'][] = $normalizedFilename.':'.$tokens[$key][2];
                     $catalog->setMetadata($message, $metadata, $domain);
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     break;
                 }
             }
@@ -273,11 +324,21 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
      */
     protected function canBeExtracted($file)
     {
+<<<<<<< HEAD
         return $this->isFile($file) && 'php' === pathinfo($file, \PATHINFO_EXTENSION);
     }
 
     /**
      * {@inheritdoc}
+=======
+        return $this->isFile($file) && 'php' === pathinfo($file, PATHINFO_EXTENSION);
+    }
+
+    /**
+     * @param string|array $directory
+     *
+     * @return array
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     protected function extractFromDirectory($directory)
     {

@@ -18,7 +18,11 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": ">=7.0"
+=======
+        "php": "^7.0"
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"

@@ -41,12 +41,16 @@ class Tokenizer {
 
     public function parse(string $source): TokenCollection {
         $result = new TokenCollection();
+<<<<<<< HEAD
 
         if ($source === '') {
             return $result;
         }
 
         $tokens = \token_get_all($source);
+=======
+        $tokens = token_get_all($source);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         $lastToken = new Token(
             $tokens[0][2],
@@ -55,7 +59,11 @@ class Tokenizer {
         );
 
         foreach ($tokens as $pos => $tok) {
+<<<<<<< HEAD
             if (\is_string($tok)) {
+=======
+            if (is_string($tok)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $token = new Token(
                     $lastToken->getLine(),
                     $this->map[$tok],
@@ -63,16 +71,24 @@ class Tokenizer {
                 );
                 $result->addToken($token);
                 $lastToken = $token;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 continue;
             }
 
             $line   = $tok[2];
+<<<<<<< HEAD
             $values = \preg_split('/\R+/Uu', $tok[1]);
+=======
+            $values = preg_split('/\R+/Uu', $tok[1]);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
             foreach ($values as $v) {
                 $token = new Token(
                     $line,
+<<<<<<< HEAD
                     \token_name($tok[0]),
                     $v
                 );
@@ -139,4 +155,18 @@ class Tokenizer {
 
         return $final;
     }
+=======
+                    token_name($tok[0]),
+                    $v
+                );
+                $result->addToken($token);
+                $line++;
+                $lastToken = $token;
+            }
+        }
+
+        return $result;
+    }
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }

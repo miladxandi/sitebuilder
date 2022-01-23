@@ -91,7 +91,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getMessages($domain)
     {
         if (!\in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: "%s".', $domain));
+=======
+            throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         if (!isset($this->messages[$domain]['all'])) {
@@ -107,7 +111,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getNewMessages($domain)
     {
         if (!\in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: "%s".', $domain));
+=======
+            throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         if (!isset($this->messages[$domain]['new'])) {
@@ -123,7 +131,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getObsoleteMessages($domain)
     {
         if (!\in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: "%s".', $domain));
+=======
+            throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         if (!isset($this->messages[$domain]['obsolete'])) {

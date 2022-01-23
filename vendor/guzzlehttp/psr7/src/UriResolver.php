@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\UriInterface;
@@ -19,7 +22,10 @@ final class UriResolver
      * @param string $path
      *
      * @return string
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @link http://tools.ietf.org/html/rfc3986#section-5.2.4
      */
     public static function removeDotSegments($path)
@@ -59,7 +65,10 @@ final class UriResolver
      * @param UriInterface $rel  Relative URI
      *
      * @return UriInterface
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @link http://tools.ietf.org/html/rfc3986#section-5.2
      */
     public static function resolve(UriInterface $base, UriInterface $rel)

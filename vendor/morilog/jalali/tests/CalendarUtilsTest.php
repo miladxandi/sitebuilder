@@ -6,6 +6,10 @@ use DateTime;
 use DateTimeZone;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
+<<<<<<< HEAD
+=======
+use Morilog\Jalali\jDate;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 use PHPUnit\Framework\TestCase;
 
 class CalendarUtilsTest extends TestCase

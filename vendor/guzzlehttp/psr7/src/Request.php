@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use InvalidArgumentException;
@@ -17,7 +20,11 @@ class Request implements RequestInterface
     /** @var string */
     private $method;
 
+<<<<<<< HEAD
     /** @var string|null */
+=======
+    /** @var null|string */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     private $requestTarget;
 
     /** @var UriInterface */
@@ -27,7 +34,11 @@ class Request implements RequestInterface
      * @param string                               $method  HTTP method
      * @param string|UriInterface                  $uri     URI
      * @param array                                $headers Request headers
+<<<<<<< HEAD
      * @param string|resource|StreamInterface|null $body    Request body
+=======
+     * @param string|null|resource|StreamInterface $body    Request body
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param string                               $version Protocol version
      */
     public function __construct(
@@ -37,7 +48,10 @@ class Request implements RequestInterface
         $body = null,
         $version = '1.1'
     ) {
+<<<<<<< HEAD
         $this->assertMethod($method);
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         if (!($uri instanceof UriInterface)) {
             $uri = new Uri($uri);
         }
@@ -52,7 +66,11 @@ class Request implements RequestInterface
         }
 
         if ($body !== '' && $body !== null) {
+<<<<<<< HEAD
             $this->stream = Utils::streamFor($body);
+=======
+            $this->stream = stream_for($body);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
     }
 
@@ -93,7 +111,10 @@ class Request implements RequestInterface
 
     public function withMethod($method)
     {
+<<<<<<< HEAD
         $this->assertMethod($method);
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $new = clone $this;
         $new->method = strtoupper($method);
         return $new;
@@ -142,6 +163,7 @@ class Request implements RequestInterface
         // See: http://tools.ietf.org/html/rfc7230#section-5.4
         $this->headers = [$header => [$host]] + $this->headers;
     }
+<<<<<<< HEAD
 
     private function assertMethod($method)
     {
@@ -149,4 +171,6 @@ class Request implements RequestInterface
             throw new \InvalidArgumentException('Method must be a non-empty string.');
         }
     }
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }

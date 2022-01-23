@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\Translation;
 
+<<<<<<< HEAD
 use Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\TranslatorInterface as LegacyTranslatorInterface;
 use Symfony\Contracts\Translation\LocaleAwareInterface;
@@ -20,11 +23,19 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  */
+<<<<<<< HEAD
 class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorInterface, TranslatorBagInterface, WarmableInterface
 {
     public const MESSAGE_DEFINED = 0;
     public const MESSAGE_MISSING = 1;
     public const MESSAGE_EQUALS_FALLBACK = 2;
+=======
+class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorInterface, TranslatorBagInterface
+{
+    const MESSAGE_DEFINED = 0;
+    const MESSAGE_MISSING = 1;
+    const MESSAGE_EQUALS_FALLBACK = 2;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
     /**
      * @var TranslatorInterface|TranslatorBagInterface
@@ -39,7 +50,11 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
     public function __construct($translator)
     {
         if (!$translator instanceof LegacyTranslatorInterface && !$translator instanceof TranslatorInterface) {
+<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s()" must be an instance of "%s", "%s" given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+=======
+            throw new \TypeError(sprintf('Argument 1 passed to %s() must be an instance of %s, %s given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
         if (!$translator instanceof TranslatorBagInterface || !$translator instanceof LocaleAwareInterface) {
             throw new InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface, TranslatorBagInterface and LocaleAwareInterface.', \get_class($translator)));
@@ -68,10 +83,17 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
     {
         if ($this->translator instanceof TranslatorInterface) {
             $trans = $this->translator->trans($id, ['%count%' => $number] + $parameters, $domain, $locale);
+<<<<<<< HEAD
         } else {
             $trans = $this->translator->transChoice($id, $number, $parameters, $domain, $locale);
         }
 
+=======
+        }
+
+        $trans = $this->translator->transChoice($id, $number, $parameters, $domain, $locale);
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $this->collectMessage($locale, $domain, $id, $trans, ['%count%' => $number] + $parameters);
 
         return $trans;
@@ -102,6 +124,7 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function warmUp($cacheDir)
@@ -112,6 +135,8 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
     }
 
     /**
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * Gets the fallback locales.
      *
      * @return array The fallback locales
@@ -141,7 +166,18 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
         return $this->messages;
     }
 
+<<<<<<< HEAD
     private function collectMessage(?string $locale, ?string $domain, ?string $id, string $translation, ?array $parameters = [])
+=======
+    /**
+     * @param string|null $locale
+     * @param string|null $domain
+     * @param string      $id
+     * @param string      $translation
+     * @param array|null  $parameters
+     */
+    private function collectMessage($locale, $domain, $id, $translation, $parameters = [])
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         if (null === $domain) {
             $domain = 'messages';
@@ -150,7 +186,10 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
         $id = (string) $id;
         $catalogue = $this->translator->getCatalogue($locale);
         $locale = $catalogue->getLocale();
+<<<<<<< HEAD
         $fallbackLocale = null;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         if ($catalogue->defines($id, $domain)) {
             $state = self::MESSAGE_DEFINED;
         } elseif ($catalogue->has($id, $domain)) {
@@ -159,9 +198,16 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
             $fallbackCatalogue = $catalogue->getFallbackCatalogue();
             while ($fallbackCatalogue) {
                 if ($fallbackCatalogue->defines($id, $domain)) {
+<<<<<<< HEAD
                     $fallbackLocale = $fallbackCatalogue->getLocale();
                     break;
                 }
+=======
+                    $locale = $fallbackCatalogue->getLocale();
+                    break;
+                }
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $fallbackCatalogue = $fallbackCatalogue->getFallbackCatalogue();
             }
         } else {
@@ -170,7 +216,10 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
 
         $this->messages[] = [
             'locale' => $locale,
+<<<<<<< HEAD
             'fallbackLocale' => $fallbackLocale,
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             'domain' => $domain,
             'id' => $id,
             'translation' => $translation,

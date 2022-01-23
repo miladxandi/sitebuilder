@@ -1,13 +1,19 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
 
 /**
  * Converts Guzzle streams into PHP stream resources.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class StreamWrapper
 {
@@ -26,7 +32,10 @@ class StreamWrapper
      * @param StreamInterface $stream The stream to get a resource for
      *
      * @return resource
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \InvalidArgumentException if stream is not readable or writable
      */
     public static function getResource(StreamInterface $stream)

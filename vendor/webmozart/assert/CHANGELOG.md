@@ -3,6 +3,7 @@ Changelog
 
 ## UNRELEASED
 
+<<<<<<< HEAD
 ## 1.10.0
 
 ### Added
@@ -117,6 +118,8 @@ If you don't use Psalm, then this has no impact.
 * deprecated `Assert::isTraversable()` in favor of `Assert::isIterable()`
   * This was already done in 1.3.0, but it was only done through a silenced `trigger_error`. It is now annotated as well.
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 ## 1.4.0 (2018-12-25)
 
 ### Added
@@ -136,7 +139,11 @@ If you don't use Psalm, then this has no impact.
 
 ## 1.3.0 (2018-01-29)
 
+<<<<<<< HEAD
 ### Added
+=======
+### Added 
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 * added `Assert::minCount()`
 * added `Assert::maxCount()`

@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 4.4.0
 -----
 
@@ -14,6 +15,8 @@ CHANGELOG
  * Improved Xliff 1.2 loader to load the original file's metadata
  * Added `TranslatorPathsPass`
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 4.2.0
 -----
 

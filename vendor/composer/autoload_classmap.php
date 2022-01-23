@@ -13,7 +13,10 @@ return array(
     'Assert\\InvalidArgumentException' => $vendorDir . '/beberlei/assert/lib/Assert/InvalidArgumentException.php',
     'Assert\\LazyAssertion' => $vendorDir . '/beberlei/assert/lib/Assert/LazyAssertion.php',
     'Assert\\LazyAssertionException' => $vendorDir . '/beberlei/assert/lib/Assert/LazyAssertionException.php',
+<<<<<<< HEAD
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\CarbonPeriod' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonPeriod.php',
@@ -57,7 +60,10 @@ return array(
     'DeepCopy\\TypeFilter\\Date\\DateIntervalFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter.php',
     'DeepCopy\\TypeFilter\\ReplaceFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
     'DeepCopy\\TypeFilter\\ShallowCopyFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
+<<<<<<< HEAD
     'DeepCopy\\TypeFilter\\Spl\\ArrayObjectFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/ArrayObjectFilter.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedList' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
     'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
     'DeepCopy\\TypeFilter\\TypeFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
@@ -103,11 +109,16 @@ return array(
     'GuzzleHttp\\Promise\\AggregateException' => $vendorDir . '/guzzlehttp/promises/src/AggregateException.php',
     'GuzzleHttp\\Promise\\CancellationException' => $vendorDir . '/guzzlehttp/promises/src/CancellationException.php',
     'GuzzleHttp\\Promise\\Coroutine' => $vendorDir . '/guzzlehttp/promises/src/Coroutine.php',
+<<<<<<< HEAD
     'GuzzleHttp\\Promise\\Create' => $vendorDir . '/guzzlehttp/promises/src/Create.php',
     'GuzzleHttp\\Promise\\Each' => $vendorDir . '/guzzlehttp/promises/src/Each.php',
     'GuzzleHttp\\Promise\\EachPromise' => $vendorDir . '/guzzlehttp/promises/src/EachPromise.php',
     'GuzzleHttp\\Promise\\FulfilledPromise' => $vendorDir . '/guzzlehttp/promises/src/FulfilledPromise.php',
     'GuzzleHttp\\Promise\\Is' => $vendorDir . '/guzzlehttp/promises/src/Is.php',
+=======
+    'GuzzleHttp\\Promise\\EachPromise' => $vendorDir . '/guzzlehttp/promises/src/EachPromise.php',
+    'GuzzleHttp\\Promise\\FulfilledPromise' => $vendorDir . '/guzzlehttp/promises/src/FulfilledPromise.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'GuzzleHttp\\Promise\\Promise' => $vendorDir . '/guzzlehttp/promises/src/Promise.php',
     'GuzzleHttp\\Promise\\PromiseInterface' => $vendorDir . '/guzzlehttp/promises/src/PromiseInterface.php',
     'GuzzleHttp\\Promise\\PromisorInterface' => $vendorDir . '/guzzlehttp/promises/src/PromisorInterface.php',
@@ -115,12 +126,16 @@ return array(
     'GuzzleHttp\\Promise\\RejectionException' => $vendorDir . '/guzzlehttp/promises/src/RejectionException.php',
     'GuzzleHttp\\Promise\\TaskQueue' => $vendorDir . '/guzzlehttp/promises/src/TaskQueue.php',
     'GuzzleHttp\\Promise\\TaskQueueInterface' => $vendorDir . '/guzzlehttp/promises/src/TaskQueueInterface.php',
+<<<<<<< HEAD
     'GuzzleHttp\\Promise\\Utils' => $vendorDir . '/guzzlehttp/promises/src/Utils.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'GuzzleHttp\\Psr7\\AppendStream' => $vendorDir . '/guzzlehttp/psr7/src/AppendStream.php',
     'GuzzleHttp\\Psr7\\BufferStream' => $vendorDir . '/guzzlehttp/psr7/src/BufferStream.php',
     'GuzzleHttp\\Psr7\\CachingStream' => $vendorDir . '/guzzlehttp/psr7/src/CachingStream.php',
     'GuzzleHttp\\Psr7\\DroppingStream' => $vendorDir . '/guzzlehttp/psr7/src/DroppingStream.php',
     'GuzzleHttp\\Psr7\\FnStream' => $vendorDir . '/guzzlehttp/psr7/src/FnStream.php',
+<<<<<<< HEAD
     'GuzzleHttp\\Psr7\\Header' => $vendorDir . '/guzzlehttp/psr7/src/Header.php',
     'GuzzleHttp\\Psr7\\InflateStream' => $vendorDir . '/guzzlehttp/psr7/src/InflateStream.php',
     'GuzzleHttp\\Psr7\\LazyOpenStream' => $vendorDir . '/guzzlehttp/psr7/src/LazyOpenStream.php',
@@ -132,6 +147,15 @@ return array(
     'GuzzleHttp\\Psr7\\NoSeekStream' => $vendorDir . '/guzzlehttp/psr7/src/NoSeekStream.php',
     'GuzzleHttp\\Psr7\\PumpStream' => $vendorDir . '/guzzlehttp/psr7/src/PumpStream.php',
     'GuzzleHttp\\Psr7\\Query' => $vendorDir . '/guzzlehttp/psr7/src/Query.php',
+=======
+    'GuzzleHttp\\Psr7\\InflateStream' => $vendorDir . '/guzzlehttp/psr7/src/InflateStream.php',
+    'GuzzleHttp\\Psr7\\LazyOpenStream' => $vendorDir . '/guzzlehttp/psr7/src/LazyOpenStream.php',
+    'GuzzleHttp\\Psr7\\LimitStream' => $vendorDir . '/guzzlehttp/psr7/src/LimitStream.php',
+    'GuzzleHttp\\Psr7\\MessageTrait' => $vendorDir . '/guzzlehttp/psr7/src/MessageTrait.php',
+    'GuzzleHttp\\Psr7\\MultipartStream' => $vendorDir . '/guzzlehttp/psr7/src/MultipartStream.php',
+    'GuzzleHttp\\Psr7\\NoSeekStream' => $vendorDir . '/guzzlehttp/psr7/src/NoSeekStream.php',
+    'GuzzleHttp\\Psr7\\PumpStream' => $vendorDir . '/guzzlehttp/psr7/src/PumpStream.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'GuzzleHttp\\Psr7\\Request' => $vendorDir . '/guzzlehttp/psr7/src/Request.php',
     'GuzzleHttp\\Psr7\\Response' => $vendorDir . '/guzzlehttp/psr7/src/Response.php',
     'GuzzleHttp\\Psr7\\Rfc7230' => $vendorDir . '/guzzlehttp/psr7/src/Rfc7230.php',
@@ -143,7 +167,10 @@ return array(
     'GuzzleHttp\\Psr7\\Uri' => $vendorDir . '/guzzlehttp/psr7/src/Uri.php',
     'GuzzleHttp\\Psr7\\UriNormalizer' => $vendorDir . '/guzzlehttp/psr7/src/UriNormalizer.php',
     'GuzzleHttp\\Psr7\\UriResolver' => $vendorDir . '/guzzlehttp/psr7/src/UriResolver.php',
+<<<<<<< HEAD
     'GuzzleHttp\\Psr7\\Utils' => $vendorDir . '/guzzlehttp/psr7/src/Utils.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'GuzzleHttp\\RedirectMiddleware' => $vendorDir . '/guzzlehttp/guzzle/src/RedirectMiddleware.php',
     'GuzzleHttp\\RequestOptions' => $vendorDir . '/guzzlehttp/guzzle/src/RequestOptions.php',
     'GuzzleHttp\\RetryMiddleware' => $vendorDir . '/guzzlehttp/guzzle/src/RetryMiddleware.php',
@@ -526,7 +553,10 @@ return array(
     'PHP_Token_CLOSE_SQUARE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_CLOSE_TAG' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_COALESCE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+<<<<<<< HEAD
     'PHP_Token_COALESCE_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'PHP_Token_COLON' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_COMMA' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_COMMENT' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
@@ -572,7 +602,10 @@ return array(
     'PHP_Token_FILE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_FINAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_FINALLY' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+<<<<<<< HEAD
     'PHP_Token_FN' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'PHP_Token_FOR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_FOREACH' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_FUNCTION' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
@@ -663,7 +696,10 @@ return array(
     'PHP_Token_UNSET_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_USE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_USE_FUNCTION' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+<<<<<<< HEAD
     'PHP_Token_Util' => $vendorDir . '/phpunit/php-token-stream/src/Token/Util.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'PHP_Token_VAR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_VARIABLE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_WHILE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
@@ -940,7 +976,10 @@ return array(
     'SebastianBergmann\\Timer\\RuntimeException' => $vendorDir . '/phpunit/php-timer/src/RuntimeException.php',
     'SebastianBergmann\\Timer\\Timer' => $vendorDir . '/phpunit/php-timer/src/Timer.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+<<<<<<< HEAD
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'Symfony\\Component\\Translation\\Catalogue\\AbstractOperation' => $vendorDir . '/symfony/translation/Catalogue/AbstractOperation.php',
     'Symfony\\Component\\Translation\\Catalogue\\MergeOperation' => $vendorDir . '/symfony/translation/Catalogue/MergeOperation.php',
     'Symfony\\Component\\Translation\\Catalogue\\OperationInterface' => $vendorDir . '/symfony/translation/Catalogue/OperationInterface.php',
@@ -951,7 +990,10 @@ return array(
     'Symfony\\Component\\Translation\\DependencyInjection\\TranslationDumperPass' => $vendorDir . '/symfony/translation/DependencyInjection/TranslationDumperPass.php',
     'Symfony\\Component\\Translation\\DependencyInjection\\TranslationExtractorPass' => $vendorDir . '/symfony/translation/DependencyInjection/TranslationExtractorPass.php',
     'Symfony\\Component\\Translation\\DependencyInjection\\TranslatorPass' => $vendorDir . '/symfony/translation/DependencyInjection/TranslatorPass.php',
+<<<<<<< HEAD
     'Symfony\\Component\\Translation\\DependencyInjection\\TranslatorPathsPass' => $vendorDir . '/symfony/translation/DependencyInjection/TranslatorPathsPass.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'Symfony\\Component\\Translation\\Dumper\\CsvFileDumper' => $vendorDir . '/symfony/translation/Dumper/CsvFileDumper.php',
     'Symfony\\Component\\Translation\\Dumper\\DumperInterface' => $vendorDir . '/symfony/translation/Dumper/DumperInterface.php',
     'Symfony\\Component\\Translation\\Dumper\\FileDumper' => $vendorDir . '/symfony/translation/Dumper/FileDumper.php',
@@ -1024,6 +1066,7 @@ return array(
     'Symfony\\Contracts\\Tests\\Service\\ServiceLocatorTest' => $vendorDir . '/symfony/contracts/Tests/Service/ServiceLocatorTest.php',
     'Symfony\\Contracts\\Tests\\Service\\ServiceSubscriberTraitTest' => $vendorDir . '/symfony/contracts/Tests/Service/ServiceSubscriberTraitTest.php',
     'Symfony\\Contracts\\Tests\\Translation\\TranslatorTest' => $vendorDir . '/symfony/contracts/Tests/Translation/TranslatorTest.php',
+<<<<<<< HEAD
     'Symfony\\Contracts\\Translation\\LocaleAwareInterface' => $vendorDir . '/symfony/translation-contracts/LocaleAwareInterface.php',
     'Symfony\\Contracts\\Translation\\Test\\TranslatorTest' => $vendorDir . '/symfony/translation-contracts/Test/TranslatorTest.php',
     'Symfony\\Contracts\\Translation\\TranslatableInterface' => $vendorDir . '/symfony/translation-contracts/TranslatableInterface.php',
@@ -1032,6 +1075,13 @@ return array(
     'Symfony\\Polyfill\\Ctype\\Ctype' => $vendorDir . '/symfony/polyfill-ctype/Ctype.php',
     'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',
     'Symfony\\Polyfill\\Php80\\Php80' => $vendorDir . '/symfony/polyfill-php80/Php80.php',
+=======
+    'Symfony\\Contracts\\Translation\\LocaleAwareInterface' => $vendorDir . '/symfony/contracts/Translation/LocaleAwareInterface.php',
+    'Symfony\\Contracts\\Translation\\TranslatorInterface' => $vendorDir . '/symfony/contracts/Translation/TranslatorInterface.php',
+    'Symfony\\Contracts\\Translation\\TranslatorTrait' => $vendorDir . '/symfony/contracts/Translation/TranslatorTrait.php',
+    'Symfony\\Polyfill\\Ctype\\Ctype' => $vendorDir . '/symfony/polyfill-ctype/Ctype.php',
+    'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TheSeer\\Tokenizer\\Exception' => $vendorDir . '/theseer/tokenizer/src/Exception.php',
     'TheSeer\\Tokenizer\\NamespaceUri' => $vendorDir . '/theseer/tokenizer/src/NamespaceUri.php',
@@ -1041,11 +1091,15 @@ return array(
     'TheSeer\\Tokenizer\\TokenCollectionException' => $vendorDir . '/theseer/tokenizer/src/TokenCollectionException.php',
     'TheSeer\\Tokenizer\\Tokenizer' => $vendorDir . '/theseer/tokenizer/src/Tokenizer.php',
     'TheSeer\\Tokenizer\\XMLSerializer' => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php',
+<<<<<<< HEAD
     'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
     'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     'Webmozart\\Assert\\Assert' => $vendorDir . '/webmozart/assert/src/Assert.php',
     'Webmozart\\Assert\\InvalidArgumentException' => $vendorDir . '/webmozart/assert/src/InvalidArgumentException.php',
     'Webmozart\\Assert\\Mixin' => $vendorDir . '/webmozart/assert/src/Mixin.php',
+=======
+    'Webmozart\\Assert\\Assert' => $vendorDir . '/webmozart/assert/src/Assert.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -1062,11 +1116,18 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Deprecated' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Example' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\StaticMethod' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php',
+<<<<<<< HEAD
+=======
+    'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\Strategy' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\AlignFormatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/AlignFormatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\PassthroughFormatter' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Generic' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Link' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Method' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Param' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php',
@@ -1080,19 +1141,26 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\See' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/See.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Since' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Since.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Source' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Source.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\TagWithType' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/TagWithType.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Throws' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Throws.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Uses' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Uses.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Var_' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Var_.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Version' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Version.php',
     'phpDocumentor\\Reflection\\Element' => $vendorDir . '/phpdocumentor/reflection-common/src/Element.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\Exception\\PcreException' => $vendorDir . '/phpdocumentor/reflection-docblock/src/Exception/PcreException.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\File' => $vendorDir . '/phpdocumentor/reflection-common/src/File.php',
     'phpDocumentor\\Reflection\\Fqsen' => $vendorDir . '/phpdocumentor/reflection-common/src/Fqsen.php',
     'phpDocumentor\\Reflection\\FqsenResolver' => $vendorDir . '/phpdocumentor/type-resolver/src/FqsenResolver.php',
     'phpDocumentor\\Reflection\\Location' => $vendorDir . '/phpdocumentor/reflection-common/src/Location.php',
     'phpDocumentor\\Reflection\\Project' => $vendorDir . '/phpdocumentor/reflection-common/src/Project.php',
     'phpDocumentor\\Reflection\\ProjectFactory' => $vendorDir . '/phpdocumentor/reflection-common/src/ProjectFactory.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\PseudoType' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoType.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\CallableString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/CallableString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\False_' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/False_.php',
@@ -1130,6 +1198,20 @@ return array(
     'phpDocumentor\\Reflection\\Types\\Iterable_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Iterable_.php',
     'phpDocumentor\\Reflection\\Types\\Mixed_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Mixed_.php',
     'phpDocumentor\\Reflection\\Types\\Never_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Never_.php',
+=======
+    'phpDocumentor\\Reflection\\Type' => $vendorDir . '/phpdocumentor/type-resolver/src/Type.php',
+    'phpDocumentor\\Reflection\\TypeResolver' => $vendorDir . '/phpdocumentor/type-resolver/src/TypeResolver.php',
+    'phpDocumentor\\Reflection\\Types\\Array_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Array_.php',
+    'phpDocumentor\\Reflection\\Types\\Boolean' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Boolean.php',
+    'phpDocumentor\\Reflection\\Types\\Callable_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Callable_.php',
+    'phpDocumentor\\Reflection\\Types\\Compound' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Compound.php',
+    'phpDocumentor\\Reflection\\Types\\Context' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Context.php',
+    'phpDocumentor\\Reflection\\Types\\ContextFactory' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/ContextFactory.php',
+    'phpDocumentor\\Reflection\\Types\\Float_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Float_.php',
+    'phpDocumentor\\Reflection\\Types\\Integer' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Integer.php',
+    'phpDocumentor\\Reflection\\Types\\Iterable_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Iterable_.php',
+    'phpDocumentor\\Reflection\\Types\\Mixed_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Mixed_.php',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     'phpDocumentor\\Reflection\\Types\\Null_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Null_.php',
     'phpDocumentor\\Reflection\\Types\\Nullable' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Nullable.php',
     'phpDocumentor\\Reflection\\Types\\Object_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Object_.php',
@@ -1141,5 +1223,8 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\Utils' => $vendorDir . '/phpdocumentor/reflection-docblock/src/Utils.php',
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 );

@@ -33,6 +33,7 @@ class QtFileDumper extends FileDumper
 
         foreach ($messages->all($domain) as $source => $target) {
             $message = $context->appendChild($dom->createElement('message'));
+<<<<<<< HEAD
             $metadata = $messages->getMetadata($source, $domain);
             if (isset($metadata['sources'])) {
                 foreach ((array) $metadata['sources'] as $location) {
@@ -44,6 +45,8 @@ class QtFileDumper extends FileDumper
                     }
                 }
             }
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $message->appendChild($dom->createElement('source', $source));
             $message->appendChild($dom->createElement('translation', $target));
         }

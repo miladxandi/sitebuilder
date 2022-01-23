@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 /**
@@ -9,7 +12,11 @@ namespace GuzzleHttp\Promise;
  * maintains a constant stack size. You can use the task queue asynchronously
  * by calling the `run()` function of the global task queue in an event loop.
  *
+<<<<<<< HEAD
  *     GuzzleHttp\Promise\Utils::queue()->run();
+=======
+ *     GuzzleHttp\Promise\queue()->run();
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class TaskQueue implements TaskQueueInterface
 {
@@ -43,8 +50,13 @@ class TaskQueue implements TaskQueueInterface
 
     public function run()
     {
+<<<<<<< HEAD
         while ($task = array_shift($this->queue)) {
             /** @var callable $task */
+=======
+        /** @var callable $task */
+        while ($task = array_shift($this->queue)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $task();
         }
     }

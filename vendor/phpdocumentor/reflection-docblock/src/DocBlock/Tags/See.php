@@ -1,14 +1,23 @@
 <?php
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+<<<<<<< HEAD
  * @link http://phpdoc.org
+=======
+ * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @link      http://phpdoc.org
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 
 namespace phpDocumentor\Reflection\DocBlock\Tags;
@@ -18,6 +27,7 @@ use phpDocumentor\Reflection\DocBlock\DescriptionFactory;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Fqsen as FqsenRef;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url;
+<<<<<<< HEAD
 use phpDocumentor\Reflection\Fqsen;
 use phpDocumentor\Reflection\FqsenResolver;
 use phpDocumentor\Reflection\Types\Context as TypeContext;
@@ -78,18 +88,75 @@ final class See extends BaseTag implements Factory\StaticMethod
         }
 
         return new Fqsen($resolved . '::' . $fqsenParts[1]);
+=======
+use phpDocumentor\Reflection\FqsenResolver;
+use phpDocumentor\Reflection\Types\Context as TypeContext;
+use Webmozart\Assert\Assert;
+
+/**
+ * Reflection class for an {@}see tag in a Docblock.
+ */
+class See extends BaseTag implements Factory\StaticMethod
+{
+    protected $name = 'see';
+
+    /** @var Reference */
+    protected $refers = null;
+
+    /**
+     * Initializes this tag.
+     *
+     * @param Reference $refers
+     * @param Description $description
+     */
+    public function __construct(Reference $refers, Description $description = null)
+    {
+        $this->refers = $refers;
+        $this->description = $description;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(
+        $body,
+        FqsenResolver $resolver = null,
+        DescriptionFactory $descriptionFactory = null,
+        TypeContext $context = null
+    ) {
+        Assert::string($body);
+        Assert::allNotNull([$resolver, $descriptionFactory]);
+
+        $parts       = preg_split('/\s+/Su', $body, 2);
+        $description = isset($parts[1]) ? $descriptionFactory->create($parts[1], $context) : null;
+
+        // https://tools.ietf.org/html/rfc2396#section-3
+        if (preg_match('/\w:\/\/\w/i', $parts[0])) {
+            return new static(new Url($parts[0]), $description);
+        }
+
+        return new static(new FqsenRef($resolver->resolve($parts[0], $context)), $description);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
      * Returns the ref of this tag.
+<<<<<<< HEAD
      */
     public function getReference(): Reference
+=======
+     *
+     * @return Reference
+     */
+    public function getReference()
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         return $this->refers;
     }
 
     /**
      * Returns a string representation of this tag.
+<<<<<<< HEAD
      */
     public function __toString(): string
     {
@@ -102,5 +169,13 @@ final class See extends BaseTag implements Factory\StaticMethod
         $refers = (string) $this->refers;
 
         return $refers . ($description !== '' ? ($refers !== '' ? ' ' : '') . $description : '');
+=======
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->refers . ($this->description ? ' ' . $this->description->render() : '');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }

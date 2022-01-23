@@ -30,7 +30,12 @@ class ChainExtractor implements ExtractorInterface
     /**
      * Adds a loader to the translation extractor.
      *
+<<<<<<< HEAD
      * @param string $format The format of the loader
+=======
+     * @param string             $format    The format of the loader
+     * @param ExtractorInterface $extractor The loader
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function addExtractor($format, ExtractorInterface $extractor)
     {

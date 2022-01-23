@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 <?php declare(strict_types=1);
 /*
  * This file is part of exporter package.
+=======
+<?php
+/*
+ * This file is part of the exporter package.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  *
  * (c) Sebastian Bergmann <sebastian@phpunit.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace SebastianBergmann\Exporter;
 
 use SebastianBergmann\RecursionContext\Context;
@@ -37,7 +47,12 @@ class Exporter
      *  - Carriage returns and newlines are normalized to \n
      *  - Recursion and repeated rendering is treated properly
      *
+<<<<<<< HEAD
      * @param int $indentation The indentation level of the 2nd+ line
+=======
+     * @param mixed $value
+     * @param int   $indentation The indentation level of the 2nd+ line
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      *
      * @return string
      */
@@ -47,8 +62,13 @@ class Exporter
     }
 
     /**
+<<<<<<< HEAD
      * @param array<mixed> $data
      * @param Context      $context
+=======
+     * @param mixed   $data
+     * @param Context $context
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      *
      * @return string
      */
@@ -65,11 +85,19 @@ class Exporter
         $context->add($data);
 
         foreach ($array as $key => $value) {
+<<<<<<< HEAD
             if (\is_array($value)) {
                 if ($context->contains($data[$key]) !== false) {
                     $result[] = '*RECURSION*';
                 } else {
                     $result[] = \sprintf(
+=======
+            if (is_array($value)) {
+                if ($context->contains($data[$key]) !== false) {
+                    $result[] = '*RECURSION*';
+                } else {
+                    $result[] = sprintf(
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                         'array(%s)',
                         $this->shortenedRecursiveExport($data[$key], $context)
                     );
@@ -79,7 +107,11 @@ class Exporter
             }
         }
 
+<<<<<<< HEAD
         return \implode(', ', $result);
+=======
+        return implode(', ', $result);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -91,12 +123,18 @@ class Exporter
      * Newlines are replaced by the visible string '\n'.
      * Contents of arrays and objects (if any) are replaced by '...'.
      *
+<<<<<<< HEAD
+=======
+     * @param mixed $value
+     *
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return string
      *
      * @see    SebastianBergmann\Exporter\Exporter::export
      */
     public function shortenedExport($value)
     {
+<<<<<<< HEAD
         if (\is_string($value)) {
             $string = \str_replace("\n", '', $this->export($value));
 
@@ -107,12 +145,25 @@ class Exporter
             } else {
                 if (\strlen($string) > 40) {
                     $string = \substr($string, 0, 30) . '...' . \substr($string, -7);
+=======
+        if (is_string($value)) {
+            $string = str_replace("\n", '', $this->export($value));
+
+            if (function_exists('mb_strlen')) {
+                if (mb_strlen($string) > 40) {
+                    $string = mb_substr($string, 0, 30) . '...' . mb_substr($string, -7);
+                }
+            } else {
+                if (strlen($string) > 40) {
+                    $string = substr($string, 0, 30) . '...' . substr($string, -7);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 }
             }
 
             return $string;
         }
 
+<<<<<<< HEAD
         if (\is_object($value)) {
             return \sprintf(
                 '%s Object (%s)',
@@ -125,6 +176,20 @@ class Exporter
             return \sprintf(
                 'Array (%s)',
                 \count($value) > 0 ? '...' : ''
+=======
+        if (is_object($value)) {
+            return sprintf(
+                '%s Object (%s)',
+                get_class($value),
+                count($this->toArray($value)) > 0 ? '...' : ''
+            );
+        }
+
+        if (is_array($value)) {
+            return sprintf(
+                'Array (%s)',
+                count($value) > 0 ? '...' : ''
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             );
         }
 
@@ -135,17 +200,27 @@ class Exporter
      * Converts an object to an array containing all of its private, protected
      * and public properties.
      *
+<<<<<<< HEAD
+=======
+     * @param mixed $value
+     *
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return array
      */
     public function toArray($value)
     {
+<<<<<<< HEAD
         if (!\is_object($value)) {
+=======
+        if (!is_object($value)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             return (array) $value;
         }
 
         $array = [];
 
         foreach ((array) $value as $key => $val) {
+<<<<<<< HEAD
             // Exception traces commonly reference hundreds to thousands of
             // objects currently loaded in memory. Including them in the result
             // has a severe negative performance impact.
@@ -153,11 +228,17 @@ class Exporter
                 continue;
             }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             // properties are transformed to keys in the following way:
             // private   $property => "\0Classname\0property"
             // protected $property => "\0*\0property"
             // public    $property => "property"
+<<<<<<< HEAD
             if (\preg_match('/^\0.+\0(.+)$/', (string) $key, $matches)) {
+=======
+            if (preg_match('/^\0.+\0(.+)$/', $key, $matches)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $key = $matches[1];
             }
 
@@ -173,8 +254,25 @@ class Exporter
         // above (fast) mechanism nor with reflection in Zend.
         // Format the output similarly to print_r() in this case
         if ($value instanceof \SplObjectStorage) {
+<<<<<<< HEAD
             foreach ($value as $key => $val) {
                 $array[\spl_object_hash($val)] = [
+=======
+            // However, the fast method does work in HHVM, and exposes the
+            // internal implementation. Hide it again.
+            if (property_exists('\SplObjectStorage', '__storage')) {
+                unset($array['__storage']);
+            } elseif (property_exists('\SplObjectStorage', 'storage')) {
+                unset($array['storage']);
+            }
+
+            if (property_exists('\SplObjectStorage', '__key')) {
+                unset($array['__key']);
+            }
+
+            foreach ($value as $key => $val) {
+                $array[spl_object_hash($val)] = [
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     'obj' => $val,
                     'inf' => $value->getInfo(),
                 ];
@@ -209,6 +307,7 @@ class Exporter
             return 'false';
         }
 
+<<<<<<< HEAD
         if (\is_float($value) && (float) ((int) $value) === $value) {
             return "$value.0";
         }
@@ -236,6 +335,29 @@ class Exporter
                 '<lf>',
                 "\n",
                 \str_replace(
+=======
+        if (is_float($value) && floatval(intval($value)) === $value) {
+            return "$value.0";
+        }
+
+        if (is_resource($value)) {
+            return sprintf(
+                'resource(%d) of type (%s)',
+                $value,
+                get_resource_type($value)
+            );
+        }
+
+        if (is_string($value)) {
+            // Match for most non printable chars somewhat taking multibyte chars into account
+            if (preg_match('/[^\x09-\x0d\x1b\x20-\xff]/', $value)) {
+                return 'Binary String: 0x' . bin2hex($value);
+            }
+
+            return "'" .
+            str_replace('<lf>', "\n",
+                str_replace(
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     ["\r\n", "\n\r", "\r", "\n"],
                     ['\r\n<lf>', '\n\r<lf>', '\r<lf>', '\n<lf>'],
                     $value
@@ -244,13 +366,21 @@ class Exporter
             "'";
         }
 
+<<<<<<< HEAD
         $whitespace = \str_repeat(' ', (int)(4 * $indentation));
+=======
+        $whitespace = str_repeat(' ', 4 * $indentation);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         if (!$processed) {
             $processed = new Context;
         }
 
+<<<<<<< HEAD
         if (\is_array($value)) {
+=======
+        if (is_array($value)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if (($key = $processed->contains($value)) !== false) {
                 return 'Array &' . $key;
             }
@@ -259,9 +389,15 @@ class Exporter
             $key    = $processed->add($value);
             $values = '';
 
+<<<<<<< HEAD
             if (\count($array) > 0) {
                 foreach ($array as $k => $v) {
                     $values .= \sprintf(
+=======
+            if (count($array) > 0) {
+                foreach ($array as $k => $v) {
+                    $values .= sprintf(
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                         '%s    %s => %s' . "\n",
                         $whitespace,
                         $this->recursiveExport($k, $indentation),
@@ -272,6 +408,7 @@ class Exporter
                 $values = "\n" . $values . $whitespace;
             }
 
+<<<<<<< HEAD
             return \sprintf('Array &%s (%s)', $key, $values);
         }
 
@@ -280,15 +417,31 @@ class Exporter
 
             if ($hash = $processed->contains($value)) {
                 return \sprintf('%s Object &%s', $class, $hash);
+=======
+            return sprintf('Array &%s (%s)', $key, $values);
+        }
+
+        if (is_object($value)) {
+            $class = get_class($value);
+
+            if ($hash = $processed->contains($value)) {
+                return sprintf('%s Object &%s', $class, $hash);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             }
 
             $hash   = $processed->add($value);
             $values = '';
             $array  = $this->toArray($value);
 
+<<<<<<< HEAD
             if (\count($array) > 0) {
                 foreach ($array as $k => $v) {
                     $values .= \sprintf(
+=======
+            if (count($array) > 0) {
+                foreach ($array as $k => $v) {
+                    $values .= sprintf(
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                         '%s    %s => %s' . "\n",
                         $whitespace,
                         $this->recursiveExport($k, $indentation),
@@ -299,6 +452,7 @@ class Exporter
                 $values = "\n" . $values . $whitespace;
             }
 
+<<<<<<< HEAD
             return \sprintf('%s Object &%s (%s)', $class, $hash, $values);
         }
 
@@ -362,5 +516,11 @@ class Exporter
         }
 
         return false;
+=======
+            return sprintf('%s Object &%s (%s)', $class, $hash, $values);
+        }
+
+        return var_export($value, true);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }

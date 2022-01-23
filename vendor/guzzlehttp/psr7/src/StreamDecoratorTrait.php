@@ -1,12 +1,18 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
 
 /**
  * Stream decorator trait
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  * @property StreamInterface stream
  */
 trait StreamDecoratorTrait
@@ -54,7 +60,11 @@ trait StreamDecoratorTrait
 
     public function getContents()
     {
+<<<<<<< HEAD
         return Utils::copyToString($this);
+=======
+        return copy_to_string($this);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -142,7 +152,10 @@ trait StreamDecoratorTrait
      * Implement in subclasses to dynamically create streams when requested.
      *
      * @return StreamInterface
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \BadMethodCallException
      */
     protected function createStream()

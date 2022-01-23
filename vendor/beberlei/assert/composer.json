@@ -23,6 +23,7 @@
     "sort-packages": true
   },
   "require": {
+<<<<<<< HEAD
     "php": "^7.0 || ^8.0",
     "ext-simplexml": "*",
     "ext-mbstring": "*",
@@ -34,6 +35,14 @@
     "phpstan/phpstan": "*",
     "phpunit/phpunit": ">=6.0.0",
     "yoast/phpunit-polyfills": "^0.1.0"
+=======
+    "php": "^7"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "*",
+    "phpstan/phpstan-shim": "*",
+    "phpunit/phpunit": "*"
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
   },
   "autoload": {
     "psr-4": {
@@ -57,8 +66,11 @@
     "assert:cs-fix": "php-cs-fixer fix . -vvv || true",
     "assert:sa-code": "vendor/bin/phpstan analyse --configuration=phpstan-code.neon --no-progress --ansi -l 7 bin lib",
     "assert:sa-tests": "vendor/bin/phpstan analyse --configuration=phpstan-tests.neon --no-progress --ansi -l 7 tests"
+<<<<<<< HEAD
   },
   "suggest": {
     "ext-intl": "Needed to allow Assertion::count(), Assertion::isCountable(), Assertion::minCount(), and Assertion::maxCount() to operate on ResourceBundles"
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
   }
 }

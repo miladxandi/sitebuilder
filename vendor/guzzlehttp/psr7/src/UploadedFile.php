@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use InvalidArgumentException;
@@ -39,7 +42,11 @@ class UploadedFile implements UploadedFileInterface
     private $error;
 
     /**
+<<<<<<< HEAD
      * @var string|null
+=======
+     * @var null|string
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     private $file;
 
@@ -60,10 +67,17 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param StreamInterface|string|resource $streamOrFile
+<<<<<<< HEAD
      * @param int                             $size
      * @param int                             $errorStatus
      * @param string|null                     $clientFilename
      * @param string|null                     $clientMediaType
+=======
+     * @param int $size
+     * @param int $errorStatus
+     * @param string|null $clientFilename
+     * @param string|null $clientMediaType
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function __construct(
         $streamOrFile,
@@ -86,7 +100,10 @@ class UploadedFile implements UploadedFileInterface
      * Depending on the value set file or stream variable
      *
      * @param mixed $streamOrFile
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws InvalidArgumentException
      */
     private function setStreamOrFile($streamOrFile)
@@ -106,7 +123,10 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param int $error
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws InvalidArgumentException
      */
     private function setError($error)
@@ -128,7 +148,10 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param int $size
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws InvalidArgumentException
      */
     private function setSize($size)
@@ -144,8 +167,12 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param mixed $param
+<<<<<<< HEAD
      *
      * @return bool
+=======
+     * @return boolean
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     private function isStringOrNull($param)
     {
@@ -154,8 +181,12 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param mixed $param
+<<<<<<< HEAD
      *
      * @return bool
+=======
+     * @return boolean
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     private function isStringNotEmpty($param)
     {
@@ -164,7 +195,10 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param string|null $clientFilename
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws InvalidArgumentException
      */
     private function setClientFilename($clientFilename)
@@ -180,7 +214,10 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * @param string|null $clientMediaType
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws InvalidArgumentException
      */
     private function setClientMediaType($clientMediaType)
@@ -197,7 +234,11 @@ class UploadedFile implements UploadedFileInterface
     /**
      * Return true if there is no upload error
      *
+<<<<<<< HEAD
      * @return bool
+=======
+     * @return boolean
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     private function isOk()
     {
@@ -205,7 +246,11 @@ class UploadedFile implements UploadedFileInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * @return boolean
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function isMoved()
     {
@@ -228,7 +273,10 @@ class UploadedFile implements UploadedFileInterface
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws RuntimeException if the upload was not successful.
      */
     public function getStream()
@@ -247,6 +295,7 @@ class UploadedFile implements UploadedFileInterface
      *
      * @see http://php.net/is_uploaded_file
      * @see http://php.net/move_uploaded_file
+<<<<<<< HEAD
      *
      * @param string $targetPath Path to which to move the uploaded file.
      *
@@ -254,6 +303,13 @@ class UploadedFile implements UploadedFileInterface
      * @throws InvalidArgumentException if the $path specified is invalid.
      * @throws RuntimeException         on any error during the move operation, or on
      *                                  the second or subsequent call to the method.
+=======
+     * @param string $targetPath Path to which to move the uploaded file.
+     * @throws RuntimeException if the upload was not successful.
+     * @throws InvalidArgumentException if the $path specified is invalid.
+     * @throws RuntimeException on any error during the move operation, or on
+     *     the second or subsequent call to the method.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function moveTo($targetPath)
     {
@@ -270,7 +326,11 @@ class UploadedFile implements UploadedFileInterface
                 ? rename($this->file, $targetPath)
                 : move_uploaded_file($this->file, $targetPath);
         } else {
+<<<<<<< HEAD
             Utils::copyToStream(
+=======
+            copy_to_stream(
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $this->getStream(),
                 new LazyOpenStream($targetPath, 'w')
             );
@@ -299,7 +359,10 @@ class UploadedFile implements UploadedFileInterface
      * {@inheritdoc}
      *
      * @see http://php.net/manual/en/features.file-upload.errors.php
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @return int One of PHP's UPLOAD_ERR_XXX constants.
      */
     public function getError()
@@ -311,7 +374,11 @@ class UploadedFile implements UploadedFileInterface
      * {@inheritdoc}
      *
      * @return string|null The filename sent by the client or null if none
+<<<<<<< HEAD
      *                     was provided.
+=======
+     *     was provided.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function getClientFilename()
     {

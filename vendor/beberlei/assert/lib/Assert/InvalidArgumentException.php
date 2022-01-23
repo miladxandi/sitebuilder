@@ -16,6 +16,7 @@ namespace Assert;
 
 class InvalidArgumentException extends \InvalidArgumentException implements AssertionFailedException
 {
+<<<<<<< HEAD
     /**
      * @var string|null
      */
@@ -32,6 +33,13 @@ class InvalidArgumentException extends \InvalidArgumentException implements Asse
     private $constraints;
 
     public function __construct($message, $code, string $propertyPath = null, $value = null, array $constraints = [])
+=======
+    private $propertyPath;
+    private $value;
+    private $constraints;
+
+    public function __construct($message, $code, $propertyPath, $value, array $constraints = [])
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         parent::__construct($message, $code);
 
@@ -47,7 +55,11 @@ class InvalidArgumentException extends \InvalidArgumentException implements Asse
      * Useful to transport information about the nature of the error
      * back to higher layers.
      *
+<<<<<<< HEAD
      * @return string|null
+=======
+     * @return string
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      */
     public function getPropertyPath()
     {
@@ -66,8 +78,15 @@ class InvalidArgumentException extends \InvalidArgumentException implements Asse
 
     /**
      * Get the constraints that applied to the failed assertion.
+<<<<<<< HEAD
      */
     public function getConstraints(): array
+=======
+     *
+     * @return array
+     */
+    public function getConstraints()
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         return $this->constraints;
     }

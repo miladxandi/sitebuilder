@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Qa workflow](https://github.com/phpDocumentor/ReflectionCommon/workflows/Qa%20workflow/badge.svg)
 [![Coveralls Coverage](https://img.shields.io/coveralls/github/phpDocumentor/ReflectionCommon.svg)](https://coveralls.io/github/phpDocumentor/ReflectionCommon?branch=master)
@@ -9,3 +10,7 @@
 
 ReflectionCommon
 ================
+=======
+# ReflectionCommon
+[![Build Status](https://travis-ci.org/phpDocumentor/ReflectionCommon.svg?branch=master)](https://travis-ci.org/phpDocumentor/ReflectionCommon)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

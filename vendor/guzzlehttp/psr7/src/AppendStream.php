@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -8,8 +11,11 @@ use Psr\Http\Message\StreamInterface;
  * Reads from multiple streams, one after the other.
  *
  * This is a read-only stream decorator.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class AppendStream implements StreamInterface
 {
@@ -64,7 +70,11 @@ class AppendStream implements StreamInterface
 
     public function getContents()
     {
+<<<<<<< HEAD
         return Utils::copyToString($this);
+=======
+        return copy_to_string($this);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -101,8 +111,11 @@ class AppendStream implements StreamInterface
         }
 
         $this->streams = [];
+<<<<<<< HEAD
 
         return null;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     public function tell()

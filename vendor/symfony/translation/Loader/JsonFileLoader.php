@@ -30,7 +30,11 @@ class JsonFileLoader extends FileLoader
             $messages = json_decode($data, true);
 
             if (0 < $errorCode = json_last_error()) {
+<<<<<<< HEAD
                 throw new InvalidResourceException('Error parsing JSON: '.$this->getJSONErrorMessage($errorCode));
+=======
+                throw new InvalidResourceException(sprintf('Error parsing JSON - %s', $this->getJSONErrorMessage($errorCode)));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             }
         }
 
@@ -39,6 +43,7 @@ class JsonFileLoader extends FileLoader
 
     /**
      * Translates JSON_ERROR_* constant into meaningful message.
+<<<<<<< HEAD
      */
     private function getJSONErrorMessage(int $errorCode): string
     {
@@ -52,6 +57,25 @@ class JsonFileLoader extends FileLoader
             case \JSON_ERROR_SYNTAX:
                 return 'Syntax error, malformed JSON';
             case \JSON_ERROR_UTF8:
+=======
+     *
+     * @param int $errorCode Error code returned by json_last_error() call
+     *
+     * @return string Message string
+     */
+    private function getJSONErrorMessage($errorCode)
+    {
+        switch ($errorCode) {
+            case JSON_ERROR_DEPTH:
+                return 'Maximum stack depth exceeded';
+            case JSON_ERROR_STATE_MISMATCH:
+                return 'Underflow or the modes mismatch';
+            case JSON_ERROR_CTRL_CHAR:
+                return 'Unexpected control character found';
+            case JSON_ERROR_SYNTAX:
+                return 'Syntax error, malformed JSON';
+            case JSON_ERROR_UTF8:
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 return 'Malformed UTF-8 characters, possibly incorrectly encoded';
             default:
                 return 'Unknown error';

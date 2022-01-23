@@ -1,14 +1,30 @@
 Webmozart Assert
 ================
 
+<<<<<<< HEAD
 [![Latest Stable Version](https://poser.pugx.org/webmozart/assert/v/stable.svg)](https://packagist.org/packages/webmozart/assert)
 [![Total Downloads](https://poser.pugx.org/webmozart/assert/downloads.svg)](https://packagist.org/packages/webmozart/assert)
 
+=======
+[![Build Status](https://travis-ci.org/webmozart/assert.svg?branch=master)](https://travis-ci.org/webmozart/assert)
+[![Build status](https://ci.appveyor.com/api/projects/status/lyg83bcsisrr94se/branch/master?svg=true)](https://ci.appveyor.com/project/webmozart/assert/branch/master)
+[![Latest Stable Version](https://poser.pugx.org/webmozart/assert/v/stable.svg)](https://packagist.org/packages/webmozart/assert)
+[![Total Downloads](https://poser.pugx.org/webmozart/assert/downloads.svg)](https://packagist.org/packages/webmozart/assert)
+
+Latest release: [1.2.0](https://packagist.org/packages/webmozart/assert#1.2.0)
+
+PHP >= 5.3.9
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 This library contains efficient assertions to test the input and output of
 your methods. With these assertions, you can greatly reduce the amount of coding
 needed to write a safe implementation.
 
+<<<<<<< HEAD
 All assertions in the [`Assert`] class throw an `Webmozart\Assert\InvalidArgumentException` if
+=======
+All assertions in the [`Assert`] class throw an `\InvalidArgumentException` if 
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 they fail.
 
 FAQ
@@ -20,21 +36,34 @@ This library is heavily inspired by Benjamin Eberlei's wonderful [assert package
 but fixes a usability issue with error messages that can't be fixed there without
 breaking backwards compatibility.
 
+<<<<<<< HEAD
 This package features usable error messages by default. However, you can also
+=======
+This package features usable error messages by default. However, you can also 
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 easily write custom error messages:
 
 ```
 Assert::string($path, 'The path is expected to be a string. Got: %s');
 ```
 
+<<<<<<< HEAD
 In [beberlei/assert], the ordering of the `%s` placeholders is different for
 every assertion. This package, on the contrary, provides consistent placeholder
+=======
+In [beberlei/assert], the ordering of the `%s` placeholders is different for 
+every assertion. This package, on the contrary, provides consistent placeholder 
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 ordering for all assertions:
 
 * `%s`: The tested value as string, e.g. `"/foo/bar"`.
 * `%2$s`, `%3$s`, ...: Additional assertion-specific values, e.g. the
   minimum/maximum length, allowed values, etc.
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 Check the source code of the assertions to find out details about the additional
 available placeholders.
 
@@ -67,11 +96,19 @@ If you create an employee with an invalid ID, an exception is thrown:
 
 ```php
 new Employee('foobar');
+<<<<<<< HEAD
 // => Webmozart\Assert\InvalidArgumentException:
 //    The employee ID must be an integer. Got: string
 
 new Employee(-10);
 // => Webmozart\Assert\InvalidArgumentException:
+=======
+// => InvalidArgumentException: 
+//    The employee ID must be an integer. Got: string
+
+new Employee(-10);
+// => InvalidArgumentException: 
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 //    The employee ID must be a positive integer. Got: -10
 ```
 
@@ -88,7 +125,10 @@ Method                                                   | Description
 `stringNotEmpty($value, $message = '')`                  | Check that a value is a non-empty string
 `integer($value, $message = '')`                         | Check that a value is an integer
 `integerish($value, $message = '')`                      | Check that a value casts to an integer
+<<<<<<< HEAD
 `positiveInteger($value, $message = '')`                 | Check that a value is a positive (non-zero) integer
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 `float($value, $message = '')`                           | Check that a value is a float
 `numeric($value, $message = '')`                         | Check that a value is numeric
 `natural($value, $message= ''')`                         | Check that a value is a non-negative integer
@@ -102,6 +142,7 @@ Method                                                   | Description
 `isIterable($value, $message = '')`                      | Check that a value is an array or a `\Traversable`
 `isCountable($value, $message = '')`                     | Check that a value is an array or a `\Countable`
 `isInstanceOf($value, $class, $message = '')`            | Check that a value is an `instanceof` a class
+<<<<<<< HEAD
 `isInstanceOfAny($value, array $classes, $message = '')` | Check that a value is an `instanceof` at least one class on the array of classes
 `notInstanceOf($value, $class, $message = '')`           | Check that a value is not an `instanceof` a class
 `isAOf($value, $class, $message = '')`                   | Check that a value is of the class or has one of its parents
@@ -109,14 +150,25 @@ Method                                                   | Description
 `isNotA($value, $class, $message = '')`                  | Check that a value is not of the class or has not one of its parents
 `isArrayAccessible($value, $message = '')`               | Check that a value can be accessed as an array
 `uniqueValues($values, $message = '')`                   | Check that the given array contains unique values
+=======
+`isInstanceOfAny($value, array $classes, $message = '')` | Check that a value is an `instanceof` a at least one class on the array of classes
+`notInstanceOf($value, $class, $message = '')`           | Check that a value is not an `instanceof` a class
+`isArrayAccessible($value, $message = '')`               | Check that a value can be accessed as an array
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 ### Comparison Assertions
 
 Method                                          | Description
+<<<<<<< HEAD
 ----------------------------------------------- | ------------------------------------------------------------------
 `true($value, $message = '')`                   | Check that a value is `true`
 `false($value, $message = '')`                  | Check that a value is `false`
 `notFalse($value, $message = '')`               | Check that a value is not `false`
+=======
+----------------------------------------------- | --------------------------------------------------
+`true($value, $message = '')`                   | Check that a value is `true`
+`false($value, $message = '')`                  | Check that a value is `false`
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 `null($value, $message = '')`                   | Check that a value is `null`
 `notNull($value, $message = '')`                | Check that a value is not `null`
 `isEmpty($value, $message = '')`                | Check that a value is `empty()`
@@ -130,8 +182,12 @@ Method                                          | Description
 `lessThan($value, $value2, $message = '')`      | Check that a value is less than another
 `lessThanEq($value, $value2, $message = '')`    | Check that a value is less than or equal to another
 `range($value, $min, $max, $message = '')`      | Check that a value is within a range
+<<<<<<< HEAD
 `inArray($value, array $values, $message = '')` | Check that a value is one of a list of values
 `oneOf($value, array $values, $message = '')`   | Check that a value is one of a list of values (alias of `inArray`)
+=======
+`oneOf($value, array $values, $message = '')`   | Check that a value is one of a list of values
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 ### String Assertions
 
@@ -141,6 +197,7 @@ any of the following assertions.
 Method                                              | Description
 --------------------------------------------------- | -----------------------------------------------------------------
 `contains($value, $subString, $message = '')`       | Check that a string contains a substring
+<<<<<<< HEAD
 `notContains($value, $subString, $message = '')`    | Check that a string does not contain a substring
 `startsWith($value, $prefix, $message = '')`        | Check that a string has a prefix
 `notStartsWith($value, $prefix, $message = '')`     | Check that a string does not have a prefix
@@ -150,6 +207,14 @@ Method                                              | Description
 `regex($value, $pattern, $message = '')`            | Check that a string matches a regular expression
 `notRegex($value, $pattern, $message = '')`         | Check that a string does not match a regular expression
 `unicodeLetters($value, $message = '')`             | Check that a string contains Unicode letters only
+=======
+`notContains($value, $subString, $message = '')`    | Check that a string does not contains a substring
+`startsWith($value, $prefix, $message = '')`        | Check that a string has a prefix
+`startsWithLetter($value, $message = '')`           | Check that a string starts with a letter
+`endsWith($value, $suffix, $message = '')`          | Check that a string has a suffix
+`regex($value, $pattern, $message = '')`            | Check that a string matches a regular expression
+`notRegex($value, $pattern, $message = '')`         | Check that a string does not match a regular expression
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 `alpha($value, $message = '')`                      | Check that a string contains letters only
 `digits($value, $message = '')`                     | Check that a string contains digits only
 `alnum($value, $message = '')`                      | Check that a string contains letters and digits only
@@ -163,7 +228,10 @@ Method                                              | Description
 `ip($value, $message = '')`                         | Check that a string is a valid IP (either IPv4 or IPv6)
 `ipv4($value, $message = '')`                       | Check that a string is a valid IPv4
 `ipv6($value, $message = '')`                       | Check that a string is a valid IPv6
+<<<<<<< HEAD
 `email($value, $message = '')`                      | Check that a string is a valid e-mail address
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 `notWhitespaceOnly($value, $message = '')`          | Check that a string contains at least one non-whitespace character
 
 ### File Assertions
@@ -195,15 +263,22 @@ Method                                             | Description
 -------------------------------------------------- | ------------------------------------------------------------------
 `keyExists($array, $key, $message = '')`           | Check that a key exists in an array
 `keyNotExists($array, $key, $message = '')`        | Check that a key does not exist in an array
+<<<<<<< HEAD
 `validArrayKey($key, $message = '')`               | Check that a value is a valid array key (int or string)
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 `count($array, $number, $message = '')`            | Check that an array contains a specific number of elements
 `minCount($array, $min, $message = '')`            | Check that an array contains at least a certain number of elements
 `maxCount($array, $max, $message = '')`            | Check that an array contains at most a certain number of elements
 `countBetween($array, $min, $max, $message = '')`  | Check that an array has a count in the given range
 `isList($array, $message = '')`                    | Check that an array is a non-associative list
+<<<<<<< HEAD
 `isNonEmptyList($array, $message = '')`            | Check that an array is a non-associative list, and not empty
 `isMap($array, $message = '')`                     | Check that an array is associative and has strings as keys
 `isNonEmptyMap($array, $message = '')`             | Check that an array is associative and has strings as keys, and is not empty
+=======
+`isMap($array, $message = '')`                     | Check that an array is associative and has strings as keys
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 ### Function Assertions
 
@@ -229,6 +304,7 @@ assertion only if it the value is not `null`:
 Assert::nullOrString($middleName, 'The middle name must be a string or null. Got: %s');
 ```
 
+<<<<<<< HEAD
 ### Extending Assert
 
 The `Assert` class comes with a few methods, which can be overridden to change the class behaviour. You can also extend it to
@@ -256,6 +332,8 @@ Where applicable, assertion functions are annotated to support Psalm's
 A dedicated [PHPStan Plugin](https://github.com/phpstan/phpstan-webmozart-assert) is
 required for proper type support.
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 Authors
 -------
 
@@ -270,6 +348,15 @@ Contributions to the package are always welcome!
 * Report any bugs or issues you find on the [issue tracker].
 * You can grab the source code at the package's [Git repository].
 
+<<<<<<< HEAD
+=======
+Support
+-------
+
+If you are having problems, send a mail to bschussek@gmail.com or shout out to
+[@webmozart] on Twitter.
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 License
 -------
 
@@ -278,7 +365,11 @@ All contents of this package are licensed under the [MIT license].
 [beberlei/assert]: https://github.com/beberlei/assert
 [assert package]: https://github.com/beberlei/assert
 [Composer]: https://getcomposer.org
+<<<<<<< HEAD
 [Bernhard Schussek]: https://webmozarts.com
+=======
+[Bernhard Schussek]: http://webmozarts.com
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 [The Community Contributors]: https://github.com/webmozart/assert/graphs/contributors
 [issue tracker]: https://github.com/webmozart/assert/issues
 [Git repository]: https://github.com/webmozart/assert

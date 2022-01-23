@@ -39,6 +39,7 @@ class PoFileDumper extends FileDumper
             } else {
                 $newLine = true;
             }
+<<<<<<< HEAD
             $metadata = $messages->getMetadata($source, $domain);
 
             if (isset($metadata['comments'])) {
@@ -63,11 +64,16 @@ class PoFileDumper extends FileDumper
                 $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
                 $output .= sprintf('msgstr "%s"'."\n", $this->escape($target));
             }
+=======
+            $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
+            $output .= sprintf('msgstr "%s"', $this->escape($target));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         return $output;
     }
 
+<<<<<<< HEAD
     private function getStandardRules(string $id)
     {
         // Partly copied from TranslatorTrait::trans.
@@ -111,6 +117,8 @@ EOF;
         return $standardRules;
     }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     /**
      * {@inheritdoc}
      */
@@ -119,6 +127,7 @@ EOF;
         return 'po';
     }
 
+<<<<<<< HEAD
     private function escape(string $str): string
     {
         return addcslashes($str, "\0..\37\42\134");
@@ -134,4 +143,10 @@ EOF;
 
         return $output;
     }
+=======
+    private function escape($str)
+    {
+        return addcslashes($str, "\0..\37\42\134");
+    }
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }

@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -11,8 +14,11 @@ use Psr\Http\Message\StreamInterface;
  * This stream returns a "hwm" metadata value that tells upstream consumers
  * what the configured high water mark of the stream is, or the maximum
  * preferred size of the buffer.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class BufferStream implements StreamInterface
 {
@@ -52,8 +58,11 @@ class BufferStream implements StreamInterface
     public function detach()
     {
         $this->close();
+<<<<<<< HEAD
 
         return null;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     public function getSize()

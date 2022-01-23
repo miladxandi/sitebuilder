@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+<<<<<<< HEAD
 ## Unreleased
 
 ## 1.8.3 - 2021-10-05
@@ -83,6 +84,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed subsequent reads from `php://input` in ServerRequest (#247)
 - Fixed readable/writable detection for certain stream modes (#248)
 - Fixed encoding of special characters in the `userInfo` component of an URI (#253)
+=======
+## [Unreleased]
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 
 ## [1.5.2] - 2018-12-04
@@ -284,7 +288,11 @@ Currently unsupported:
 
 
 
+<<<<<<< HEAD
 [1.6.0]: https://github.com/guzzle/psr7/compare/1.5.2...1.6.0
+=======
+[Unreleased]: https://github.com/guzzle/psr7/compare/1.5.2...HEAD
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 [1.5.2]: https://github.com/guzzle/psr7/compare/1.5.1...1.5.2
 [1.5.1]: https://github.com/guzzle/psr7/compare/1.5.0...1.5.1
 [1.5.0]: https://github.com/guzzle/psr7/compare/1.4.2...1.5.0

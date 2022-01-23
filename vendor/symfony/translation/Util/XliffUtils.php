@@ -41,7 +41,11 @@ class XliffUtils
             $namespace = $xliff->attributes->getNamedItem('xmlns');
             if ($namespace) {
                 if (0 !== substr_compare('urn:oasis:names:tc:xliff:document:', $namespace->nodeValue, 0, 34)) {
+<<<<<<< HEAD
                     throw new InvalidArgumentException(sprintf('Not a valid XLIFF namespace "%s".', $namespace));
+=======
+                    throw new InvalidArgumentException(sprintf('Not a valid XLIFF namespace "%s"', $namespace));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 }
 
                 return substr($namespace, 34);
@@ -61,6 +65,7 @@ class XliffUtils
     {
         $xliffVersion = static::getVersionNumber($dom);
         $internalErrors = libxml_use_internal_errors(true);
+<<<<<<< HEAD
         if ($shouldEnable = self::shouldEnableEntityLoader()) {
             $disableEntities = libxml_disable_entity_loader(false);
         }
@@ -75,6 +80,19 @@ class XliffUtils
             }
         }
 
+=======
+        $disableEntities = libxml_disable_entity_loader(false);
+
+        $isValid = @$dom->schemaValidateSource(self::getSchema($xliffVersion));
+        if (!$isValid) {
+            libxml_disable_entity_loader($disableEntities);
+
+            return self::getXmlErrors($internalErrors);
+        }
+
+        libxml_disable_entity_loader($disableEntities);
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $dom->normalizeDocument();
 
         libxml_clear_errors();
@@ -83,6 +101,7 @@ class XliffUtils
         return [];
     }
 
+<<<<<<< HEAD
     private static function shouldEnableEntityLoader(): bool
     {
         // Version prior to 8.0 can be enabled without deprecation
@@ -113,13 +132,19 @@ class XliffUtils
         return !@$dom->schemaValidateSource($schema);
     }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public static function getErrorsAsString(array $xmlErrors): string
     {
         $errorsAsString = '';
 
         foreach ($xmlErrors as $error) {
             $errorsAsString .= sprintf("[%s %s] %s (in %s - line %d, column %d)\n",
+<<<<<<< HEAD
                 \LIBXML_ERR_WARNING === $error['level'] ? 'WARNING' : 'ERROR',
+=======
+                LIBXML_ERR_WARNING === $error['level'] ? 'WARNING' : 'ERROR',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $error['code'],
                 $error['message'],
                 $error['file'],
@@ -179,7 +204,11 @@ class XliffUtils
         $errors = [];
         foreach (libxml_get_errors() as $error) {
             $errors[] = [
+<<<<<<< HEAD
                 'level' => \LIBXML_ERR_WARNING == $error->level ? 'WARNING' : 'ERROR',
+=======
+                'level' => LIBXML_ERR_WARNING == $error->level ? 'WARNING' : 'ERROR',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 'code' => $error->code,
                 'message' => trim($error->message),
                 'file' => $error->file ?: 'n/a',

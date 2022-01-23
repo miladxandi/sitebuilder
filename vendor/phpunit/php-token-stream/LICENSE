@@ -1,6 +1,10 @@
 php-token-stream
 
+<<<<<<< HEAD
 Copyright (c) 2009-2019, Sebastian Bergmann <sebastian@phpunit.de>.
+=======
+Copyright (c) 2009-2018, Sebastian Bergmann <sebastian@phpunit.de>.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

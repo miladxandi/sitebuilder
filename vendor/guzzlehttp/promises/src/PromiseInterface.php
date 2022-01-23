@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 /**
@@ -57,7 +60,10 @@ interface PromiseInterface
      * Resolve the promise with the given value.
      *
      * @param mixed $value
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \RuntimeException if the promise is already resolved.
      */
     public function resolve($value);
@@ -66,7 +72,10 @@ interface PromiseInterface
      * Reject the promise with the given reason.
      *
      * @param mixed $reason
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \RuntimeException if the promise is already resolved.
      */
     public function reject($reason);
@@ -89,7 +98,10 @@ interface PromiseInterface
      * @param bool $unwrap
      *
      * @return mixed
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @throws \LogicException if the promise has no wait function or if the
      *                         promise does not settle after waiting.
      */

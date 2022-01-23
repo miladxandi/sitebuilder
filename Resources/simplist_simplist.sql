@@ -65,6 +65,7 @@ CREATE TABLE `users` (
   `Username` varchar(150) COLLATE utf8_persian_ci NOT NULL,
   `Email` varchar(150) COLLATE utf8_persian_ci NOT NULL,
   `Password` text COLLATE utf8_persian_ci NOT NULL,
+  `NationalCode` varchar(50) COLLATE utf8_persian_ci NOT NULL,
   `LoginToken` varchar(50) COLLATE utf8_persian_ci DEFAULT NULL,
   `Type` varchar(70) COLLATE utf8_persian_ci NOT NULL DEFAULT 'Visitor',
   `Status` tinyint(1) NOT NULL DEFAULT '1',

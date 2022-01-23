@@ -19,18 +19,31 @@ class PHP_Token_FunctionTest extends TestCase
 
     protected function setUp()
     {
+<<<<<<< HEAD
         foreach (new PHP_Token_Stream(TEST_FILES_PATH . 'source.php') as $token) {
+=======
+        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'source.php');
+
+        foreach ($ts as $token) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             if ($token instanceof PHP_Token_FUNCTION) {
                 $this->functions[] = $token;
             }
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_FUNCTION::getArguments
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetArguments()
     {
         $this->assertEquals([], $this->functions[0]->getArguments());
 
         $this->assertEquals(
+<<<<<<< HEAD
             ['$baz' => 'Baz'], $this->functions[1]->getArguments()
         );
 
@@ -40,6 +53,17 @@ class PHP_Token_FunctionTest extends TestCase
 
         $this->assertEquals(
             ['$barfoo' => 'Barfoo'], $this->functions[3]->getArguments()
+=======
+          ['$baz' => 'Baz'], $this->functions[1]->getArguments()
+        );
+
+        $this->assertEquals(
+          ['$foobar' => 'Foobar'], $this->functions[2]->getArguments()
+        );
+
+        $this->assertEquals(
+          ['$barfoo' => 'Barfoo'], $this->functions[3]->getArguments()
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         );
 
         $this->assertEquals([], $this->functions[4]->getArguments());
@@ -47,6 +71,12 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals(['$x' => null, '$y' => null], $this->functions[5]->getArguments());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_FUNCTION::getName
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetName()
     {
         $this->assertEquals('foo', $this->functions[0]->getName());
@@ -56,6 +86,12 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals('baz', $this->functions[4]->getName());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token::getLine
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetLine()
     {
         $this->assertEquals(5, $this->functions[0]->getLine());
@@ -66,6 +102,12 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals(37, $this->functions[6]->getLine());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_TokenWithScope::getEndLine
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetEndLine()
     {
         $this->assertEquals(5, $this->functions[0]->getEndLine());
@@ -76,11 +118,18 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals(41, $this->functions[6]->getEndLine());
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @covers PHP_Token_FUNCTION::getDocblock
+     */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function testGetDocblock()
     {
         $this->assertNull($this->functions[0]->getDocblock());
 
         $this->assertEquals(
+<<<<<<< HEAD
             "/**\n     * @param Baz \$baz\n     */",
             $this->functions[1]->getDocblock()
         );
@@ -88,6 +137,15 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals(
             "/**\n     * @param Foobar \$foobar\n     */",
             $this->functions[2]->getDocblock()
+=======
+          "/**\n     * @param Baz \$baz\n     */",
+          $this->functions[1]->getDocblock()
+        );
+
+        $this->assertEquals(
+          "/**\n     * @param Foobar \$foobar\n     */",
+          $this->functions[2]->getDocblock()
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         );
 
         $this->assertNull($this->functions[3]->getDocblock());
@@ -96,6 +154,7 @@ class PHP_Token_FunctionTest extends TestCase
 
     public function testSignature()
     {
+<<<<<<< HEAD
         $tokens     = new PHP_Token_Stream(TEST_FILES_PATH . 'source5.php');
         $functions  = $tokens->getFunctions();
         $classes    = $tokens->getClasses();
@@ -119,6 +178,31 @@ class PHP_Token_FunctionTest extends TestCase
         $this->assertEquals(
             'm($a, array $b, array $c = array())',
             $interfaces['i']['methods']['m']['signature']
+=======
+        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'source5.php');
+        $f  = $ts->getFunctions();
+        $c  = $ts->getClasses();
+        $i  = $ts->getInterfaces();
+
+        $this->assertEquals(
+          'foo($a, array $b, array $c = array())',
+          $f['foo']['signature']
+        );
+
+        $this->assertEquals(
+          'm($a, array $b, array $c = array())',
+          $c['c']['methods']['m']['signature']
+        );
+
+        $this->assertEquals(
+          'm($a, array $b, array $c = array())',
+          $c['a']['methods']['m']['signature']
+        );
+
+        $this->assertEquals(
+          'm($a, array $b, array $c = array())',
+          $i['i']['methods']['m']['signature']
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         );
     }
 }

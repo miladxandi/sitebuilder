@@ -51,7 +51,11 @@ abstract class FileDumper implements DumperInterface
      */
     public function setBackup($backup)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.1.', __METHOD__), \E_USER_DEPRECATED);
+=======
+        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.1.', __METHOD__), E_USER_DEPRECATED);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         if (false !== $backup) {
             throw new \LogicException('The backup feature is no longer supported.');
@@ -103,7 +107,13 @@ abstract class FileDumper implements DumperInterface
     /**
      * Transforms a domain of a message catalogue to its string representation.
      *
+<<<<<<< HEAD
      * @param string $domain
+=======
+     * @param MessageCatalogue $messages
+     * @param string           $domain
+     * @param array            $options
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      *
      * @return string representation
      */

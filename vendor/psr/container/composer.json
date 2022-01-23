@@ -8,15 +8,31 @@
     "authors": [
         {
             "name": "PHP-FIG",
+<<<<<<< HEAD
             "homepage": "https://www.php-fig.org/"
         }
     ],
     "require": {
         "php": ">=7.4.0"
+=======
+            "homepage": "http://www.php-fig.org/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     },
     "autoload": {
         "psr-4": {
             "Psr\\Container\\": "src/"
         }
+<<<<<<< HEAD
+=======
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }

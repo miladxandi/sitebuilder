@@ -11,7 +11,11 @@
 
 namespace Symfony\Component\Translation;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2, use IdentityTranslator instead.', MessageSelector::class), \E_USER_DEPRECATED);
+=======
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.2, use IdentityTranslator instead.', MessageSelector::class), E_USER_DEPRECATED);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 

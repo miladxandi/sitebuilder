@@ -1,13 +1,22 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
 
+<<<<<<< HEAD
 /**
  * Decorator used to return only a subset of a stream.
  *
  * @final
+=======
+
+/**
+ * Decorator used to return only a subset of a stream
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class LimitStream implements StreamInterface
 {
@@ -74,7 +83,11 @@ class LimitStream implements StreamInterface
     {
         if ($whence !== SEEK_SET || $offset < 0) {
             throw new \RuntimeException(sprintf(
+<<<<<<< HEAD
                 'Cannot seek to offset %s with whence %s',
+=======
+                'Cannot seek to offset % with whence %s',
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 $offset,
                 $whence
             ));

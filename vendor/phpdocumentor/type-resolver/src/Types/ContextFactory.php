@@ -1,18 +1,27 @@
 <?php
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+<<<<<<< HEAD
+=======
+ * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  * @link      http://phpdoc.org
  */
 
 namespace phpDocumentor\Reflection\Types;
 
+<<<<<<< HEAD
 use ArrayIterator;
 use InvalidArgumentException;
 use ReflectionClass;
@@ -55,6 +64,8 @@ if (!defined('T_NAME_FULLY_QUALIFIED')) {
     define('T_NAME_FULLY_QUALIFIED', 'T_NAME_FULLY_QUALIFIED');
 }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 /**
  * Convenience class to create a Context for DocBlocks when not using the Reflection Component of phpDocumentor.
  *
@@ -67,14 +78,22 @@ if (!defined('T_NAME_FULLY_QUALIFIED')) {
 final class ContextFactory
 {
     /** The literal used at the end of a use statement. */
+<<<<<<< HEAD
     private const T_LITERAL_END_OF_USE = ';';
 
     /** The literal used between sets of use statements */
     private const T_LITERAL_USE_SEPARATOR = ',';
+=======
+    const T_LITERAL_END_OF_USE = ';';
+
+    /** The literal used between sets of use statements */
+    const T_LITERAL_USE_SEPARATOR = ',';
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
     /**
      * Build a Context given a Class Reflection.
      *
+<<<<<<< HEAD
      * @see Context for more information on Contexts.
      */
     public function createFromReflector(Reflector $reflector): Context
@@ -153,6 +172,25 @@ final class ContextFactory
             }
 
             return $this->createForNamespace($namespace, $contents);
+=======
+     * @param \Reflector $reflector
+     *
+     * @see Context for more information on Contexts.
+     *
+     * @return Context
+     */
+    public function createFromReflector(\Reflector $reflector)
+    {
+        if (method_exists($reflector, 'getDeclaringClass')) {
+            $reflector = $reflector->getDeclaringClass();
+        }
+
+        $fileName = $reflector->getFileName();
+        $namespace = $reflector->getNamespaceName();
+
+        if (file_exists($fileName)) {
+            return $this->createForNamespace($namespace, file_get_contents($fileName));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         return new Context($namespace, []);
@@ -161,6 +199,7 @@ final class ContextFactory
     /**
      * Build a Context for a namespace in the provided file contents.
      *
+<<<<<<< HEAD
      * @see Context for more information on Contexts.
      *
      * @param string $namespace    It does not matter if a `\` precedes the namespace name,
@@ -177,6 +216,24 @@ final class ContextFactory
         while ($tokens->valid()) {
             $currentToken = $tokens->current();
             switch ($currentToken[0]) {
+=======
+     * @param string $namespace It does not matter if a `\` precedes the namespace name, this method first normalizes.
+     * @param string $fileContents the file's contents to retrieve the aliases from with the given namespace.
+     *
+     * @see Context for more information on Contexts.
+     *
+     * @return Context
+     */
+    public function createForNamespace($namespace, $fileContents)
+    {
+        $namespace = trim($namespace, '\\');
+        $useStatements = [];
+        $currentNamespace = '';
+        $tokens = new \ArrayIterator(token_get_all($fileContents));
+
+        while ($tokens->valid()) {
+            switch ($tokens->current()[0]) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 case T_NAMESPACE:
                     $currentNamespace = $this->parseNamespace($tokens);
                     break;
@@ -184,6 +241,7 @@ final class ContextFactory
                     // Fast-forward the iterator through the class so that any
                     // T_USE tokens found within are skipped - these are not
                     // valid namespace use statements so should be ignored.
+<<<<<<< HEAD
                     $braceLevel      = 0;
                     $firstBraceFound = false;
                     while ($tokens->valid() && ($braceLevel > 0 || !$firstBraceFound)) {
@@ -215,6 +273,32 @@ final class ContextFactory
                     break;
             }
 
+=======
+                    $braceLevel = 0;
+                    $firstBraceFound = false;
+                    while ($tokens->valid() && ($braceLevel > 0 || !$firstBraceFound)) {
+                        if ($tokens->current() === '{'
+                            || $tokens->current()[0] === T_CURLY_OPEN
+                            || $tokens->current()[0] === T_DOLLAR_OPEN_CURLY_BRACES) {
+                            if (!$firstBraceFound) {
+                                $firstBraceFound = true;
+                            }
+                            $braceLevel++;
+                        }
+
+                        if ($tokens->current() === '}') {
+                            $braceLevel--;
+                        }
+                        $tokens->next();
+                    }
+                    break;
+                case T_USE:
+                    if ($currentNamespace === $namespace) {
+                        $useStatements = array_merge($useStatements, $this->parseUseStatement($tokens));
+                    }
+                    break;
+            }
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $tokens->next();
         }
 
@@ -224,16 +308,29 @@ final class ContextFactory
     /**
      * Deduce the name from tokens when we are at the T_NAMESPACE token.
      *
+<<<<<<< HEAD
      * @param ArrayIterator<int, string|array{0:int,1:string,2:int}> $tokens
      */
     private function parseNamespace(ArrayIterator $tokens): string
+=======
+     * @param \ArrayIterator $tokens
+     *
+     * @return string
+     */
+    private function parseNamespace(\ArrayIterator $tokens)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         // skip to the first string or namespace separator
         $this->skipToNextStringOrNamespaceSeparator($tokens);
 
         $name = '';
+<<<<<<< HEAD
         $acceptedTokens = [T_STRING, T_NS_SEPARATOR, T_NAME_QUALIFIED];
         while ($tokens->valid() && in_array($tokens->current()[0], $acceptedTokens, true)) {
+=======
+        while ($tokens->valid() && ($tokens->current()[0] === T_STRING || $tokens->current()[0] === T_NS_SEPARATOR)
+        ) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $name .= $tokens->current()[1];
             $tokens->next();
         }
@@ -244,6 +341,7 @@ final class ContextFactory
     /**
      * Deduce the names of all imports when we are at the T_USE token.
      *
+<<<<<<< HEAD
      * @param ArrayIterator<int, string|array{0:int,1:string,2:int}> $tokens
      *
      * @return string[]
@@ -260,6 +358,24 @@ final class ContextFactory
             $currentToken = $tokens->current();
             if ($currentToken[0] === self::T_LITERAL_END_OF_USE) {
                 return $uses;
+=======
+     * @param \ArrayIterator $tokens
+     *
+     * @return string[]
+     */
+    private function parseUseStatement(\ArrayIterator $tokens)
+    {
+        $uses = [];
+        $continue = true;
+
+        while ($continue) {
+            $this->skipToNextStringOrNamespaceSeparator($tokens);
+
+            list($alias, $fqnn) = $this->extractUseStatement($tokens);
+            $uses[$alias] = $fqnn;
+            if ($tokens->current()[0] === self::T_LITERAL_END_OF_USE) {
+                $continue = false;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             }
         }
 
@@ -269,6 +385,7 @@ final class ContextFactory
     /**
      * Fast-forwards the iterator as longs as we don't encounter a T_STRING or T_NS_SEPARATOR token.
      *
+<<<<<<< HEAD
      * @param ArrayIterator<int, string|array{0:int,1:string,2:int}> $tokens
      */
     private function skipToNextStringOrNamespaceSeparator(ArrayIterator $tokens): void
@@ -287,12 +404,22 @@ final class ContextFactory
                 break;
             }
 
+=======
+     * @param \ArrayIterator $tokens
+     *
+     * @return void
+     */
+    private function skipToNextStringOrNamespaceSeparator(\ArrayIterator $tokens)
+    {
+        while ($tokens->valid() && ($tokens->current()[0] !== T_STRING) && ($tokens->current()[0] !== T_NS_SEPARATOR)) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $tokens->next();
         }
     }
 
     /**
      * Deduce the namespace name and alias of an import when we are at the T_USE token or have not reached the end of
+<<<<<<< HEAD
      * a USE statement yet. This will return a key/value array of the alias => namespace.
      *
      * @param ArrayIterator<int, string|array{0:int,1:string,2:int}> $tokens
@@ -416,5 +543,40 @@ final class ContextFactory
         }
 
         return $extractedUseStatements;
+=======
+     * a USE statement yet.
+     *
+     * @param \ArrayIterator $tokens
+     *
+     * @return string
+     */
+    private function extractUseStatement(\ArrayIterator $tokens)
+    {
+        $result = [''];
+        while ($tokens->valid()
+            && ($tokens->current()[0] !== self::T_LITERAL_USE_SEPARATOR)
+            && ($tokens->current()[0] !== self::T_LITERAL_END_OF_USE)
+        ) {
+            if ($tokens->current()[0] === T_AS) {
+                $result[] = '';
+            }
+            if ($tokens->current()[0] === T_STRING || $tokens->current()[0] === T_NS_SEPARATOR) {
+                $result[count($result) - 1] .= $tokens->current()[1];
+            }
+            $tokens->next();
+        }
+
+        if (count($result) == 1) {
+            $backslashPos = strrpos($result[0], '\\');
+
+            if (false !== $backslashPos) {
+                $result[] = substr($result[0], $backslashPos + 1);
+            } else {
+                $result[] = $result[0];
+            }
+        }
+
+        return array_reverse($result);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }

@@ -16,12 +16,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 use Symfony\Component\Translation\DataCollectorTranslator;
+<<<<<<< HEAD
 use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  *
  * @final since Symfony 4.4
+=======
+
+/**
+ * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -39,14 +45,24 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     {
         $messages = $this->sanitizeCollectedMessages($this->translator->getCollectedMessages());
 
+<<<<<<< HEAD
         $this->data += $this->computeCount($messages);
         $this->data['messages'] = $messages;
 
+=======
+        $this->data = $this->computeCount($messages);
+        $this->data['messages'] = $messages;
+
+        $this->data['locale'] = $this->translator->getLocale();
+        $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $this->data = $this->cloneVar($this->data);
     }
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @param \Throwable|null $exception
      */
@@ -54,6 +70,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     {
         $this->data['locale'] = $this->translator->getLocale();
         $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
+=======
+     */
+    public function collect(Request $request, Response $response, \Exception $exception = null)
+    {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -65,11 +86,19 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     }
 
     /**
+<<<<<<< HEAD
      * @return array|Data
      */
     public function getMessages()
     {
         return $this->data['messages'] ?? [];
+=======
+     * @return array
+     */
+    public function getMessages()
+    {
+        return isset($this->data['messages']) ? $this->data['messages'] : [];
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -77,7 +106,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
      */
     public function getCountMissings()
     {
+<<<<<<< HEAD
         return $this->data[DataCollectorTranslator::MESSAGE_MISSING] ?? 0;
+=======
+        return isset($this->data[DataCollectorTranslator::MESSAGE_MISSING]) ? $this->data[DataCollectorTranslator::MESSAGE_MISSING] : 0;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -85,7 +118,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
      */
     public function getCountFallbacks()
     {
+<<<<<<< HEAD
         return $this->data[DataCollectorTranslator::MESSAGE_EQUALS_FALLBACK] ?? 0;
+=======
+        return isset($this->data[DataCollectorTranslator::MESSAGE_EQUALS_FALLBACK]) ? $this->data[DataCollectorTranslator::MESSAGE_EQUALS_FALLBACK] : 0;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     /**
@@ -93,7 +130,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
      */
     public function getCountDefines()
     {
+<<<<<<< HEAD
         return $this->data[DataCollectorTranslator::MESSAGE_DEFINED] ?? 0;
+=======
+        return isset($this->data[DataCollectorTranslator::MESSAGE_DEFINED]) ? $this->data[DataCollectorTranslator::MESSAGE_DEFINED] : 0;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     public function getLocale()
@@ -117,7 +158,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return 'translation';
     }
 
+<<<<<<< HEAD
     private function sanitizeCollectedMessages(array $messages)
+=======
+    private function sanitizeCollectedMessages($messages)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $result = [];
         foreach ($messages as $key => $message) {
@@ -142,7 +187,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $result;
     }
 
+<<<<<<< HEAD
     private function computeCount(array $messages)
+=======
+    private function computeCount($messages)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $count = [
             DataCollectorTranslator::MESSAGE_DEFINED => 0,
@@ -157,7 +206,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $count;
     }
 
+<<<<<<< HEAD
     private function sanitizeString(string $string, int $length = 80)
+=======
+    private function sanitizeString($string, $length = 80)
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $string = trim(preg_replace('/\s+/', ' ', $string));
 

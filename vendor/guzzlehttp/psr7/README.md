@@ -23,11 +23,19 @@ Reads from multiple streams, one after the other.
 ```php
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $a = Psr7\Utils::streamFor('abc, ');
 $b = Psr7\Utils::streamFor('123.');
 $composed = new Psr7\AppendStream([$a, $b]);
 
 $composed->addStream(Psr7\Utils::streamFor(' Above all listen to me'));
+=======
+$a = Psr7\stream_for('abc, ');
+$b = Psr7\stream_for('123.');
+$composed = new Psr7\AppendStream([$a, $b]);
+
+$composed->addStream(Psr7\stream_for(' Above all listen to me'));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 echo $composed; // abc, 123. Above all listen to me.
 ```
@@ -65,7 +73,11 @@ then on disk.
 ```php
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $original = Psr7\Utils::streamFor(fopen('http://www.google.com', 'r'));
+=======
+$original = Psr7\stream_for(fopen('http://www.google.com', 'r'));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $stream = new Psr7\CachingStream($original);
 
 $stream->read(1024);
@@ -89,7 +101,11 @@ stream becomes too full.
 use GuzzleHttp\Psr7;
 
 // Create an empty stream
+<<<<<<< HEAD
 $stream = Psr7\Utils::streamFor();
+=======
+$stream = Psr7\stream_for();
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 // Start dropping data when the stream has more than 10 bytes
 $dropping = new Psr7\DroppingStream($stream, 10);
@@ -112,7 +128,11 @@ to create a concrete class for a simple extension point.
 
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $stream = Psr7\Utils::streamFor('hi');
+=======
+$stream = Psr7\stream_for('hi');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $fnStream = Psr7\FnStream::decorate($stream, [
     'rewind' => function () use ($stream) {
         echo 'About to rewind - ';
@@ -167,7 +187,11 @@ chunks (e.g. Amazon S3's multipart upload API).
 ```php
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $original = Psr7\Utils::streamFor(fopen('/tmp/test.txt', 'r+'));
+=======
+$original = Psr7\stream_for(fopen('/tmp/test.txt', 'r+'));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 echo $original->getSize();
 // >>> 1048576
 
@@ -197,7 +221,11 @@ NoSeekStream wraps a stream and does not allow seeking.
 ```php
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $original = Psr7\Utils::streamFor('foo');
+=======
+$original = Psr7\stream_for('foo');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $noSeek = new Psr7\NoSeekStream($original);
 
 echo $noSeek->read(3);
@@ -271,7 +299,11 @@ This decorator could be added to any existing stream and used like so:
 ```php
 use GuzzleHttp\Psr7;
 
+<<<<<<< HEAD
 $original = Psr7\Utils::streamFor('foo');
+=======
+$original = Psr7\stream_for('foo');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 $eofStream = new EofCallbackStream($original, function () {
     echo 'EOF!';
@@ -297,12 +329,17 @@ stream from a PSR-7 stream.
 ```php
 use GuzzleHttp\Psr7\StreamWrapper;
 
+<<<<<<< HEAD
 $stream = GuzzleHttp\Psr7\Utils::streamFor('hello!');
+=======
+$stream = GuzzleHttp\Psr7\stream_for('hello!');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $resource = StreamWrapper::getResource($stream);
 echo fread($resource, 6); // outputs hello!
 ```
 
 
+<<<<<<< HEAD
 # Static API
 
 There are various static methods available under the `GuzzleHttp\Psr7` namespace.
@@ -311,11 +348,22 @@ There are various static methods available under the `GuzzleHttp\Psr7` namespace
 ## `GuzzleHttp\Psr7\Message::toString`
 
 `public static function toString(MessageInterface $message): string`
+=======
+# Function API
+
+There are various functions available under the `GuzzleHttp\Psr7` namespace.
+
+
+## `function str`
+
+`function str(MessageInterface $message)`
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 Returns the string representation of an HTTP message.
 
 ```php
 $request = new GuzzleHttp\Psr7\Request('GET', 'http://example.com');
+<<<<<<< HEAD
 echo GuzzleHttp\Psr7\Message::toString($request);
 ```
 
@@ -466,10 +514,161 @@ a message.
 ## `GuzzleHttp\Psr7\Utils::readLine`
 
 `public static function readLine(StreamInterface $stream, int $maxLength = null): string`
+=======
+echo GuzzleHttp\Psr7\str($request);
+```
+
+
+## `function uri_for`
+
+`function uri_for($uri)`
+
+This function accepts a string or `Psr\Http\Message\UriInterface` and returns a
+UriInterface for the given value. If the value is already a `UriInterface`, it
+is returned as-is.
+
+```php
+$uri = GuzzleHttp\Psr7\uri_for('http://example.com');
+assert($uri === GuzzleHttp\Psr7\uri_for($uri));
+```
+
+
+## `function stream_for`
+
+`function stream_for($resource = '', array $options = [])`
+
+Create a new stream based on the input type.
+
+Options is an associative array that can contain the following keys:
+
+* - metadata: Array of custom metadata.
+* - size: Size of the stream.
+
+This method accepts the following `$resource` types:
+
+- `Psr\Http\Message\StreamInterface`: Returns the value as-is.
+- `string`: Creates a stream object that uses the given string as the contents.
+- `resource`: Creates a stream object that wraps the given PHP stream resource.
+- `Iterator`: If the provided value implements `Iterator`, then a read-only
+  stream object will be created that wraps the given iterable. Each time the
+  stream is read from, data from the iterator will fill a buffer and will be
+  continuously called until the buffer is equal to the requested read size.
+  Subsequent read calls will first read from the buffer and then call `next`
+  on the underlying iterator until it is exhausted.
+- `object` with `__toString()`: If the object has the `__toString()` method,
+  the object will be cast to a string and then a stream will be returned that
+  uses the string value.
+- `NULL`: When `null` is passed, an empty stream object is returned.
+- `callable` When a callable is passed, a read-only stream object will be
+  created that invokes the given callable. The callable is invoked with the
+  number of suggested bytes to read. The callable can return any number of
+  bytes, but MUST return `false` when there is no more data to return. The
+  stream object that wraps the callable will invoke the callable until the
+  number of requested bytes are available. Any additional bytes will be
+  buffered and used in subsequent reads.
+
+```php
+$stream = GuzzleHttp\Psr7\stream_for('foo');
+$stream = GuzzleHttp\Psr7\stream_for(fopen('/path/to/file', 'r'));
+
+$generator = function ($bytes) {
+    for ($i = 0; $i < $bytes; $i++) {
+        yield ' ';
+    }
+}
+
+$stream = GuzzleHttp\Psr7\stream_for($generator(100));
+```
+
+
+## `function parse_header`
+
+`function parse_header($header)`
+
+Parse an array of header values containing ";" separated data into an array of
+associative arrays representing the header key value pair data of the header.
+When a parameter does not contain a value, but just contains a key, this
+function will inject a key with a '' string value.
+
+
+## `function normalize_header`
+
+`function normalize_header($header)`
+
+Converts an array of header values that may contain comma separated headers
+into an array of headers with no comma separated values.
+
+
+## `function modify_request`
+
+`function modify_request(RequestInterface $request, array $changes)`
+
+Clone and modify a request with the given changes. This method is useful for
+reducing the number of clones needed to mutate a message.
+
+The changes can be one of:
+
+- method: (string) Changes the HTTP method.
+- set_headers: (array) Sets the given headers.
+- remove_headers: (array) Remove the given headers.
+- body: (mixed) Sets the given body.
+- uri: (UriInterface) Set the URI.
+- query: (string) Set the query string value of the URI.
+- version: (string) Set the protocol version.
+
+
+## `function rewind_body`
+
+`function rewind_body(MessageInterface $message)`
+
+Attempts to rewind a message body and throws an exception on failure. The body
+of the message will only be rewound if a call to `tell()` returns a value other
+than `0`.
+
+
+## `function try_fopen`
+
+`function try_fopen($filename, $mode)`
+
+Safely opens a PHP stream resource using a filename.
+
+When fopen fails, PHP normally raises a warning. This function adds an error
+handler that checks for errors and throws an exception instead.
+
+
+## `function copy_to_string`
+
+`function copy_to_string(StreamInterface $stream, $maxLen = -1)`
+
+Copy the contents of a stream into a string until the given number of bytes
+have been read.
+
+
+## `function copy_to_stream`
+
+`function copy_to_stream(StreamInterface $source, StreamInterface $dest, $maxLen = -1)`
+
+Copy the contents of a stream into another stream until the given number of
+bytes have been read.
+
+
+## `function hash`
+
+`function hash(StreamInterface $stream, $algo, $rawOutput = false)`
+
+Calculate a hash of a Stream. This method reads the entire stream to calculate
+a rolling hash (based on PHP's hash_init functions).
+
+
+## `function readline`
+
+`function readline(StreamInterface $stream, $maxLength = null)`
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 Read a line from the stream up to the maximum allowed buffer length.
 
 
+<<<<<<< HEAD
 ## `GuzzleHttp\Psr7\Utils::streamFor`
 
 `public static function streamFor(resource|string|null|int|float|bool|StreamInterface|callable|\Iterator $resource = '', array $options = []): StreamInterface`
@@ -542,17 +741,66 @@ UriInterface, it is returned as-is.
 ## `GuzzleHttp\Psr7\MimeType::fromFilename`
 
 `public static function fromFilename(string $filename): string|null`
+=======
+## `function parse_request`
+
+`function parse_request($message)`
+
+Parses a request message string into a request object.
+
+
+## `function parse_response`
+
+`function parse_response($message)`
+
+Parses a response message string into a response object.
+
+
+## `function parse_query`
+
+`function parse_query($str, $urlEncoding = true)`
+
+Parse a query string into an associative array.
+
+If multiple values are found for the same key, the value of that key value pair
+will become an array. This function does not parse nested PHP style arrays into
+an associative array (e.g., `foo[a]=1&foo[b]=2` will be parsed into
+`['foo[a]' => '1', 'foo[b]' => '2']`).
+
+
+## `function build_query`
+
+`function build_query(array $params, $encoding = PHP_QUERY_RFC3986)`
+
+Build a query string from an array of key value pairs.
+
+This function can use the return value of parse_query() to build a query string.
+This function does not modify the provided keys when an array is encountered
+(like http_build_query would).
+
+
+## `function mimetype_from_filename`
+
+`function mimetype_from_filename($filename)`
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 Determines the mimetype of a file by looking at its extension.
 
 
+<<<<<<< HEAD
 ## `GuzzleHttp\Psr7\MimeType::fromExtension`
 
 `public static function fromExtension(string $extension): string|null`
+=======
+## `function mimetype_from_extension`
+
+`function mimetype_from_extension($extension)`
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 Maps a file extensions to a mimetype.
 
 
+<<<<<<< HEAD
 ## Upgrading from Function API
 
 The static API was first introduced in 1.7.0, in order to mitigate problems with functions conflicting between global and local copies of the package. The function API will be removed in 2.0.0. A migration table has been provided here for your convenience:
@@ -583,6 +831,8 @@ The static API was first introduced in 1.7.0, in order to mitigate problems with
 | `_caseless_remove` | `Utils::caselessRemove` |
 
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 # Additional URI Methods
 
 Aside from the standard `Psr\Http\Message\UriInterface` implementation in form of the `GuzzleHttp\Psr7\Uri` class,
@@ -807,6 +1057,7 @@ Whether two URIs can be considered equivalent. Both URIs are normalized automati
 `$normalizations` bitmask. The method also accepts relative URI references and returns true when they are equivalent.
 This of course assumes they will be resolved against the same base URI. If this is not the case, determination of
 equivalence or difference of relative references does not mean anything.
+<<<<<<< HEAD
 
 
 ## Security
@@ -822,3 +1073,5 @@ Guzzle is made available under the MIT License (MIT). Please see [License File](
 Available as part of the Tidelift Subscription
 
 The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-psr7?utm_source=packagist-guzzlehttp-psr7&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

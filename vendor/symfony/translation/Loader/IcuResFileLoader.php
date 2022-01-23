@@ -43,7 +43,11 @@ class IcuResFileLoader implements LoaderInterface
         }
 
         if (!$rb) {
+<<<<<<< HEAD
             throw new InvalidResourceException(sprintf('Cannot load resource "%s".', $resource));
+=======
+            throw new InvalidResourceException(sprintf('Cannot load resource "%s"', $resource));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         } elseif (intl_is_failure($rb->getErrorCode())) {
             throw new InvalidResourceException($rb->getErrorMessage(), $rb->getErrorCode());
         }
@@ -52,7 +56,11 @@ class IcuResFileLoader implements LoaderInterface
         $catalogue = new MessageCatalogue($locale);
         $catalogue->add($messages, $domain);
 
+<<<<<<< HEAD
         if (class_exists(DirectoryResource::class)) {
+=======
+        if (class_exists('Symfony\Component\Config\Resource\DirectoryResource')) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $catalogue->addResource(new DirectoryResource($resource));
         }
 

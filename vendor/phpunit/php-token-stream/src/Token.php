@@ -186,7 +186,11 @@ abstract class PHP_TokenWithScopeAndVisibility extends PHP_TokenWithScope
                 $tokens[$i] instanceof PHP_Token_PROTECTED ||
                 $tokens[$i] instanceof PHP_Token_PUBLIC)) {
                 return strtolower(
+<<<<<<< HEAD
                     str_replace('PHP_Token_', '', PHP_Token_Util::getClass($tokens[$i]))
+=======
+                    str_replace('PHP_Token_', '', get_class($tokens[$i]))
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 );
             }
             if (isset($tokens[$i]) &&
@@ -220,7 +224,11 @@ abstract class PHP_TokenWithScopeAndVisibility extends PHP_TokenWithScope
                 $tokens[$i] instanceof PHP_Token_FINAL ||
                 $tokens[$i] instanceof PHP_Token_ABSTRACT)) {
                 $keywords[] = strtolower(
+<<<<<<< HEAD
                     str_replace('PHP_Token_', '', PHP_Token_Util::getClass($tokens[$i]))
+=======
+                    str_replace('PHP_Token_', '', get_class($tokens[$i]))
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 );
             }
         }
@@ -272,7 +280,11 @@ abstract class PHP_Token_Includes extends PHP_Token
         if ($tokens[$this->id + 2] instanceof PHP_Token_CONSTANT_ENCAPSED_STRING) {
             $this->name = trim($tokens[$this->id + 2], "'\"");
             $this->type = strtolower(
+<<<<<<< HEAD
                 str_replace('PHP_Token_', '', PHP_Token_Util::getClass($tokens[$this->id]))
+=======
+                str_replace('PHP_Token_', '', get_class($tokens[$this->id]))
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             );
         }
     }
@@ -405,7 +417,11 @@ class PHP_Token_FUNCTION extends PHP_TokenWithScopeAndVisibility
         $tokens    = $this->tokenStream->tokens();
 
         for ($i = $this->id; $i <= $end; $i++) {
+<<<<<<< HEAD
             switch (PHP_Token_Util::getClass($tokens[$i])) {
+=======
+            switch (get_class($tokens[$i])) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 case 'PHP_Token_IF':
                 case 'PHP_Token_ELSEIF':
                 case 'PHP_Token_FOR':
@@ -1350,6 +1366,7 @@ class PHP_Token_SPACESHIP extends PHP_Token
 class PHP_Token_YIELD_FROM extends PHP_Token
 {
 }
+<<<<<<< HEAD
 
 // Tokens introduced in PHP 7.4
 class PHP_Token_COALESCE_EQUAL extends PHP_Token
@@ -1359,3 +1376,5 @@ class PHP_Token_COALESCE_EQUAL extends PHP_Token
 class PHP_Token_FN extends PHP_Token
 {
 }
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

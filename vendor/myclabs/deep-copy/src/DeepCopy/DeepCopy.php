@@ -2,21 +2,32 @@
 
 namespace DeepCopy;
 
+<<<<<<< HEAD
 use ArrayObject;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 use DateInterval;
 use DateTimeInterface;
 use DateTimeZone;
 use DeepCopy\Exception\CloneException;
 use DeepCopy\Filter\Filter;
 use DeepCopy\Matcher\Matcher;
+<<<<<<< HEAD
 use DeepCopy\Reflection\ReflectionHelper;
 use DeepCopy\TypeFilter\Date\DateIntervalFilter;
 use DeepCopy\TypeFilter\Spl\ArrayObjectFilter;
+=======
+use DeepCopy\TypeFilter\Date\DateIntervalFilter;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 use DeepCopy\TypeFilter\Spl\SplDoublyLinkedListFilter;
 use DeepCopy\TypeFilter\TypeFilter;
 use DeepCopy\TypeMatcher\TypeMatcher;
 use ReflectionObject;
 use ReflectionProperty;
+<<<<<<< HEAD
+=======
+use DeepCopy\Reflection\ReflectionHelper;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 use SplDoublyLinkedList;
 
 /**
@@ -61,7 +72,10 @@ class DeepCopy
     {
         $this->useCloneMethod = $useCloneMethod;
 
+<<<<<<< HEAD
         $this->addTypeFilter(new ArrayObjectFilter($this), new TypeMatcher(ArrayObject::class));
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $this->addTypeFilter(new DateIntervalFilter(), new TypeMatcher(DateInterval::class));
         $this->addTypeFilter(new SplDoublyLinkedListFilter($this), new TypeMatcher(SplDoublyLinkedList::class));
     }
@@ -102,6 +116,7 @@ class DeepCopy
         ];
     }
 
+<<<<<<< HEAD
     public function prependFilter(Filter $filter, Matcher $matcher)
     {
         array_unshift($this->filters, [
@@ -110,6 +125,8 @@ class DeepCopy
         ]);
     }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function addTypeFilter(TypeFilter $filter, TypeMatcher $matcher)
     {
         $this->typeFilters[] = [
@@ -240,12 +257,15 @@ class DeepCopy
         }
 
         $property->setAccessible(true);
+<<<<<<< HEAD
 
         // Ignore uninitialized properties (for PHP >7.4)
         if (method_exists($property, 'isInitialized') && !$property->isInitialized($object)) {
             return;
         }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $propertyValue = $property->getValue($object);
 
         // Copy the property

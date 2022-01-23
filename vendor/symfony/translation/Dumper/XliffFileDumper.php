@@ -41,7 +41,11 @@ class XliffFileDumper extends FileDumper
             return $this->dumpXliff1($defaultLocale, $messages, $domain, $options);
         }
         if ('2.0' === $xliffVersion) {
+<<<<<<< HEAD
             return $this->dumpXliff2($defaultLocale, $messages, $domain);
+=======
+            return $this->dumpXliff2($defaultLocale, $messages, $domain, $options);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         throw new InvalidArgumentException(sprintf('No support implemented for dumping XLIFF version "%s".', $xliffVersion));
@@ -55,7 +59,11 @@ class XliffFileDumper extends FileDumper
         return 'xlf';
     }
 
+<<<<<<< HEAD
     private function dumpXliff1(string $defaultLocale, MessageCatalogue $messages, ?string $domain, array $options = [])
+=======
+    private function dumpXliff1($defaultLocale, MessageCatalogue $messages, $domain, array $options = [])
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $toolInfo = ['tool-id' => 'symfony', 'tool-name' => 'Symfony'];
         if (\array_key_exists('tool_info', $options)) {
@@ -129,7 +137,11 @@ class XliffFileDumper extends FileDumper
         return $dom->saveXML();
     }
 
+<<<<<<< HEAD
     private function dumpXliff2(string $defaultLocale, MessageCatalogue $messages, ?string $domain)
+=======
+    private function dumpXliff2($defaultLocale, MessageCatalogue $messages, $domain, array $options = [])
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     {
         $dom = new \DOMDocument('1.0', 'utf-8');
         $dom->formatOutput = true;
@@ -141,8 +153,13 @@ class XliffFileDumper extends FileDumper
         $xliff->setAttribute('trgLang', str_replace('_', '-', $messages->getLocale()));
 
         $xliffFile = $xliff->appendChild($dom->createElement('file'));
+<<<<<<< HEAD
         if (str_ends_with($domain, MessageCatalogue::INTL_DOMAIN_SUFFIX)) {
             $xliffFile->setAttribute('id', substr($domain, 0, -\strlen(MessageCatalogue::INTL_DOMAIN_SUFFIX)).'.'.$messages->getLocale());
+=======
+        if (MessageCatalogue::INTL_DOMAIN_SUFFIX === substr($domain, -($suffixLength = \strlen(MessageCatalogue::INTL_DOMAIN_SUFFIX)))) {
+            $xliffFile->setAttribute('id', substr($domain, 0, -$suffixLength).'.'.$messages->getLocale());
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         } else {
             $xliffFile->setAttribute('id', $domain.'.'.$messages->getLocale());
         }
@@ -150,11 +167,19 @@ class XliffFileDumper extends FileDumper
         foreach ($messages->all($domain) as $source => $target) {
             $translation = $dom->createElement('unit');
             $translation->setAttribute('id', strtr(substr(base64_encode(hash('sha256', $source, true)), 0, 7), '/+', '._'));
+<<<<<<< HEAD
 
             if (\strlen($source) <= 80) {
                 $translation->setAttribute('name', $source);
             }
 
+=======
+            $name = $source;
+            if (\strlen($source) > 80) {
+                $name = substr(md5($source), -7);
+            }
+            $translation->setAttribute('name', $name);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             $metadata = $messages->getMetadata($source, $domain);
 
             // Add notes section
@@ -162,7 +187,11 @@ class XliffFileDumper extends FileDumper
                 $notesElement = $dom->createElement('notes');
                 foreach ($metadata['notes'] as $note) {
                     $n = $dom->createElement('note');
+<<<<<<< HEAD
                     $n->appendChild($dom->createTextNode($note['content'] ?? ''));
+=======
+                    $n->appendChild($dom->createTextNode(isset($note['content']) ? $note['content'] : ''));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     unset($note['content']);
 
                     foreach ($note as $name => $value) {
@@ -196,8 +225,20 @@ class XliffFileDumper extends FileDumper
         return $dom->saveXML();
     }
 
+<<<<<<< HEAD
     private function hasMetadataArrayInfo(string $key, array $metadata = null): bool
     {
         return is_iterable($metadata[$key] ?? null);
+=======
+    /**
+     * @param string     $key
+     * @param array|null $metadata
+     *
+     * @return bool
+     */
+    private function hasMetadataArrayInfo($key, $metadata = null)
+    {
+        return null !== $metadata && \array_key_exists($key, $metadata) && ($metadata[$key] instanceof \Traversable || \is_array($metadata[$key]));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }

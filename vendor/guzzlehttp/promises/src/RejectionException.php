@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 /**
@@ -13,7 +16,11 @@ class RejectionException extends \RuntimeException
     private $reason;
 
     /**
+<<<<<<< HEAD
      * @param mixed  $reason      Rejection reason.
+=======
+     * @param mixed $reason       Rejection reason.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param string $description Optional description
      */
     public function __construct($reason, $description = null)

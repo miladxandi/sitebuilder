@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 /**
@@ -14,10 +17,16 @@ class FulfilledPromise implements PromiseInterface
 
     public function __construct($value)
     {
+<<<<<<< HEAD
         if (is_object($value) && method_exists($value, 'then')) {
             throw new \InvalidArgumentException(
                 'You cannot create a FulfilledPromise with a promise.'
             );
+=======
+        if (method_exists($value, 'then')) {
+            throw new \InvalidArgumentException(
+                'You cannot create a FulfilledPromise with a promise.');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         $this->value = $value;
@@ -32,11 +41,19 @@ class FulfilledPromise implements PromiseInterface
             return $this;
         }
 
+<<<<<<< HEAD
         $queue = Utils::queue();
         $p = new Promise([$queue, 'run']);
         $value = $this->value;
         $queue->add(static function () use ($p, $value, $onFulfilled) {
             if (Is::pending($p)) {
+=======
+        $queue = queue();
+        $p = new Promise([$queue, 'run']);
+        $value = $this->value;
+        $queue->add(static function () use ($p, $value, $onFulfilled) {
+            if ($p->getState() === self::PENDING) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                 try {
                     $p->resolve($onFulfilled($value));
                 } catch (\Throwable $e) {

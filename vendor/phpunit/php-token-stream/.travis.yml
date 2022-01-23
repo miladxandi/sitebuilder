@@ -4,7 +4,11 @@ php:
   - 7.1
   - 7.2
   - 7.3
+<<<<<<< HEAD
   - 7.4snapshot
+=======
+  - master
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 sudo: false
 

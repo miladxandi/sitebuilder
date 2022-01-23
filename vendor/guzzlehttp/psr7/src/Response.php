@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\ResponseInterface;
@@ -83,7 +86,11 @@ class Response implements ResponseInterface
     /**
      * @param int                                  $status  Status code
      * @param array                                $headers Response headers
+<<<<<<< HEAD
      * @param string|resource|StreamInterface|null $body    Response body
+=======
+     * @param string|null|resource|StreamInterface $body    Response body
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
      * @param string                               $version Protocol version
      * @param string|null                          $reason  Reason phrase (when empty a default will be used based on the status code)
      */
@@ -94,6 +101,7 @@ class Response implements ResponseInterface
         $version = '1.1',
         $reason = null
     ) {
+<<<<<<< HEAD
         $this->assertStatusCodeIsInteger($status);
         $status = (int) $status;
         $this->assertStatusCodeRange($status);
@@ -102,6 +110,16 @@ class Response implements ResponseInterface
 
         if ($body !== '' && $body !== null) {
             $this->stream = Utils::streamFor($body);
+=======
+        if (filter_var($status, FILTER_VALIDATE_INT) === false) {
+            throw new \InvalidArgumentException('Status code must be an integer value.');
+        }
+
+        $this->statusCode = (int) $status;
+
+        if ($body !== '' && $body !== null) {
+            $this->stream = stream_for($body);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
 
         $this->setHeaders($headers);
@@ -126,6 +144,7 @@ class Response implements ResponseInterface
 
     public function withStatus($code, $reasonPhrase = '')
     {
+<<<<<<< HEAD
         $this->assertStatusCodeIsInteger($code);
         $code = (int) $code;
         $this->assertStatusCodeRange($code);
@@ -152,4 +171,14 @@ class Response implements ResponseInterface
             throw new \InvalidArgumentException('Status code must be an integer value between 1xx and 5xx.');
         }
     }
+=======
+        $new = clone $this;
+        $new->statusCode = (int) $code;
+        if ($reasonPhrase == '' && isset(self::$phrases[$new->statusCode])) {
+            $reasonPhrase = self::$phrases[$new->statusCode];
+        }
+        $new->reasonPhrase = $reasonPhrase;
+        return $new;
+    }
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }

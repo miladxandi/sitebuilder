@@ -19,16 +19,24 @@ $usageInstructions = <<<END
   # show the translation status of all locales
   $ php translation-status.php
 
+<<<<<<< HEAD
   # only show the translation status of incomplete or erroneous locales
   $ php translation-status.php --incomplete
 
   # show the translation status of all locales, all their missing translations and mismatches between trans-unit id and source
+=======
+  # show the translation status of all locales and all their missing translations
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
   $ php translation-status.php -v
 
   # show the status of a single locale
   $ php translation-status.php fr
 
+<<<<<<< HEAD
   # show the status of a single locale, missing translations and mismatches between trans-unit id and source
+=======
+  # show the status of a single locale and all its missing translations
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
   $ php translation-status.php fr -v
 
 END;
@@ -38,8 +46,11 @@ $config = [
     'verbose_output' => false,
     // NULL = analyze all locales
     'locale_to_analyze' => null,
+<<<<<<< HEAD
     // append --incomplete to only show incomplete languages
     'include_completed_languages' => true,
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     // the reference files all the other translations are compared to
     'original_files' => [
         'src/Symfony/Component/Form/Resources/translations/validators.en.xlf',
@@ -51,17 +62,24 @@ $config = [
 $argc = $_SERVER['argc'];
 $argv = $_SERVER['argv'];
 
+<<<<<<< HEAD
 if ($argc > 4) {
+=======
+if ($argc > 3) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     echo str_replace('translation-status.php', $argv[0], $usageInstructions);
     exit(1);
 }
 
 foreach (array_slice($argv, 1) as $argumentOrOption) {
+<<<<<<< HEAD
     if ('--incomplete' === $argumentOrOption) {
         $config['include_completed_languages'] = false;
         continue;
     }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     if (0 === strpos($argumentOrOption, '-')) {
         $config['verbose_output'] = true;
     } else {
@@ -71,19 +89,27 @@ foreach (array_slice($argv, 1) as $argumentOrOption) {
 
 foreach ($config['original_files'] as $originalFilePath) {
     if (!file_exists($originalFilePath)) {
+<<<<<<< HEAD
         echo sprintf('The following file does not exist. Make sure that you execute this command at the root dir of the Symfony code repository.%s  %s', \PHP_EOL, $originalFilePath);
+=======
+        echo sprintf('The following file does not exist. Make sure that you execute this command at the root dir of the Symfony code repository.%s  %s', PHP_EOL, $originalFilePath);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         exit(1);
     }
 }
 
 $totalMissingTranslations = 0;
+<<<<<<< HEAD
 $totalTranslationMismatches = 0;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 foreach ($config['original_files'] as $originalFilePath) {
     $translationFilePaths = findTranslationFiles($originalFilePath, $config['locale_to_analyze']);
     $translationStatus = calculateTranslationStatus($originalFilePath, $translationFilePaths);
 
     $totalMissingTranslations += array_sum(array_map(function ($translation) {
+<<<<<<< HEAD
         return count($translation['missingKeys']);
     }, array_values($translationStatus)));
     $totalTranslationMismatches += array_sum(array_map(function ($translation) {
@@ -94,6 +120,15 @@ foreach ($config['original_files'] as $originalFilePath) {
 }
 
 exit($totalTranslationMismatches > 0 ? 1 : 0);
+=======
+        return \count($translation['missingKeys']);
+    }, array_values($translationStatus)));
+
+    printTranslationStatus($originalFilePath, $translationStatus, $config['verbose_output']);
+}
+
+exit($totalMissingTranslations > 0 ? 1 : 0);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 function findTranslationFiles($originalFilePath, $localeToAnalyze)
 {
@@ -103,8 +138,12 @@ function findTranslationFiles($originalFilePath, $localeToAnalyze)
     $originalFileName = basename($originalFilePath);
     $translationFileNamePattern = str_replace('.en.', '.*.', $originalFileName);
 
+<<<<<<< HEAD
     $translationFiles = glob($translationsDir.'/'.$translationFileNamePattern, \GLOB_NOSORT);
     sort($translationFiles);
+=======
+    $translationFiles = glob($translationsDir.'/'.$translationFileNamePattern);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     foreach ($translationFiles as $filePath) {
         $locale = extractLocaleFromFilePath($filePath);
 
@@ -126,6 +165,7 @@ function calculateTranslationStatus($originalFilePath, $translationFilePaths)
     foreach ($translationFilePaths as $locale => $translationPath) {
         $translatedKeys = extractTranslationKeys($translationPath);
         $missingKeys = array_diff_key($allTranslationKeys, $translatedKeys);
+<<<<<<< HEAD
         $mismatches = findTransUnitMismatches($allTranslationKeys, $translatedKeys);
 
         $translationStatus[$locale] = [
@@ -135,11 +175,20 @@ function calculateTranslationStatus($originalFilePath, $translationFilePaths)
             'mismatches' => $mismatches,
         ];
         $translationStatus[$locale]['is_completed'] = isTranslationCompleted($translationStatus[$locale]);
+=======
+
+        $translationStatus[$locale] = [
+            'total' => \count($allTranslationKeys),
+            'translated' => \count($translatedKeys),
+            'missingKeys' => $missingKeys,
+        ];
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 
     return $translationStatus;
 }
 
+<<<<<<< HEAD
 function isTranslationCompleted(array $translationStatus): bool
 {
     return $translationStatus['total'] === $translationStatus['translated'] && 0 === count($translationStatus['mismatches']);
@@ -150,6 +199,13 @@ function printTranslationStatus($originalFilePath, $translationStatus, $verboseO
     printTitle($originalFilePath);
     printTable($translationStatus, $verboseOutput, $includeCompletedLanguages);
     echo \PHP_EOL.\PHP_EOL;
+=======
+function printTranslationStatus($originalFilePath, $translationStatus, $verboseOutput)
+{
+    printTitle($originalFilePath);
+    printTable($translationStatus, $verboseOutput);
+    echo PHP_EOL.PHP_EOL;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 }
 
 function extractLocaleFromFilePath($filePath)
@@ -174,6 +230,7 @@ function extractTranslationKeys($filePath)
     return $translationKeys;
 }
 
+<<<<<<< HEAD
 /**
  * Check whether the trans-unit id and source match with the base translation.
  */
@@ -254,6 +311,37 @@ function printTable($translations, $verboseOutput, bool $includeCompletedLanguag
         }
         if ($shouldBeClosed) {
             echo str_repeat('-', 80).\PHP_EOL;
+=======
+function printTitle($title)
+{
+    echo $title.PHP_EOL;
+    echo str_repeat('=', strlen($title)).PHP_EOL.PHP_EOL;
+}
+
+function printTable($translations, $verboseOutput)
+{
+    $longestLocaleNameLength = max(array_map('strlen', array_keys($translations)));
+
+    foreach ($translations as $locale => $translation) {
+        $isTranslationCompleted = $translation['translated'] === $translation['total'];
+        if ($isTranslationCompleted) {
+            textColorGreen();
+        }
+
+        echo sprintf('| Locale: %-'.$longestLocaleNameLength.'s | Translated: %d/%d', $locale, $translation['translated'], $translation['total']).PHP_EOL;
+
+        textColorNormal();
+
+        if (true === $verboseOutput && \count($translation['missingKeys']) > 0) {
+            echo str_repeat('-', 80).PHP_EOL;
+            echo '| Missing Translations:'.PHP_EOL;
+
+            foreach ($translation['missingKeys'] as $id => $content) {
+                echo sprintf('|   (id=%s) %s', $id, $content).PHP_EOL;
+            }
+
+            echo str_repeat('-', 80).PHP_EOL;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
     }
 }
@@ -263,11 +351,14 @@ function textColorGreen()
     echo "\033[32m";
 }
 
+<<<<<<< HEAD
 function textColorRed()
 {
     echo "\033[31m";
 }
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 function textColorNormal()
 {
     echo "\033[0m";

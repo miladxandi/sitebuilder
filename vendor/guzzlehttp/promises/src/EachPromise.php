@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Promise;
 
 /**
@@ -10,6 +13,7 @@ class EachPromise implements PromisorInterface
 {
     private $pending = [];
 
+<<<<<<< HEAD
     private $nextPendingIndex = 0;
 
     /** @var \Iterator|null */
@@ -28,6 +32,24 @@ class EachPromise implements PromisorInterface
     private $aggregate;
 
     /** @var bool|null */
+=======
+    /** @var \Iterator */
+    private $iterable;
+
+    /** @var callable|int */
+    private $concurrency;
+
+    /** @var callable */
+    private $onFulfilled;
+
+    /** @var callable */
+    private $onRejected;
+
+    /** @var Promise */
+    private $aggregate;
+
+    /** @var bool */
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     private $mutex;
 
     /**
@@ -48,12 +70,21 @@ class EachPromise implements PromisorInterface
      *   allowed number of outstanding concurrently executing promises,
      *   creating a capped pool of promises. There is no limit by default.
      *
+<<<<<<< HEAD
      * @param mixed $iterable Promises or values to iterate.
      * @param array $config   Configuration options
      */
     public function __construct($iterable, array $config = [])
     {
         $this->iterable = Create::iterFor($iterable);
+=======
+     * @param mixed    $iterable Promises or values to iterate.
+     * @param array    $config   Configuration options
+     */
+    public function __construct($iterable, array $config = [])
+    {
+        $this->iterable = iter_for($iterable);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
         if (isset($config['concurrency'])) {
             $this->concurrency = $config['concurrency'];
@@ -68,7 +99,10 @@ class EachPromise implements PromisorInterface
         }
     }
 
+<<<<<<< HEAD
     /** @psalm-suppress InvalidNullableReturnType */
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     public function promise()
     {
         if ($this->aggregate) {
@@ -77,6 +111,7 @@ class EachPromise implements PromisorInterface
 
         try {
             $this->createPromise();
+<<<<<<< HEAD
             /** @psalm-assert Promise $this->aggregate */
             $this->iterable->rewind();
             $this->refillPending();
@@ -98,6 +133,16 @@ class EachPromise implements PromisorInterface
          * @psalm-suppress NullableReturnStatement
          * @phpstan-ignore-next-line
          */
+=======
+            $this->iterable->rewind();
+            $this->refillPending();
+        } catch (\Throwable $e) {
+            $this->aggregate->reject($e);
+        } catch (\Exception $e) {
+            $this->aggregate->reject($e);
+        }
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         return $this->aggregate;
     }
 
@@ -105,16 +150,29 @@ class EachPromise implements PromisorInterface
     {
         $this->mutex = false;
         $this->aggregate = new Promise(function () {
+<<<<<<< HEAD
             if ($this->checkIfFinished()) {
                 return;
             }
             reset($this->pending);
+=======
+            reset($this->pending);
+            if (empty($this->pending) && !$this->iterable->valid()) {
+                $this->aggregate->resolve(null);
+                return;
+            }
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             // Consume a potentially fluctuating list of promises while
             // ensuring that indexes are maintained (precluding array_shift).
             while ($promise = current($this->pending)) {
                 next($this->pending);
                 $promise->wait();
+<<<<<<< HEAD
                 if (Is::settled($this->aggregate)) {
+=======
+                if ($this->aggregate->getState() !== PromiseInterface::PENDING) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     return;
                 }
             }
@@ -124,7 +182,10 @@ class EachPromise implements PromisorInterface
         $clearFn = function () {
             $this->iterable = $this->concurrency = $this->pending = null;
             $this->onFulfilled = $this->onRejected = null;
+<<<<<<< HEAD
             $this->nextPendingIndex = 0;
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         };
 
         $this->aggregate->then($clearFn, $clearFn);
@@ -164,6 +225,7 @@ class EachPromise implements PromisorInterface
             return false;
         }
 
+<<<<<<< HEAD
         $promise = Create::promiseFor($this->iterable->current());
         $key = $this->iterable->key();
 
@@ -179,10 +241,21 @@ class EachPromise implements PromisorInterface
                         $value,
                         $key,
                         $this->aggregate
+=======
+        $promise = promise_for($this->iterable->current());
+        $idx = $this->iterable->key();
+
+        $this->pending[$idx] = $promise->then(
+            function ($value) use ($idx) {
+                if ($this->onFulfilled) {
+                    call_user_func(
+                        $this->onFulfilled, $value, $idx, $this->aggregate
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     );
                 }
                 $this->step($idx);
             },
+<<<<<<< HEAD
             function ($reason) use ($idx, $key) {
                 if ($this->onRejected) {
                     call_user_func(
@@ -190,6 +263,12 @@ class EachPromise implements PromisorInterface
                         $reason,
                         $key,
                         $this->aggregate
+=======
+            function ($reason) use ($idx) {
+                if ($this->onRejected) {
+                    call_user_func(
+                        $this->onRejected, $reason, $idx, $this->aggregate
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
                     );
                 }
                 $this->step($idx);
@@ -227,7 +306,11 @@ class EachPromise implements PromisorInterface
     private function step($idx)
     {
         // If the promise was already resolved, then ignore this step.
+<<<<<<< HEAD
         if (Is::settled($this->aggregate)) {
+=======
+        if ($this->aggregate->getState() !== PromiseInterface::PENDING) {
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
             return;
         }
 

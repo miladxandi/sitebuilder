@@ -26,7 +26,11 @@ for a general introduction to promises.
 - Promises can be cancelled.
 - Works with any object that has a `then` function.
 - C# style async/await coroutine promises using
+<<<<<<< HEAD
   `GuzzleHttp\Promise\Coroutine::of()`.
+=======
+  `GuzzleHttp\Promise\coroutine()`.
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 
 # Quick start
@@ -88,7 +92,11 @@ $promise
     });
 
 // Resolving the promise triggers the $onFulfilled callbacks and outputs
+<<<<<<< HEAD
 // "Hello, reader."
+=======
+// "Hello, reader".
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $promise->resolve('reader.');
 ```
 
@@ -150,7 +158,11 @@ use GuzzleHttp\Promise\Promise;
 
 $promise = new Promise();
 $promise->then(null, function ($reason) {
+<<<<<<< HEAD
     throw new Exception($reason);
+=======
+    throw new \Exception($reason);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 })->then(null, function ($reason) {
     assert($reason->getMessage() === 'Error!');
 });
@@ -182,6 +194,10 @@ invoked using the value returned from the `$onRejected` callback.
 
 ```php
 use GuzzleHttp\Promise\Promise;
+<<<<<<< HEAD
+=======
+use GuzzleHttp\Promise\RejectedPromise;
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
 $promise = new Promise();
 $promise
@@ -219,7 +235,11 @@ the promise is rejected with the exception and the exception is thrown.
 
 ```php
 $promise = new Promise(function () use (&$promise) {
+<<<<<<< HEAD
     throw new Exception('foo');
+=======
+    throw new \Exception('foo');
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 });
 
 $promise->wait(); // throws the exception.
@@ -396,7 +416,11 @@ $deferred = new React\Promise\Deferred();
 $reactPromise = $deferred->promise();
 
 // Create a Guzzle promise that is fulfilled with a React promise.
+<<<<<<< HEAD
 $guzzlePromise = new GuzzleHttp\Promise\Promise();
+=======
+$guzzlePromise = new \GuzzleHttp\Promise\Promise();
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $guzzlePromise->then(function ($value) use ($reactPromise) {
     // Do something something with the value...
     // Return the React promise
@@ -423,7 +447,11 @@ instance.
 
 ```php
 // Get the global task queue
+<<<<<<< HEAD
 $queue = GuzzleHttp\Promise\Utils::queue();
+=======
+$queue = \GuzzleHttp\Promise\queue();
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 $queue->run();
 ```
 
@@ -501,6 +529,7 @@ $promise->then(function ($value) { echo $value; });
 $promise->resolve('foo');
 // prints "foo"
 ```
+<<<<<<< HEAD
 
 
 ## Upgrading from Function API
@@ -545,3 +574,5 @@ Guzzle is made available under the MIT License (MIT). Please see [License File](
 Available as part of the Tidelift Subscription
 
 The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-promises?utm_source=packagist-guzzlehttp-promises&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055

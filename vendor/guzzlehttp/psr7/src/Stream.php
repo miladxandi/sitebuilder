@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -11,6 +14,7 @@ use Psr\Http\Message\StreamInterface;
  */
 class Stream implements StreamInterface
 {
+<<<<<<< HEAD
     /**
      * Resource modes.
      *
@@ -22,6 +26,8 @@ class Stream implements StreamInterface
     const READABLE_MODES = '/r|a\+|ab\+|w\+|wb\+|x\+|xb\+|c\+|cb\+/';
     const WRITABLE_MODES = '/a|w|r\+|rb\+|rw|x|c/';
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     private $stream;
     private $size;
     private $seekable;
@@ -30,6 +36,25 @@ class Stream implements StreamInterface
     private $uri;
     private $customMetadata;
 
+<<<<<<< HEAD
+=======
+    /** @var array Hash of readable and writable stream types */
+    private static $readWriteHash = [
+        'read' => [
+            'r' => true, 'w+' => true, 'r+' => true, 'x+' => true, 'c+' => true,
+            'rb' => true, 'w+b' => true, 'r+b' => true, 'x+b' => true,
+            'c+b' => true, 'rt' => true, 'w+t' => true, 'r+t' => true,
+            'x+t' => true, 'c+t' => true, 'a+' => true, 'rb+' => true,
+        ],
+        'write' => [
+            'w' => true, 'w+' => true, 'rw' => true, 'r+' => true, 'x+' => true,
+            'c+' => true, 'wb' => true, 'w+b' => true, 'r+b' => true, 'rb+' => true,
+            'x+b' => true, 'c+b' => true, 'w+t' => true, 'r+t' => true,
+            'x+t' => true, 'c+t' => true, 'a' => true, 'a+' => true
+        ]
+    ];
+
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     /**
      * This constructor accepts an associative array of options.
      *
@@ -61,8 +86,13 @@ class Stream implements StreamInterface
         $this->stream = $stream;
         $meta = stream_get_meta_data($this->stream);
         $this->seekable = $meta['seekable'];
+<<<<<<< HEAD
         $this->readable = (bool)preg_match(self::READABLE_MODES, $meta['mode']);
         $this->writable = (bool)preg_match(self::WRITABLE_MODES, $meta['mode']);
+=======
+        $this->readable = isset(self::$readWriteHash['read'][$meta['mode']]);
+        $this->writable = isset(self::$readWriteHash['write'][$meta['mode']]);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         $this->uri = $this->getMetadata('uri');
     }
 
@@ -77,10 +107,15 @@ class Stream implements StreamInterface
     public function __toString()
     {
         try {
+<<<<<<< HEAD
             if ($this->isSeekable()) {
                 $this->seek(0);
             }
             return $this->getContents();
+=======
+            $this->seek(0);
+            return (string) stream_get_contents($this->stream);
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         } catch (\Exception $e) {
             return '';
         }
@@ -195,8 +230,11 @@ class Stream implements StreamInterface
 
     public function seek($offset, $whence = SEEK_SET)
     {
+<<<<<<< HEAD
         $whence = (int) $whence;
 
+=======
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         if (!isset($this->stream)) {
             throw new \RuntimeException('Stream is detached');
         }

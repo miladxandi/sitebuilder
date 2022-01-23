@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.4/phpunit.xsd"
          bootstrap="tests/bootstrap.php"
          forceCoversAnnotation="false"
@@ -12,6 +13,16 @@
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
+=======
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.0/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true">
+    <testsuite>
+        <directory suffix="Test.php">tests</directory>
+    </testsuite>
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

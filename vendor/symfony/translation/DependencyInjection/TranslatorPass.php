@@ -68,6 +68,7 @@ class TranslatorPass implements CompilerPassInterface
             return;
         }
 
+<<<<<<< HEAD
         $paths = array_keys($container->getDefinition('twig.template_iterator')->getArgument(2));
         if ($container->hasDefinition($this->debugCommandServiceId)) {
             $definition = $container->getDefinition($this->debugCommandServiceId);
@@ -84,6 +85,14 @@ class TranslatorPass implements CompilerPassInterface
             if (\count($definition->getArguments()) > 7) {
                 $definition->replaceArgument(7, $paths);
             }
+=======
+        if ($container->hasDefinition($this->debugCommandServiceId)) {
+            $container->getDefinition($this->debugCommandServiceId)->replaceArgument(4, $container->getParameter('twig.default_path'));
+        }
+
+        if ($container->hasDefinition($this->updateCommandServiceId)) {
+            $container->getDefinition($this->updateCommandServiceId)->replaceArgument(5, $container->getParameter('twig.default_path'));
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
     }
 }

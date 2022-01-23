@@ -16,7 +16,11 @@
     },
     "prefer-stable": true,
     "require": {
+<<<<<<< HEAD
         "php": ">=7.1",
+=======
+        "php": "^7.1",
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         "ext-tokenizer": "*"
     },
     "require-dev": {
@@ -33,7 +37,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "3.1-dev"
+=======
+            "dev-master": "3.0-dev"
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
         }
     }
 }

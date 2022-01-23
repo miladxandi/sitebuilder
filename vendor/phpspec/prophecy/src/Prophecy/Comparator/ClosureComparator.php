@@ -27,6 +27,7 @@ final class ClosureComparator extends Comparator
             && is_object($actual) && $actual instanceof \Closure;
     }
 
+<<<<<<< HEAD
     public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false, array &$processed = array())
     {
         if ($expected !== $actual) {
@@ -40,5 +41,18 @@ final class ClosureComparator extends Comparator
                 'all closures are different if not identical'
             );
         }
+=======
+    public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false)
+    {
+        throw new ComparisonFailure(
+            $expected,
+            $actual,
+            // we don't need a diff
+            '',
+            '',
+            false,
+            'all closures are born different'
+        );
+>>>>>>> 140ccc26977f8b1cb4fade0f462b76c9f6ee2055
     }
 }
