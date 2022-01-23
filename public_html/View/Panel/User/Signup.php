@@ -17,7 +17,9 @@
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <img src="/Content/Main/VLOGO.jpg" style="width: 80vh" alt="">
         </div>
-
+        <?php if ($Viewbag): ?>
+            <p><?php echo $Viewbag[0]; ?></p>
+        <?php endif;?>
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
             <form action="/signup" method="post" class="signup-from">
                 <div class="row">
@@ -62,6 +64,7 @@
                     <button class="btn btn-dark" type="submit" name="submit">
                         Create
                     </button>
+
                     <a href="/login">
                         <button class="btn btn-dark" type="button">
                             Log in

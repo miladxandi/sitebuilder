@@ -35,3 +35,10 @@
     border: black solid thin;
     text-align: center;
 }
+
+body{
+    background-image: url('../../Content/Main/pngwing.com.jpg');
+    background-size: 90%;
+    background-position-x: 90px ;
+    background-repeat: no-repeat
+}
