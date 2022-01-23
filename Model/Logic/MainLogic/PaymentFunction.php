@@ -27,7 +27,7 @@ final class PaymentFunction implements DataContract
         $this->Payment = new \Plugin\Payment\Zarinpal();
 	}
 
-	public function Register()
+	public function Register($data)
 	{
 
 	}

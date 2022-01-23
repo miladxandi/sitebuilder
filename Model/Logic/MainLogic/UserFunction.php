@@ -24,8 +24,9 @@ final class UserFunction implements DataContract
         $this->User = new UserRepository();
     }
 
-    public function Register()
+    public function Register($data)
     {
+
         $Firstname = $_POST['Firstname'];
         $Lastname = $_POST['Lastname'];
         $Username = $_POST['Username'];
