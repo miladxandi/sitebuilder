@@ -5,105 +5,56 @@
 
 <head>
 
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENS | Login</title>
+    <link rel="stylesheet" href="/Style/Main/bootstrap.min.css">
+    <link rel="stylesheet" href="/Style/Panel/signup.css">
 
 </head>
 
 
-<body
-    style="background-image: url('/Content/Main/pngwing.com.jpg');background-size: 90%;background-position-x: 90px ;background-repeat: no-repeat">
+<body>
 
-<style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <a href=""><img src="/Content/Main/VLOGO.jpg" style="width: 80vh" alt=""></a>
+        </div>
 
-    .labels{
+        <div class="row-lg-12 row-md-12 row-sm-12 text-center">
+            <br>
+            <form action="/signup" method="post" class="signup-from" style="margin-left: 57vh">
+                <div class="row">
+                    <div class="row-lg-6 row-md-6 row-sm-12">
 
-        font-size: 18px;
-    }
+                        <div class="form-group m-5">
+                            <label for="Username" class="form-control">Username</label><br>
+                            <input type="text" name="Username" id="Username" class="form-control">
+                        </div>
 
-    .button {
+                        <div class="form-group m-5">
+                            <label for="Password" class="form-control">Password</label><br>
+                            <input type="password" name="Password" id="Password" class="form-control">
+                        </div>
 
-        background: black;
-        color: whitesmoke;
-        font-family: "Yu Gothic Light";
-        font-size: 20px;
-        border-radius: 20px;
-        width: 80px;
-        height: 50px;
-
-
-    }
-
-    .titr {
-
-        font-family: "Yu Gothic Medium";
-        color: whitesmoke;
-        text-align: left;
-
-    }
-
-    .table {
-        background-image: url('/Content/Main/28939169.jpg');
-        display: block;
-        width: 400px;
-        height: 300px;
-        text-align: center;
-        border-radius: 40px;
-        box-shadow: black 20px 20px 30px;
-    }
-
-    .inputs {
-        border-radius: 20px;
-        width: 60%;
-        border: black solid thin;
-        text-align: center;
-    }
-
-</style>
-
-<div style="margin: auto; text-align: center">
-    <div>
-
-        <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
-
-    </div>
-
-    <div style=";display: block ; position:absolute;padding-left: 77vh">
-
-        <form action="" method="post" class="table">
-            <div>
-                <br>
-                <br>
-                <br>
-
-                <label for="usen"  class="titr labels">User Name</label><br>
-                <input type="text" name="usen" id="usen" class="inputs">
-                <br>
-                <br>
-                <label for="pass" style="font-size: 20px " class="titr labels">Password</label><br>
-                <input type="text" name="pass" id="pass" class="inputs">
-                <br>
-                <br>
-
-            </div>
-            <div style="display: block">
-                <br>
-                <br><br><br>
-                <button class="button" type="submit">
-                    Log in
-                </button>
-                <form action="/signup">
-                    <button type="submit" class="button" style="font-size: 19px">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <a href="/login">
+                        <button class="btn btn-dark" type="button">
+                            Enter
+                        </button>
+                    </a>
+                    <a href="/sinup">
+                    <button class="btn btn-dark" type="button" name="submit">
                         Sign up
                     </button>
-                </form>
-            </div>
+                    </a>
+                </div>
 
-        </form>
-    </div>
-
-    <div>
-
-    </div>
+            </form>
 
 
 </div>

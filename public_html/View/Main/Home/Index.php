@@ -57,9 +57,9 @@
             <div>
 
                 <button type="button" style="cursor:pointer;width: 32vh;margin-top: 20px;background-color: black;margin-left: 59vh;border: hidden;display: flex ">
-                    <a href="Signup.php" style="color: whitesmoke">Sign up</a>
+                    <a href="/Signup" style="color: whitesmoke">Sign up</a>
                     <h2 style="color: white">|</h2>
-                    <a href="Login.php" style="color: whitesmoke" >Log in</a>
+                    <a href="/Login" style="color: whitesmoke" >Log in</a>
                 </button>
 
 
