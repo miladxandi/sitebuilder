@@ -22,7 +22,7 @@ final class UrlFunction implements DataContract
 		$this->Url = new UrlRepository();
 	}
 
-	public function Register()
+	public function Register($data)
 	{
 		if (isset($_POST['submit']))
 		{

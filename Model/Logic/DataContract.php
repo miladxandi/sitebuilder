@@ -12,7 +12,7 @@ namespace Model\Logic;
 interface DataContract
 {
 	public function __construct();
-	public function Register();
+	public function Register($data);
 	public function Update($QuerryString);
 	public function Delete($QuerryString);
 	public function Show();

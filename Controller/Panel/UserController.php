@@ -45,9 +45,9 @@ class UserController extends BaseController
 
     public function Signup()
     {
-        if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname'])&& isset($_POST['Email']) )
+        if (isset($_POST['submit']) )
         {
-            $this->Function->Register();
+            $this->Function->Register($_POST);
         }
         else
         {

@@ -24,24 +24,28 @@ final class UserFunction implements DataContract
         $this->User = new UserRepository();
     }
 
-    public function Register()
+    public function Register($data)
     {
-        $Firstname = $_POST['Firstname'];
-        $Lastname = $_POST['Lastname'];
-        $Username = $_POST['Username'];
-        $Email = $_POST['Email'];
-        $Password = password_hash( $_POST['Password'],1);
-        $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
-        if ($Insert== 1) {
-            setcookie("username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
-            setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-            setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-            setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-            $Viewbag = ['Success' => 'Your has been created!!'];
-            View::Process("Panel.User.Signup", $Viewbag);
-        } else {
-            $Viewbag = ['Error' => 'Username or email exist!',];
-            View::Process("Panel.User.Signup", $Viewbag);
+        $Firstname = $data['Firstname'];
+        $Lastname = $data['Lastname'];
+        $Username = $data['Username'];
+        $Phone = $data['Phone'];
+        $NationalCode = $data['NationalCode'];
+        $Email = $data['Email'];
+        $Password = password_hash( $data['Password'],1);
+        if ($data['Password']==$data['PasswordVerify']){
+            $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Phone'=>$Phone, 'Password'=>$Password, 'NationalCode'=>$NationalCode]);
+            if ($Insert== 1) {
+                setcookie("username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
+                setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
+                setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
+                setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
+                $Viewbag = ['Success' => 'Your has been created!!'];
+                View::Process("Panel.User.Signup", $Viewbag);
+            } else {
+                $Viewbag = ['Error' => 'Username or email exist!',];
+                View::Process("Panel.User.Signup", $Viewbag);
+            }
         }
     }
 
