@@ -18,14 +18,16 @@
   ],
   "autoload": {
     "classmap": [
-      "Controller",
       "Core",
       "Middleware",
       "Plugin",
       "Plugin",
       "Route",
       "Model"
-    ]
+    ],
+    "psr-4": {
+      "Controller\\": "Controller/"
+    }
   },
   "scripts": {
     "post-root-package-install": [

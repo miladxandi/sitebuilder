@@ -30,15 +30,17 @@ class UserController extends BaseController
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-                    $Viewbag = ['Success' => 'You Logged out successfully!!'];
+                    $Viewbag = ['Success' => 'You Logged out successfully!!','Title' => 'Login'];
                     View::Process("Panel.User.Login", $Viewbag);
 
                 } else {
-                    View::Process("Panel.User.Login");
+                    $Viewbag = ['Title' => 'Login'];
+                    View::Process("Panel.User.Login", $Viewbag);
                 }
             }
             else {
-                View::Process("Panel.User.Login");
+                $Viewbag = ['Title' => 'Login'];
+                View::Process("Panel.User.Login", $Viewbag);
             }
         }
     }
@@ -48,9 +50,12 @@ class UserController extends BaseController
         if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname']) && isset($_POST['Email']) && isset($_POST['NationalCode']) )
         {
             $this->Function->Register($_POST);
+
         }
         else
         {
+            $Viewbag = ['Title' => 'Signup'];
+
             View::Process("Panel.User.Signup");
         }
     }
