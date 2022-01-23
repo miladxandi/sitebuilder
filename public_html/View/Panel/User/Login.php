@@ -40,8 +40,8 @@
                     <button class="btn btn-dark" type="submit" name="submit">
                         Log in
                     </button>
-                    <a href="Signup.php">
-                        <button class="btn btn-dark" type="submit">
+                    <a href="/Signup">
+                        <button class="btn btn-dark" type="button">
                             sign up
                         </button>
                     </a>
