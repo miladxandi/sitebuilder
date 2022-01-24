@@ -30,17 +30,12 @@
                                         <i class="search link icon"></i>
                                     </div>
                                 </div>
-                                <a href="/signup" class="ui item">
-                                    Sign up
-                                </a>
 
                                 <a href="/login" class="ui item">
                                     Log in
                                  </a>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
                 </div>
@@ -50,7 +45,6 @@
     <div style="background-color: #61d4d6" class="col-lg-12 col-md-12 col-sm-12">
         <div class="ui grid vertically" style="padding-top: 80px">
         <div class="two column row">
-
             <div class="column" >
                 <h1 class="ui text-white text-center ">
                     <div class="four wide content"> Collect</div>
@@ -58,7 +52,16 @@
                     <div class="content">  Build Better</div>
                     <div class="content">  Products</div>
 
+                    <div class="ui animated button  " tabindex="0" style="width: 25vh">
+                        <div class="visible content">Sign up for free</div>
+                        <div class="hidden content">
+                            <a href="/signup"><i class="signup icon"></i></a>
+                        </div>
+                    </div>
                 </h1>
+
+
+
             </div>
 
             <div class=" column ">
@@ -67,7 +70,15 @@
         </div>
         </div>
         </div>
-
+    <div class="ui grid vertically">
+        <div class="two column row">
+            <div class="column">
+            <div class="ui placeholder">
+              <img src="/Content/Main/istockphoto-1193214720-612x612.jpg" alt="">
+            </div>
+            </div>
+        </div>
+    </div>
     </body>
 
     </html>
