@@ -35,16 +35,16 @@ final class UserFunction implements DataContract
         if (strlen($_POST['Password'])>=4){
             $Password = password_hash( $_POST['Password'],1);
             if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
-                $Viewbag = ['Username exists!','Title' => 'Signup'];
-                View::Process("Panel.User.Signup", $Viewbag);
+                $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
+//                return $Viewbag;
             }
             elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
-                $Viewbag = ['email exists!','Title' => 'Signup'];
-                View::Process("Panel.User.Signup", $Viewbag);
+                $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
+//                return $Viewbag;
             }
             elseif ($this->User->FindByCustom('NationalCode',$NationalCode)['Rows'] == 1){
-                $Viewbag = ['ID number exists...','Title' => 'Signup'];
-                View::Process("Panel.User.Signup", $Viewbag);
+                $Viewbag = ['Error'=>'ID number exists...','Title' => 'Signup'];
+//                return $Viewbag;
             }
             else{
                 $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password, 'NationalCode'=>$NationalCode]);
@@ -53,18 +53,18 @@ final class UserFunction implements DataContract
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-                    $Viewbag = ['Your account has been created!!','Title' => 'Signup'];
-                    View::Process("Panel.User.Signup", $Viewbag);
+                    $Viewbag = ['Success'=>'Your account has been created!!','Title' => 'Signup'];
+//                    return $Viewbag;
                 }
                 else {
-                    $Viewbag = ['sign up failed! please try again...','Title' => 'Signup'];
-                    View::Process("Panel.User.Signup", $Viewbag);
+                    $Viewbag = ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
+//                    return $Viewbag;
                 }
             }
         }
         else{
-            $Viewbag = ['password must be more than 4 digits!',];
-            View::Process("Panel.User.Signup", $Viewbag);
+            $Viewbag = ['Error'=>'password must be more than 4 digits!',];
+//            return $Viewbag;
         }
     }
 
@@ -186,16 +186,16 @@ final class UserFunction implements DataContract
                 setcookie("Firstname", $Login['Values']['Firstname'], time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("LoginToken", password_hash($Token, 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("lcsrn_Validation", password_hash("true", 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-                $Viewbag = ['You are entered!!'];
-                View::Process("Panel.User.Login", $Viewbag);
+                $Viewbag = ['Success'=>'You are entered!!'];
+//                return $Viewbag;
             }
             elseif ($this->User->FindByUser($Username)['Rows']!=1){
-                $Viewbag = ["you don't have account.to create one , click on SIGNUP button below..."];
-                View::Process("Panel.User.Login", $Viewbag);
+                $Viewbag = ['Error'=>"you don't have account.to create one , click on SIGNUP button below..."];
+//                return $Viewbag;
             }
             else {
-                $Viewbag = ['wrong password OR username!'];
-                View::Process("Panel.User.Login", $Viewbag);
+                $Viewbag = ['Error'=>'wrong password OR username!'];
+//                return $Viewbag;
             }
     }
 

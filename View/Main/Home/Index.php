@@ -1,6 +1,7 @@
-<?php include '../View/Shared/Forms/Header.php'?>
+<?php include '../View/Shared/Forms/Header.php' ?>
 
 <body style="background-color: white">
+<<<<<<< HEAD
         <header class="header">
 
             <nav>
@@ -36,15 +37,37 @@
                                  </a>
                             </div>
                         </div>
+=======
+<header class="header">
+    <nav>
+        <div class="ui container">
+            <div class="ui flex">
+                <div class="ui secondary menu ">
+                    <a href="/"><img src="/Content/Main/logo4.jpg" style="width: 300px" alt=""></a>
+                    <a class="active item">Home</a>
+                    <a class="item">Templates</a>
+                    <a class="item">Contact</a>
+                    <a class="item">About us</a>
+                    <div class="right menu">
+                        <div class="item">
+                            <div class="ui icon input">
+                                <input type="text" placeholder="Search ...">
+                                <i class="search link icon"></i>
+                            </div>
+                        </div>
+                        <a href="/signup" class="ui item">Sign up</a>
+                        <a href="/login" class="ui item">Log in</a>
+>>>>>>> dd9fecca056f66e852f22eb2f53e4b34c223ca83
                     </div>
                 </div>
-                </div>
-            </nav>
-
-        </header>
-    <div style="background-color: #61d4d6" class="col-lg-12 col-md-12 col-sm-12">
-        <div class="ui grid vertically" style="padding-top: 80px">
+            </div>
+        </div>
+    </nav>
+</header>
+<div style="background-color: #61d4d6" class="col-lg-12 col-md-12 col-sm-12">
+    <div class="ui grid vertically" style="padding-top: 80px">
         <div class="two column row">
+<<<<<<< HEAD
             <div class="column" >
                 <h1 class="ui text-white text-center ">
                     <div class="four wide content"> Collect</div>
@@ -58,16 +81,24 @@
                             <a href="/signup"><i class="signup icon"></i></a>
                         </div>
                     </div>
+=======
+            <div class="column">
+                <h1 class="ui text-white text-center ">
+                    <div class="four wide content"> Collect</div>
+                    <div class="content "> Feedback &</div>
+                    <div class="content"> Build Better</div>
+                    <div class="content"> Products</div>
+>>>>>>> dd9fecca056f66e852f22eb2f53e4b34c223ca83
                 </h1>
 
 
 
             </div>
-
             <div class=" column ">
-                    <img src="/Content/Main/logo 11.lpg.jpg" style="margin-bottom: 60px" alt="">
+                <img src="/Content/Main/logo 11.lpg.jpg" style="margin-bottom: 60px" alt="">
             </div>
         </div>
+<<<<<<< HEAD
         </div>
         </div>
     <div class="ui grid vertically">
@@ -82,3 +113,9 @@
     </body>
 
     </html>
+=======
+    </div>
+</div>
+</body>
+</html>
+>>>>>>> dd9fecca056f66e852f22eb2f53e4b34c223ca83
