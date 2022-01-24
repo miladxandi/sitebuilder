@@ -18,17 +18,16 @@
                                 <i class="search link icon"></i>
                             </div>
                         </div>
-                        <a class="ui item">Logout</a>
+                        <div class="ui item">
+                            <a href="/Signup" style="color: whitesmoke">Sign up</a>
+                            <h2 style="color: white">|</h2>
+                            <a href="/Login" style="color: whitesmoke">Log in</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <button type="button" style="cursor:pointer;width: 32vh;margin-top: 20px;background-color: black;margin-left: 59vh;border: hidden;display: flex; ">
-        <a href="/Signup" style="color: whitesmoke">Sign up</a>
-        <h2 style="color: white">|</h2>
-        <a href="/Login" style="color: whitesmoke">Log in</a>
-    </button>
 </header>
 <div style="background-color: #61d4d6" class="height text-center ">
     <div class="ui grid vertically" style="padding-top: 100px">
