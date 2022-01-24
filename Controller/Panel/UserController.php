@@ -59,6 +59,11 @@ class UserController extends BaseController
         }
     }
 
+    public function Portfolio()
+    {
+        View::Process("Panel.User.Portfolio");
+    }
+
     public function Lock()
     {
         $this->Function->LockScreen();
