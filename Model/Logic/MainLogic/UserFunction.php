@@ -35,15 +35,15 @@ final class UserFunction implements DataContract
         if (strlen($_POST['Password'])>=4){
             $Password = password_hash( $_POST['Password'],1);
             if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
-                $Viewbag = ['Username exists!',];
+                $Viewbag = ['Username exists!','Title' => 'Signup'];
                 View::Process("Panel.User.Signup", $Viewbag);
             }
             elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
-                $Viewbag = ['email exists!',];
+                $Viewbag = ['email exists!','Title' => 'Signup'];
                 View::Process("Panel.User.Signup", $Viewbag);
             }
             elseif ($this->User->FindByCustom('NationalCode',$NationalCode)['Rows'] == 1){
-                $Viewbag = ['ID number exists...',];
+                $Viewbag = ['ID number exists...','Title' => 'Signup'];
                 View::Process("Panel.User.Signup", $Viewbag);
             }
             else{
@@ -53,11 +53,11 @@ final class UserFunction implements DataContract
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-                    $Viewbag = ['Your account has been created!!'];
+                    $Viewbag = ['Your account has been created!!','Title' => 'Signup'];
                     View::Process("Panel.User.Signup", $Viewbag);
                 }
                 else {
-                    $Viewbag = ['sign up failed! please try again...',];
+                    $Viewbag = ['sign up failed! please try again...','Title' => 'Signup'];
                     View::Process("Panel.User.Signup", $Viewbag);
                 }
             }

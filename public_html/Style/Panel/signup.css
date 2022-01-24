@@ -23,22 +23,19 @@
 }
 
 .signup-from {
-    background-color: rgba(142, 142, 142, .72);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .inputs {
     border-radius: 20px;
-    width: 60%;
+    width: 30%;
     border: black solid thin;
     text-align: center;
 }
 
 body{
-    background-image: url('../../Content/Main/pngwing.com.jpg');
-    background-size: 90%;
-    background-position-x: 90px ;
-    background-repeat: no-repeat
+    background-color: #61d4d6;
 }
+ header{
+     background-color: #61d4d6;
+
+ }

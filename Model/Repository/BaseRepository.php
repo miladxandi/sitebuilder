@@ -10,7 +10,7 @@ abstract class BaseRepository
     protected static $Model;
     protected $rStatement;
     public $Table;
-    protected $PrimaryKey,$Name,$Pass,$Mail,$Token,$Keys,$Values, $UpdatePhrase;
+    protected $PrimaryKey='id',$Name,$Pass,$Mail,$Token,$Keys,$Values, $UpdatePhrase;
 
     public function __construct()
     {
