@@ -47,7 +47,7 @@ class UserController extends BaseController
 
     public function Signup()
     {
-        if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname']) && isset($_POST['Email']) && isset($_POST['NationalCode']) )
+        if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname']) && isset($_POST['Email']) )
         {
             $this->Function->Register($_POST);
 
@@ -55,8 +55,7 @@ class UserController extends BaseController
         else
         {
             $Viewbag = ['Title' => 'Signup'];
-
-            View::Process("Panel.User.Signup");
+            View::Process("Panel.User.Signup",$Viewbag);
         }
     }
 
