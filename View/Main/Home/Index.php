@@ -2,6 +2,7 @@
 
     <body style="background-color: white">
         <header class="header">
+
             <nav>
                 <div class="ui container">
                     <div class="ui flex">
@@ -43,8 +44,27 @@
                 </div>
             </nav>
 
-
         </header>
+    <div style="background-color: #61d4d6" class="height text-center ">
+        <div class="ui grid vertically" style="padding-top: 100px">
+        <div class="two column row">
+
+            <div class=" column ">
+                <h1 class="ui text-white justify ">
+                    <div class="four wide content"> Collect</div>
+                    <div class="content ">  Feedback &</div>
+                    <div class="content">  Build Better</div>
+                    <div class="content">  Products</div>
+
+                </h1>
+            </div>
+
+            <div class=" column ">
+                    <img src="/Content/Main/logo 11.lpg.jpg" style="margin-bottom: 100px" alt="">
+            </div>
+        </div>
+        </div>
+
     </body>
 
     </html>
