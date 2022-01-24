@@ -176,6 +176,11 @@ body{
     color: #f2f2f2f2;
     margin: 1rem 0;
 }
+@media (max-width: 768px){
+    #single_portfolio .single_portfolio-content{
+        margin-top: 8rem;
+    }
+}
 @media (max-width: 400px) {
     #single_portfolio .more-services{
         flex-direction: column;
@@ -202,13 +207,16 @@ body{
     list-style: none;
     margin: 0 0.2rem;
     cursor: pointer;
+    opacity: 0.3;
 }
-
+#single_portfolio .thumbnail.is-active {
+    opacity: 1;
+}
 #single_portfolio .thumbnail img {
     width: 100%;
     height: auto;
 }
-#template-slider img{
+#single_portfolio #template-slider img{
     width: 100%;
     height: 100%;
     object-fit: cover;
