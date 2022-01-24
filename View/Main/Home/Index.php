@@ -1,40 +1,42 @@
-<?php include '../View/Shared/Forms/Header.php';?>
+<?php include '../View/Shared/Forms/Header.php'?>
 
-    <body style="background-color: white">
+<body style="background-color: white">
         <header class="header">
 
             <nav>
                 <div class="ui container">
                     <div class="ui flex">
-
-
-                        <div class="ui secondary  menu">
+                        <div class="ui secondary menu ">
                             <a href="/"><img src="/Content/Main/logo4.jpg" style="width: 300px" alt=""></a>
 
                             <a class="active item">
                                 Home
                             </a>
                             <a class="item">
-                                Messages
+                                Templates
                             </a>
                             <a class="item">
-                                Friends
+                                Contact
                             </a>
                             <a class="item">
-                                Friends
+                                About us
                             </a>
 
                             <div class="right menu">
 
                                 <div class="item">
                                     <div class="ui icon input">
-                                        <input type="text" placeholder="Search...">
+                                        <input type="text" placeholder="Search ...">
                                         <i class="search link icon"></i>
                                     </div>
                                 </div>
-                                <a class="ui item">
-                                    Logout
+                                <a href="/signup" class="ui item">
+                                    Sign up
                                 </a>
+
+                                <a href="/login" class="ui item">
+                                    Log in
+                                 </a>
                             </div>
                         </div>
 
@@ -45,12 +47,12 @@
             </nav>
 
         </header>
-    <div style="background-color: #61d4d6" class="height text-center ">
-        <div class="ui grid vertically" style="padding-top: 100px">
+    <div style="background-color: #61d4d6" class="col-lg-12 col-md-12 col-sm-12">
+        <div class="ui grid vertically" style="padding-top: 80px">
         <div class="two column row">
 
-            <div class=" column ">
-                <h1 class="ui text-white justify ">
+            <div class="column" >
+                <h1 class="ui text-white text-center ">
                     <div class="four wide content"> Collect</div>
                     <div class="content ">  Feedback &</div>
                     <div class="content">  Build Better</div>
@@ -60,8 +62,9 @@
             </div>
 
             <div class=" column ">
-                    <img src="/Content/Main/logo 11.lpg.jpg" style="margin-bottom: 100px" alt="">
+                    <img src="/Content/Main/logo 11.lpg.jpg" style="margin-bottom: 60px" alt="">
             </div>
+        </div>
         </div>
         </div>
 
