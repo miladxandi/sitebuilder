@@ -25,4 +25,10 @@ return[
         'post'=> true,
         'middleware'=>'',
     ],
+    '/customers' => [
+        'target'=>'Panel.Customer.All',
+        'get'=> true,
+        'post'=> false,
+        'middleware'=>'',
+    ],
 ];

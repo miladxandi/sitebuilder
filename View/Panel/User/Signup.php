@@ -1,82 +1,84 @@
-<html>
-
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masoud Insurance | Signup</title>
-    <link rel="stylesheet" href="/Style/Main/bootstrap.min.css">
-    <link rel="stylesheet" href="/Style/Panel/signup.css">
-</head>
+<?php include '../View/Shared/Forms/Header.php'?>
 
 
-<body>
+<?php include '../View/Shared/Forms/Middle.php'?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-            <img src="/Content/Main/VLOGO.jpg" style="width: 200px" alt="">
-        </div>
-        <?php if ($Viewbag): ?>
-            <p><?php echo $Viewbag[0]; ?></p>
-        <?php endif;?>
-        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-            <form action="/signup" method="post" class="signup-from">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group m-5">
-                            <label for="Firstname" class="form-control">Firstname</label><br>
-                            <input type="text" required name="Firstname" id="Firstname" class="form-control">
+<form action="/signup" method="post" class="signup-from">
+
+        <div class="ui placeholder segment">
+
+            <div class="ui two column very relaxed stackable grid">
+
+                <div class="column">
+                    <div class="ui form">
+
+                        <div class="field">
+                            <label>First name</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Fname">
+                                <i class="user circle outline icon"></i>
+                            </div>
                         </div>
-                        <div class="form-group m-5">
-                            <label for="Lastname" class="form-control">Lastname</label><br>
-                            <input type="text" name="Lastname" id="Lastname" class="form-control">
+
+                        <div class="field">
+                            <label>Last name</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Lname">
+                                <i class="user circle icon" ></i>
+                            </div>
                         </div>
-                        <div class="form-group m-5">
-                            <label for="Username" class="form-control">Username</label><br>
-                            <input type="text" name="Username" id="Username" class="form-control">
+
+                        <div class="field">
+                            <label>Email</label>
+                            <div class="ui left icon input">
+                                <input type="email" placeholder="email">
+                                <i class="at icon" ></i>
+                            </div>
+
                         </div>
-                        <div class="form-group m-5">
-                            <label for="Phone" class="form-control">Phone</label><br>
-                            <input type="tel" name="Phone" id="Phone" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group m-5">
-                            <label for="NationalCode" class="form-control">National Code</label><br>
-                            <input type="text" name="NationalCode" id="NationalCode" class="form-control">
-                        </div>
-                        <div class="form-group m-5">
-                            <label for="Email" class="form-control">Email</label><br>
-                            <input type="text" name="Email" id="Email" class="form-control">
-                        </div>
-                        <div class="form-group m-5">
-                            <label for="Password" class="form-control">Password</label><br>
-                            <input type="password" name="Password" id="Password" class="form-control">
-                        </div>
-                        <div class="form-group m-5">
-                            <label for="PasswordVerify" class="form-control">Password Verify</label><br>
-                            <input type="password" name="PasswordVerify" id="PasswordVerify" class="form-control">
-                        </div>
+
                     </div>
                 </div>
-                <div class="btn-group">
-                    <button class="btn btn-dark" type="submit" name="submit">
-                        Create
-                    </button>
-                    <a href="/Login">
-                        <button class="btn btn-dark" type="button">
-                            Log in
-                        </button>
-                    </a>
+                <div class="column">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Username</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Username">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <div class="ui left icon input">
+                                <input type="password" placeholder="Password">
+                                <i class="lock icon" ></i>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Verify password</label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="verify password">
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+                <div class="column">
+                    <div class="ui blue submit button">Creat</div>
                 </div>
 
-            </form>
+                <div class="ui small button segment">
+                        <a href="/login"><i class="signup icon"></i></a>
+                        Login
+                </div>
+                </div>
         </div>
-    </div>
-</div>
-
-</body>
+    </form>
 
 
-</html>
+<?php include '../View/Shared/Forms/Footer.php'?>
