@@ -24,6 +24,7 @@ body{
 .ui.ul{
     text-decoration-color: white;
 }
+
 .signup-from {
 }
 .inputs {
@@ -32,14 +33,18 @@ body{
     border: black solid thin;
     text-align: center;
 }
-
+img{
+    border-radius: 20px;
+}
 body{
     background-color: #61d4d6;
 }
  header{
+
      background-color: #61d4d6;
 
  }
+
 /*portfolio page style*/
 #portfolio .portfolio-item__img:before{
     content: "";

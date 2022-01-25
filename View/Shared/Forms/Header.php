@@ -21,5 +21,4 @@
     <script src="/Script/Main/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="/Script/Main/main.js"></script>
-
 </head>
