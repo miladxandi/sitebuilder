@@ -17,7 +17,7 @@ return[
         'target'=>'Panel.User.Signup',
         'get'=> true,
         'post'=> true,
-        'middleware'=>'Main.Home.Aboutus',
+        'middleware'=>'',
     ],
     '/login' => [
         'target'=>'Panel.User.Login',

@@ -26,45 +26,39 @@ final class UserFunction implements DataContract
 
     public function Register($data)
     {
-
         $Firstname = $_POST['Firstname'];
         $Lastname = $_POST['Lastname'];
         $Username = $_POST['Username'];
         $Email = $_POST['Email'];
-        $NationalCode = $_POST['NationalCode'];
         if (strlen($_POST['Password'])>=4){
             $Password = password_hash( $_POST['Password'],1);
             if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
                 $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
-//                return $Viewbag;
+                return $Viewbag;
             }
             elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
                 $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
-//                return $Viewbag;
-            }
-            elseif ($this->User->FindByCustom('NationalCode',$NationalCode)['Rows'] == 1){
-                $Viewbag = ['Error'=>'ID number exists...','Title' => 'Signup'];
-//                return $Viewbag;
+                return $Viewbag;
             }
             else{
-                $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password, 'NationalCode'=>$NationalCode]);
+                $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
                 if ($Insert== 1) {
                     setcookie("username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     $Viewbag = ['Success'=>'Your account has been created!!','Title' => 'Signup'];
-//                    return $Viewbag;
+                    return $Viewbag;
                 }
                 else {
                     $Viewbag = ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
-//                    return $Viewbag;
+                    return $Viewbag;
                 }
             }
         }
         else{
             $Viewbag = ['Error'=>'password must be more than 4 digits!',];
-//            return $Viewbag;
+            return $Viewbag;
         }
     }
 
@@ -187,15 +181,15 @@ final class UserFunction implements DataContract
                 setcookie("LoginToken", password_hash($Token, 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("lcsrn_Validation", password_hash("true", 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 $Viewbag = ['Success'=>'You are entered!!'];
-//                return $Viewbag;
+                return $Viewbag;
             }
             elseif ($this->User->FindByUser($Username)['Rows']!=1){
                 $Viewbag = ['Error'=>"you don't have account.to create one , click on SIGNUP button below..."];
-//                return $Viewbag;
+                return $Viewbag;
             }
             else {
                 $Viewbag = ['Error'=>'wrong password OR username!'];
-//                return $Viewbag;
+                return $Viewbag;
             }
     }
 
