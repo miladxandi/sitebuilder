@@ -22,7 +22,8 @@ class UserController extends BaseController
     public function Login($Input = null)
     {
         if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])) {
-            $this->Function->Login();
+            $Viewbag = $this->Function->Login();
+            View::Process("Panel.User.Login", $Viewbag);
         }
         else {
             if (isset($_GET['Logout']) && strtolower($_GET['Logout']) == strtolower("True")) {
