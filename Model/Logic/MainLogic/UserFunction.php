@@ -171,7 +171,6 @@ final class UserFunction implements DataContract
 
     public function Login()
     {
-
             $Token = rand(5000, 1000000) . "-" . rand(5000, 1000000) . "-" . rand(5000, 1000000);
             $Username = addslashes($_POST['Username']);
             $Password = addslashes($_POST['Password']);

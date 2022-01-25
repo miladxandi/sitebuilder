@@ -5,5 +5,5 @@
 *.zip
 /public_html/Content/Shared/Posts
 *.lock
-/Core/Configurations/
+/Core/Configurations
 /vendor
