@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
@@ -16,11 +15,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
     <link rel="stylesheet" href="/Style/Main/bootstrap.min.css">
+    <link rel="stylesheet" href="/Style/Main/splide.min.css">
     <link rel="stylesheet" href="/Style/Panel/signup.css">
 
-<<<<<<< HEAD
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-=======
+    <script src="/Script/Main/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
->>>>>>> dd9fecca056f66e852f22eb2f53e4b34c223ca83
+    <script src="/Script/Main/main.js"></script>
 </head>

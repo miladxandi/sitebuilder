@@ -59,6 +59,11 @@ class UserController extends BaseController
         }
     }
 
+    public function Portfolios()
+    {
+        View::Process("Panel.User.Portfolios");
+    }
+
     public function Portfolio()
     {
         View::Process("Panel.User.Portfolio");

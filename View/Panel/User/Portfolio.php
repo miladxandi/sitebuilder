@@ -27,142 +27,62 @@
     </nav>
 </header>
 <main>
-    <div class="container">
-        <section id="portfolio">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
+    <section id="single_portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div id="template-slider" class="splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="/Content/Panel/01.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="/Content/Panel/02.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="/Content/Panel/03.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="/Content/Panel/04.jpg" />
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
+                        </div>
+                        <ul id="thumbnails" class="thumbnails">
+                            <li class="thumbnail">
+                                <img src="/Content/Panel/01.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="/Content/Panel/02.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="/Content/Panel/03.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="/Content/Panel/04.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="single_portfolio-content">
+                            <h5>then name of the template</h5>
+                            <p><i class="fa fa-user"></i>the usage: business/shopping/marketing/... </p>
+                            <p><i class="fal fa-calendar-day"></i>created at: 2022/1/24</p>
+                            <p><i class="fa fa-cogs"></i>downloads: 800088</p>
+                            <p><i class="fa fa-cogs"></i>cost: $20</p>
+                            <hr>
+                            <p class="text">a summary about template and what it contains...
+                                it can be more than lines
+                        </div>
+                        <div class="more-services">
+                            <button>Demo</button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
-                    <figure>
-                        <a class="portfolio-item__img" href="#">
-                            <img src="/Content/Panel/9.png"/>
-                        </a>
-                        <figcaption>
-                            <div class="portfolio-item__caption">
-                                <span>author and time posted</span>
-                                <h4><a href="#">this is a short summary and explanation</a></h4>
-                            </div>
-                            <div class="portfolio-item__link">
-                                <a href="#"><i class="fal fa-arrow-right"></i></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-
             </div>
-            <div class="more-services">
-                <button>more items</button>
-            </div>
-        </section>
-    </div>
+    </section>
 </main>
+</body>
+</html>
