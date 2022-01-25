@@ -2,7 +2,7 @@
 <?php \View\View\Shared\MainLayouts::_Menu(); ?>
 
 
-<div style="background-color: #61d4d6">
+<div class="hero-video">
     <div class="ui grid vertically" style="padding-top: 80px">
         <div class="two column row">
             <div class="column">
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="align-items-center" style="background-color: #61d4d6 ">
+    <div class="cards-box" >
         <div class="ui link cards">
             <div class="card">
                 <div class="image">

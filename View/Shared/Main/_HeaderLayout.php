@@ -27,26 +27,26 @@
 
     <meta content="origin-when-cross-origin" name="referrer">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-    <link href="/Content/Main/VLOGO.jpg" rel="icon" sizes="1000x1000" type="image/png">
-    <link rel="apple-touch-icon" href="/Content/Main/VLOGO.jpg">
-    <link rel="apple-touch-icon" sizes="72x72" href="/Content/Main/VLOGO.jpg">
-    <link rel="apple-touch-icon" sizes="114x114" href="/Content/Main/VLOGO.jpg">
-    <link rel="apple-touch-icon" sizes="1000x1000" href="/Content/Main/VLOGO.jpg" >
-    <link rel="icon" type="image/x-icon" href="/Content/Main/VLOGO.jpg" >
-    <link rel="shortcut icon" href="/Content/Main/VLOGO.jpg" >
+    <link href="/Content/Main/logo-simple.png" rel="icon" sizes="1000x1000" type="image/png">
+    <link rel="apple-touch-icon" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="1000x1000" href="/Content/Main/logo-simple.png" >
+    <link rel="icon" type="image/x-icon" href="/Content/Main/logo-simple.png" >
+    <link rel="shortcut icon" href="/Content/Main/logo-simple.png" >
     <?php
-    $Add = new Core\Requirement\oLoad("../../..","Style/Main","Script/Main","Content/Main");
+    $Add = new Core\Requirement\oLoad("Style/Main","Script/Main","Content/Main");
     $Add->Loader("css","semantic.min",'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist',false);
     $Add->Loader("css","bootstrap.min");
     $Add->Loader("css","splide.min");
     $Add->Loader("css","main");
+    $Add->Loader("css","main");
     $Add->Loader("js","jquery.min");
-    $Add->Loader("js","splide.min");
+    $Add->Loader("js","bootstrap.min");
     $Add->Loader("js","main");
     $Add->Loader("js","semantic.min",'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist',false);
+    $Add->Loader("js","bootstrap.bundle.min",'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js',false);
     ?>
 
 </head>
 <body style="background-color: white">
-
-

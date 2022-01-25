@@ -1,11 +1,11 @@
 <?php include '../View/Shared/Forms/Header.php' ?>
 <?php include '../View/Shared/Forms/Middle.php' ?>
 
-<form action="/login" method="post" class="signup-from">
     <div class="ui placeholder segment">
         <div class="ui two column very relaxed stackable grid">
             <div class="column">
-                <div class="ui form">
+                <form action="/login" method="post" class="signup-from">
+                    <div class="ui form">
                     <div class="field">
                         <label>Username</label>
                         <div class="ui left icon input">
@@ -20,17 +20,21 @@
                             <i class="lock icon"></i>
                         </div>
                     </div>
-                    <input type="submit" class="ui blue submit button" name="submit" value="Create">
+                    <button type="submit" name="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color: #69D4D7">
+                        Login
+                    </button>
                 </div>
+                </form>
             </div>
             <div class="middle aligned column">
-                <div class="ui small button">
-                    <a href="/signup"><i class="signup icon"></i>SignUp</a>
-                </div>
+                <a href="/signup">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="background-color: #69D4D7">
+                        Signup
+                    </button>
+                </a>
             </div>
         </div>
         <div class="ui vertical divider">Or</div>
     </div>
-</form>
 
 <?php include '../View/Shared/Forms/Footer.php' ?>

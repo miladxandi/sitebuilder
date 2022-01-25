@@ -9,9 +9,9 @@ class oLoad
     private $Css;
     private $Js;
     private $Image;
-    public function __construct(string $BasePath,string $CssPath,string $JsPath,string $ImagePath)
+    public function __construct(string $CssPath,string $JsPath,string $ImagePath)
     {
-        $this->BaseUrl=$BasePath;
+        $this->BaseUrl='';
         $this->Css= $CssPath;
         $this->Js= $JsPath;
         $this->Image= $ImagePath;
