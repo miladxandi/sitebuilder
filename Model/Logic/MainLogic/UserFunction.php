@@ -31,17 +31,17 @@ final class UserFunction implements DataContract
         $Username = $_POST['Username'];
         $Email = $_POST['Email'];
         $Password = $_POST['Password'];
-//        if (strlen($_POST['Password'])>=4){
-//            $Password = password_hash( $_POST['Password'],1);
-//            if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
-//                $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
-//                return $Viewbag;
-//            }
-//            elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
-//                $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
-//                return $Viewbag;
-//            }
-//            else{
+        if (strlen($Password)>=4){
+            $Password = password_hash( $Password,1);
+            if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
+                $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
+                return $Viewbag;
+            }
+            elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
+                $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
+                return $Viewbag;
+            }
+            else{
                 $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
                 if ($Insert== 1) {
                     setcookie("username", null, time() - 3600, "", $_SERVER['HTTP_HOST'], Routing::$SecureProtocol, true);
@@ -55,12 +55,12 @@ final class UserFunction implements DataContract
                     $Viewbag = ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
                     return $Viewbag;
                 }
-//            }
-//        }
-//        else{
-//            $Viewbag = ['Error'=>'password must be more than 4 digits!',];
-//            return $Viewbag;
-//        }
+            }
+        }
+        else{
+            $Viewbag = ['Error'=>'password must be more than 4 digits!',];
+            return $Viewbag;
+        }
     }
 
     public function Update($QuerryString)

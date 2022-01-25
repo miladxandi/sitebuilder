@@ -1,6 +1,8 @@
 <?php include '../View/Shared/Forms/Header.php' ?>
 <?php include '../View/Shared/Forms/Middle.php' ?>
 
+   <p><?php echo !empty($Viewbag['Error'])?$Viewbag['Error']:''; ?></p>
+   <p><?php echo !empty($Viewbag['Success'])?$Viewbag['Success']:''; ?></p>
     <form action="/signup" method="post" class="signup-from">
         <div class="ui placeholder segment">
             <div class="ui two column very relaxed stackable grid">
@@ -48,7 +50,7 @@
                         <div class="field">
                             <label>Verify password</label>
                             <div class="ui left icon input">
-                                <input type="text" placeholder="verify password" name="Password-Verf">
+                                <input type="text" placeholder="verify password" name="PasswordVer">
                                 <i class="lock icon"></i>
                             </div>
                         </div>
