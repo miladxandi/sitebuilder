@@ -25,6 +25,18 @@ return[
         'post'=> true,
         'middleware'=>'',
     ],
+    '/portfolios' => [
+        'target'=>'Panel.User.Portfolios',
+        'get'=> true,
+        'post'=> false,
+        'middleware'=>'',
+    ],
+    '/portfolio' => [
+        'target'=>'Panel.User.Portfolio',
+        'get'=> true,
+        'post'=> false,
+        'middleware'=>'',
+    ],
     '/customers' => [
         'target'=>'Panel.Customer.All',
         'get'=> true,

@@ -1,35 +1,36 @@
-<?php include '../View/Shared/Forms/Header.php'?>
+<?php include '../View/Shared/Forms/Header.php' ?>
+<?php include '../View/Shared/Forms/Middle.php' ?>
 
-
-<?php include '../View/Shared/Forms/Middle.php'?>
-
-            <form action="/login" method="post" class="signup-from">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group m-5">
-                            <label for="Username" class="form-control">Username</label><br>
-                            <input type="text" name="Username" id="Username" class="form-control">
+<form action="/login" method="post" class="signup-from">
+    <div class="ui placeholder segment">
+        <div class="ui two column very relaxed stackable grid">
+            <div class="column">
+                <div class="ui form">
+                    <div class="field">
+                        <label>Username</label>
+                        <div class="ui left icon input">
+                            <input type="text" placeholder="Username" name="Username">
+                            <i class="user icon"></i>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group m-5">
-                            <label for="Password" class="form-control">Password</label><br>
-                            <input type="password" name="Password" id="Password" class="form-control">
+                    <div class="field">
+                        <label>Password</label>
+                        <div class="ui left icon input">
+                            <input type="password" placeholder="Password" name="Password">
+                            <i class="lock icon"></i>
                         </div>
                     </div>
+                    <input type="submit" class="ui blue submit button" name="submit" value="Create">
                 </div>
-                <div class="btn-group">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" name="submit">
-                        Log in
-                    </button>
-                    <a href="/Signup">
-                        <button class="btn btn-dark" type="button">
-                            sign up
-                        </button>
-                    </a>
+            </div>
+            <div class="middle aligned column">
+                <div class="ui small button">
+                    <a href="/signup"><i class="signup icon"></i>SignUp</a>
                 </div>
+            </div>
+        </div>
+        <div class="ui vertical divider">Or</div>
+    </div>
+</form>
 
-            </form>
-
-
-<?php include '../View/Shared/Forms/Footer.php'?>
+<?php include '../View/Shared/Forms/Footer.php' ?>
