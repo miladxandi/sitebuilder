@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" href="../../../Content/Shared/Logo.png">
     <link rel="apple-touch-icon" type="image/x-icon" href="../../../Content/Shared/Logo.png">
     <?php
-    $Add = new Core\Requirement\oLoad("../../..","Style/Main","Script/Main","Content/Main");
+    $Add = new Core\Requirement\oLoad("../../../public_html","Style/Main","Script/Main","Content/Main");
     $Add->Loader("css","bootstrap");
     $Add->Loader("css","bootstrap-grid");
     $Add->Loader("css","main");
