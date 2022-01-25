@@ -25,14 +25,14 @@ return[
         'post'=> true,
         'middleware'=>'',
     ],
-    '/portfolios' => [
-        'target'=>'Panel.User.Portfolios',
+    '/templates' => [
+        'target'=>'Main.Template.list',
         'get'=> true,
         'post'=> false,
         'middleware'=>'',
     ],
-    '/portfolio' => [
-        'target'=>'Panel.User.Portfolio',
+    '/template' => [
+        'target'=>'Main.Template.single',
         'get'=> true,
         'post'=> false,
         'middleware'=>'',

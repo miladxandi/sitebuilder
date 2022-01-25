@@ -1,20 +1,26 @@
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header class="header">
+    <nav>
+        <div class="ui container">
+            <div class="ui flex">
+                <div class="ui secondary menu mainmenu">
+                    <a href="/"><img src="/Content/Main/logo4.jpg" style="width: 300px" alt=""></a>
+                    <a class="active item">Home</a>
+                    <a class="item">Templates</a>
+                    <a class="item">Contact</a>
+                    <a class="item">About us</a>
+                    <div class="right menu">
+                        <div class="item">
+                            <div class="ui icon input">
+                                <input type="text" placeholder="Search ...">
+                                <i class="search link icon"></i>
+                            </div>
+                        </div>
+                        <a href="/signup" class="ui item">Sign up</a>
+                        <a href="/login" class="ui item">Log in</a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://codeload.github.com/eastCloudmedia/SimplistFramework/zip/master" target="_blank">Direct Download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/eastCloudmedia/SimplistFramework" target="_blank">GitHub</a>
-                </li>
-            </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+</header>
