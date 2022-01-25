@@ -30,6 +30,17 @@ class AdminMiddleware extends BaseMiddleware
 		return $this->PanelCookieS();
 	}
 
+    public function checkVerifyPass()
+    {
+        if (isset($_POST['submit'])){
+            if (isset($_POST['Password']) && isset($_POST['PasswordVer']) && $_POST['Password'] !=null && $_POST['PasswordVer']==$_POST['Password'])
+                return ['Status'=>true];
+            else
+                return ['Status'=>false,'Route'=>'/signup'];
+        }
+        return ['Status'=>true];
+
+    }
 
 	public function Profile()
 	{
