@@ -1,8 +1,6 @@
 <?php include '../View/Shared/Forms/Header.php' ?>
 <?php include '../View/Shared/Forms/Middle.php' ?>
 
-   <p><?php echo !empty($Viewbag['Error'])?$Viewbag['Error']:''; ?></p>
-   <p><?php echo !empty($Viewbag['Success'])?$Viewbag['Success']:''; ?></p>
     <form action="/signup" method="post" class="signup-from">
         <div class="ui placeholder segment">
             <div class="ui two column very relaxed stackable grid">
