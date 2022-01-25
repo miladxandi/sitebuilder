@@ -10,6 +10,7 @@ namespace Middleware\Important;
 use Core\Configurations\Routing;
 use Core\Security\Check;
 use Core\Watcher\Basement;
+use Illuminate\Support\Str;
 
 
 class Security
@@ -37,7 +38,7 @@ class Security
         foreach ($Request as $Key => $Value)
         {
             foreach ($BadArray as $mis) {
-                if (str_contains($Value, $mis)) {
+                if (Str::contains($Value, $mis)) {
 
                     $_REQUEST[$Key] = "";
                     return true;
