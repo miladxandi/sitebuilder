@@ -11,5 +11,8 @@
         <?php if (isset($Viewbag['Error'])): ?>
             <p><?php echo $Viewbag['Error']; ?></p>
         <?php endif; ?>
+        <?php if (isset($Viewbag['Success'])): ?>
+            <p><?php echo $Viewbag['Success']; ?></p>
+        <?php endif; ?>
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
 

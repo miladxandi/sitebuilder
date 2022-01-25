@@ -66,8 +66,7 @@
                 <div class="extra content">
       <span class="right floated">
         Joined in 2013
-      </span>
-                    <span>
+      </span><span>
         <i class="user icon"></i>
         75 Friends
       </span>
@@ -122,7 +121,6 @@
         </div>
     </div>
 </div>
-
 
 <?php \View\View\Shared\MainLayouts::_Footer(); ?>
 

@@ -11,7 +11,7 @@ namespace Core\Configurations;
 class Connection
 {
     protected static $Host = "localhost";
-    protected static $DatabaseName = "simplist";
+    protected static $DatabaseName = "simplist_simplist";
     protected static $Collation = "utf8";
     protected static $Username = "root";
     protected static $Password = "";
