@@ -39,7 +39,6 @@ class Security
         {
             foreach ($BadArray as $mis) {
                 if (Str::contains($Value, $mis)) {
-
                     $_REQUEST[$Key] = "";
                     return true;
                 }

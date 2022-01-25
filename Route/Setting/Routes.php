@@ -17,7 +17,7 @@ return[
         'target'=>'Panel.User.Signup',
         'get'=> true,
         'post'=> true,
-        'middleware'=>'',
+        'middleware'=>'Panel.Admin.checkVerifyPass',
     ],
     '/login' => [
         'target'=>'Panel.User.Login',

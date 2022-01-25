@@ -6,6 +6,7 @@ namespace Controller\Panel;
 
 use Controller\BaseController;
 use Core\Configurations\Routing;
+use Middleware\Important\Security;
 use Model\Logic\MainLogic\UserFunction;
 use Route\Show\View;
 
