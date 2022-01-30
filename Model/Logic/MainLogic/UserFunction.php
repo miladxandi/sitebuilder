@@ -35,11 +35,9 @@ final class UserFunction implements DataContract
             $Password = password_hash( $Password,1);
             if ($this->User->FindByUser($Username)['Rows'] == 1){
                 $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
-                return $Viewbag;
             }
             elseif ($this->User->FindByEmail($Email)['Rows'] == 1){
                 $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
-                return $Viewbag;
             }
             else{
                 $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
@@ -49,18 +47,16 @@ final class UserFunction implements DataContract
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     $Viewbag = ['Success'=>'Your account has been created!!','Title' => 'Signup'];
-                    return $Viewbag;
                 }
                 else {
                     $Viewbag = ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
-                    return $Viewbag;
                 }
             }
         }
         else{
             $Viewbag = ['Error'=>'password must be more than 4 digits!',];
-            return $Viewbag;
         }
+        return $Viewbag;
     }
 
     public function Update($QuerryString)

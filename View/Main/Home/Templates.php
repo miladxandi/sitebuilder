@@ -14,21 +14,21 @@
                     <div class="col-lg-4 col-md-6 col-12 portfolio-item">
                         <figure>
                             <a class="portfolio-item__img" href="/<?php echo $template["Id"]; ?>">
-                                <img src="/Content/Main/Template/<?php echo $template["img"]; ?>"/>
+                                <img src="<?php echo !empty($template["Img"])?'/Content/Main/Template/'.$template["Img"]:'/Content/Panel/default-img.png'; ?>"/>
                             </a>
                             <figcaption>
                                 <div class="portfolio-item__caption">
                                 <span>
-                                    <?php echo $template["author"]; ?>
+                                    <?php echo !empty($template["Designer"])?$template["Designer"]:'Admin'; ?>
                                     and
                                     <?php $humanDifferTime = new Carbon();
-                                    $humanDifferTime::create($template["time"]);
+                                    $humanDifferTime::create($template["Date"]);
                                     $humanDifferTime = $humanDifferTime->isoFormat('dddd D');
                                     echo $humanDifferTime; ?>
                                 </span>
                                     <h4>
                                         <a href="/<?php echo $template["Id"]; ?>">
-                                            <?php echo $template["content"]; ?>
+                                            <?php echo $template["Description"]; ?>
                                         </a>
                                     </h4>
                                 </div>

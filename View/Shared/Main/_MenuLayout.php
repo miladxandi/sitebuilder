@@ -8,11 +8,10 @@
                     <a class="item" href="/templates" >Templates</a>
                     <a class="item" href="/contactus">Contact</a>
                     <a class="item" href="/aboutus">About us</a>
+                    <a class="item" href="/panel">Admin panel</a>
                     <div class="right menu">
-
                         <a href="/signup" class="ui item">Sign up</a>
                         <a href="/login" class="ui item">Log in</a>
-
                     </div>
                 </div>
             </div>
@@ -41,6 +40,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/aboutus">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/panel">About us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
