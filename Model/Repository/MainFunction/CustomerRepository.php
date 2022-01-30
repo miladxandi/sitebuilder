@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Model\Repository\MainFunction;
 
 
@@ -13,5 +11,4 @@ class CustomerRepository extends BaseRepository
         parent::__construct();
         $this->Table = 'customers';
     }
-
 }

@@ -1,4 +1,7 @@
 /*portfolio page style*/
+#portfolio{
+    padding-top: 12rem;
+}
 #portfolio .portfolio-item__img:before{
     content: "";
     transition: all 0.3s ease-in-out;

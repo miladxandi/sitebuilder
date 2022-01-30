@@ -33,11 +33,11 @@ final class UserFunction implements DataContract
         $Password = $_POST['Password'];
         if (strlen($Password)>=4){
             $Password = password_hash( $Password,1);
-            if ($this->User->FindByCustom('Username',$Username)['Rows'] == 1){
+            if ($this->User->FindByUser($Username)['Rows'] == 1){
                 $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
                 return $Viewbag;
             }
-            elseif ($this->User->FindByCustom('Email',$Email)['Rows'] == 1){
+            elseif ($this->User->FindByEmail($Email)['Rows'] == 1){
                 $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
                 return $Viewbag;
             }

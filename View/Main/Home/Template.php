@@ -49,9 +49,10 @@
                             <hr>
                             <p class="text">a summary about template and what it contains...
                                 it can be more than lines
+                            </p>
                         </div>
                         <div class="more-services">
-                            <button>Demo</button>
+                            <a href="#"><button>Demo</button></a>
                             <button>Add to Cart</button>
                         </div>
                     </div>

@@ -8,7 +8,7 @@
 
 namespace Core\Configurations;
 
-class Connection
+class  Connection
 {
     protected static $Host = "localhost";
     protected static $DatabaseName = "simplist_simplist";
