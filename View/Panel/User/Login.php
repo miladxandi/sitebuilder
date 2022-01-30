@@ -32,6 +32,11 @@
                         Signup
                     </button>
                 </a>
+                <a href="/reset-password">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="background-color: #69D4D7">
+                        Reset Password
+                    </button>
+                </a>
             </div>
         </div>
         <div class="ui vertical divider">Or</div>

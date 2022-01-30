@@ -40,7 +40,6 @@
     $Add->Loader("css","bootstrap.min");
     $Add->Loader("css","splide.min");
     $Add->Loader("css","main");
-    $Add->Loader("css","main");
     $Add->Loader("js","jquery.min");
     $Add->Loader("js","bootstrap.min");
     $Add->Loader("js","main");

@@ -23,6 +23,7 @@ class UserController extends BaseController
     {
         if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])) {
             $Viewbag = $this->Function->Login();
+            $Viewbag['Title'] = 'Login';
             View::Process("Panel.User.Login", $Viewbag);
         }
         else {
@@ -52,6 +53,7 @@ class UserController extends BaseController
         if (isset($_POST['submit']) && isset($_POST['Username']) && isset($_POST['Password'])  && isset($_POST['Firstname']) && isset($_POST['Lastname']) && isset($_POST['Email']) )
         {
             $Viewbag = $this->Function->Register($_POST);
+            $Viewbag['Title'] = 'Signup';
             View::Process("Panel.User.Signup",$Viewbag);
         }
         else

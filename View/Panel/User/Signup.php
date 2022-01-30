@@ -49,7 +49,7 @@
                     <div class="field">
                         <label>Verify password</label>
                         <div class="ui left icon input">
-                            <input type="text" placeholder="verify password" name="PasswordVer">
+                            <input type="password" placeholder="verify password" name="PasswordVer">
                             <i class="lock icon"></i>
                         </div>
                     </div>

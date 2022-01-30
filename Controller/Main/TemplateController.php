@@ -21,8 +21,9 @@ class TemplateController extends BaseController
         View::Process("Main.Home.Templates",$Viewbag);
     }
 
-    public function single()
+    public function single($QueryString)
     {
+        var_dump($QueryString['id']);
         View::Process("Main.Home.Template");
     }
 }

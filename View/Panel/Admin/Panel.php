@@ -5,26 +5,48 @@
     <hr>
     <div id="nav">
         <ul>
-            <li><a href="index.php">نمایش فروشگاه</a></li>
-            <li><a href="product.php">لیست محصولات</a></li>
-            <li><a href="add.product.php">افزودن محصول</a></li>
-            <li><a href="user.php">لیست کاربران</a></li>
-            <li><a href="comments.php">نظرات</a></li>
-            <li><a href="orders.php">سفارش ها</a></li>
-            <li><a href="do_logout.php">خروج از بخش مدریت</a></li>
+            <li><a href="index">نمایش فروشگاه</a></li>
+            <li><a href="product">لیست محصولات</a></li>
+            <li><a href="add.product">افزودن محصول</a></li>
+            <li><a href="user">لیست کاربران</a></li>
+            <li><a href="comments">نظرات</a></li>
+            <li><a href="orders">سفارش ها</a></li>
+            <li><a href="do_logout">خروج از بخش مدریت</a></li>
             <hr>
             <div class="admin_main">
                 <div class="add_product">
-                    <form action="/Panel"method="post">
-                        <input type="text"name="template_name"placeholder="نام قالب"><br>
-                        <input type="text"name="template_img"placeholder="تصویر قالب"><br>
-                        <input type="text"name="template_price" placeholder="قیمت قالب"><br>
-                        <input type="text"name="template_category" placeholder="دسته بندی قالب"><br>
-                        <input type="text"name="template_designer" placeholder="طراح قالب"><br>
-                        <input type="text"name="template_date" placeholder="زمان انتشار"><br>
-                        <input type="text"name="template_link" placeholder="لینک قالب"><br>
-                        <textarea name="template_description"placeholder="توضیحات قالب"></textarea><br>
-                        <input type="submit"name="add_template"value="افزودن قالب">
+                    <form action="/Panel" method="post" class="signup-from">
+                        <div class="ui left icon input">
+                            <input type="text" name="template_name" placeholder="نام قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_img" placeholder="تصویر قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_price" placeholder="قیمت قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_category" placeholder="دسته بندی قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_designer" placeholder="طراح قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_date" placeholder="زمان انتشار"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <input type="text" name="template_link" placeholder="لینک قالب"><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <textarea name="template_description" placeholder="توضیحات قالب"></textarea><br>
+                        </div>
+                        <div class="ui left icon input">
+                            <button type="submit" name="add_template"
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                    style="background-color: #69D4D7">
+                                بساز
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -25,13 +25,19 @@ return[
         'post'=> true,
         'middleware'=>'',
     ],
+    '/reset-password' => [
+        'target'=>'Panel.User.ResetPassword',
+        'get'=> true,
+        'post'=> true,
+        'middleware'=>'Panel.Admin.checkVerifyPass',
+    ],
     '/templates' => [
         'target'=>'Main.Template.list',
         'get'=> true,
         'post'=> false,
         'middleware'=>'',
     ],
-    '/template' => [
+    '/templates/' => [
         'target'=>'Main.Template.single',
         'get'=> true,
         'post'=> false,

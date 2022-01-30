@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `simplist_simplist`
+-- Database: `simplist`
 --
 
 -- --------------------------------------------------------
@@ -79,16 +79,23 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `templates` (
-    `Id` int(11) NOT NULL,
-    `Name` varchar(150) COLLATE utf8_persian_ci NOT NULL,
-    `Img` varchar(200) COLLATE utf8_persian_ci,
-    `Category` varchar(150) COLLATE utf8_persian_ci NOT NULL,
-    `Price` Int(20) COLLATE utf8_persian_ci NOT NULL,
-    `Designer` varchar(150) COLLATE utf8_persian_ci NOT NULL,
-    `Description` text COLLATE utf8_persian_ci NOT NULL,
-    `Url` varchar(30) COLLATE utf8_persian_ci NOT NULL,
-    `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+                             `Id` int(11) NOT NULL,
+                             `Name` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+                             `Img` varchar(200) COLLATE utf8_persian_ci,
+                             `Category` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+                             `Price` Int(20) COLLATE utf8_persian_ci NOT NULL,
+                             `Designer` varchar(150) COLLATE utf8_persian_ci NOT NULL,
+                             `Description` text COLLATE utf8_persian_ci NOT NULL,
+                             `Url` varchar(30) COLLATE utf8_persian_ci NOT NULL,
+                             `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+ALTER TABLE `templates`
+    ADD PRIMARY KEY (`Id`);
+
+ALTER TABLE `templates`
+    MODIFY `Id` int(50) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- Indexes for dumped tables

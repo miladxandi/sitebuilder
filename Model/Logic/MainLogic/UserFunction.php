@@ -34,10 +34,10 @@ final class UserFunction implements DataContract
         if (strlen($Password)>=4){
             $Password = password_hash( $Password,1);
             if ($this->User->FindByUser($Username)['Rows'] == 1){
-                $Viewbag = ['Error'=>'Username exists!','Title' => 'Signup'];
+                return ['Error'=>'Username exists!','Title' => 'Signup'];
             }
             elseif ($this->User->FindByEmail($Email)['Rows'] == 1){
-                $Viewbag = ['Error'=>'email exists!','Title' => 'Signup'];
+                return ['Error'=>'email exists!','Title' => 'Signup'];
             }
             else{
                 $Insert = $this->User->Insert(['Firstname'=>$Firstname, 'Lastname'=>$Lastname, 'Username'=>$Username,'Email'=>$Email, 'Password'=>$Password]);
@@ -46,17 +46,16 @@ final class UserFunction implements DataContract
                     setcookie("Firstname",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("LoginToken",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                     setcookie("lcsrn_Validation",null,time()-3600,"",$_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
-                    $Viewbag = ['Success'=>'Your account has been created!!','Title' => 'Signup'];
+                    return ['Success'=>'Your account has been created!!','Title' => 'Signup'];
                 }
                 else {
-                    $Viewbag = ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
+                    return ['Error'=>'sign up failed! please try again...','Title' => 'Signup'];
                 }
             }
         }
         else{
-            $Viewbag = ['Error'=>'password must be more than 4 digits!',];
+            return ['Error'=>'password must be more than 4 digits!',];
         }
-        return $Viewbag;
     }
 
     public function Update($QuerryString)
@@ -172,7 +171,7 @@ final class UserFunction implements DataContract
             $Password = addslashes($_POST['Password']);
             $Login = $this->User->Login($Username, $Password, $Token);
             if ($Login && $Login['Rows'] == "11") {
-                setcookie("Username", $Login['Values']['Username'], time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
+                setcookie("Username", $Login['Values']['Username'], time() + 60 * 60 * 24 * 365);
                 setcookie("Firstname", $Login['Values']['Firstname'], time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("LoginToken", password_hash($Token, 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);
                 setcookie("lcsrn_Validation", password_hash("true", 1), time() + 60 * 60 * 24 * 365, "", $_SERVER['HTTP_HOST'],Routing::$SecureProtocol,true);

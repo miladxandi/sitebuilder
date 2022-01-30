@@ -48,7 +48,8 @@
     "illuminate/support": "6.*",
     "morilog/jalali": "3.*",
     "nesbot/carbon": "2.*",
-    "symfony/contracts": "2.*"
+    "symfony/contracts": "2.*",
+    "ext-openssl": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "7"
