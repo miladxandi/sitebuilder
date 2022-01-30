@@ -2,7 +2,7 @@
 
 namespace Plugin\Utility;
 
-class Jsoner
+trait Jsoner
 {
     public static function Json( $Data,int $Code = 200, $Mode=JSON_UNESCAPED_SLASHES)
     {
