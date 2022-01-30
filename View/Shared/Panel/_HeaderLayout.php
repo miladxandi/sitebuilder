@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -23,41 +22,29 @@
      فریمورک سیمپلیست
      طراحی وب
      طراحی وب بدون دانش برنامه نویسی">
+    <title>Webker | <?php echo $Viewbag['Title'] ?></title>
+
     <meta content="origin-when-cross-origin" name="referrer">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../Content/Shared/Logo.png" id="favicon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="../../../Content/Shared/Logo.png">
-    <link rel="apple-touch-icon" type="image/x-icon" href="../../../Content/Shared/Logo.png">
+    <link href="/Content/Main/logo-simple.png" rel="icon" sizes="1000x1000" type="image/png">
+    <link rel="apple-touch-icon" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/Main/logo-simple.png">
+    <link rel="apple-touch-icon" sizes="1000x1000" href="/Content/Main/logo-simple.png" >
+    <link rel="icon" type="image/x-icon" href="/Content/Main/logo-simple.png" >
+    <link rel="shortcut icon" href="/Content/Main/logo-simple.png" >
     <?php
-    $Add = new Core\Requirement\oLoad("../../..","Style/Main","Script/Main","Content/Main");
-    $Add->Loader("css","bootstrap");
-    $Add->Loader("css","bootstrap-grid");
+    $Add = new Core\Requirement\oLoad("Style/Main","Script/Main","Content/Main");
+    $Add->Loader("css","semantic.min",'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist',false);
+    $Add->Loader("css","bootstrap.min");
+    $Add->Loader("css","splide.min");
     $Add->Loader("css","main");
-    $Add->Loader("css","W3CSS");
     $Add->Loader("js","jquery.min");
-    $Add->Loader("js","bootstrap");
-    $Add->Loader("js","bootstrap.bundle");
+    $Add->Loader("js","bootstrap.min");
+    $Add->Loader("js","main");
+    $Add->Loader("js","semantic.min",'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist',false);
+    $Add->Loader("js","bootstrap.bundle.min",'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js',false);
     ?>
-    <style>
-        body, html {
-            height: 100%;
-        }
 
-        .parallax {
-            /* The image used */
-            background-image: url('../../../Content/Main/Simplist_Version3.jpg');
-            background-attachment: scroll;
-
-
-            /* Full height */
-            height: 100%;
-
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-
-    </style>
+</head>
+<body style="background-color: white">

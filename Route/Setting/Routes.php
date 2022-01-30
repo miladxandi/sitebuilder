@@ -37,6 +37,12 @@ return[
         'post'=> false,
         'middleware'=>'',
     ],
+    '/panel' => [
+        'target'=>'Panel.Admin.Index',
+        'get'=> true,
+        'post'=> true,
+        'middleware'=>'',
+    ],
     '/customers' => [
         'target'=>'Panel.Customer.All',
         'get'=> true,

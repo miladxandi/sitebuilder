@@ -5,6 +5,7 @@ namespace Controller\Panel;
 
 use Controller\BaseController;
 use Model\Logic\MainLogic\PostFunction;
+use Model\Logic\MainLogic\TemplateFunction;
 use Model\Logic\MainLogic\UrlFunction;
 use Model\Logic\MainLogic\UserFunction;
 use Model\Repository\MainFunction\UserRepository;
@@ -12,19 +13,24 @@ use Route\Show\View;
 
 class AdminController extends BaseController
 {
-    private $Post,$User,$Url;
+    private $Post,$User,$Url,$Template;
     public function __construct()
     {
         $this->User= new UserFunction();
         $this->Repository= new UserRepository();
         $this->Post =  new PostFunction();
         $this->Url = new UrlFunction();
+        $this->Template = new TemplateFunction();
     }
 
     public function Index()
     {
-        $Viewbag=['UserInfo'=>$this->Repository->FindByUser($_COOKIE['Username'])['Values']];
-        View::Process("Panel.Admin.Panel",$Viewbag);
+        if (isset($_POST['add_template']) && isset($_POST['template_name']) && isset($_POST['template_description']))
+            $Viewbag = $this->Template->Insert();
+        else
+            $Viewbag=['Error'=>'please enter all items!!'];
+
+        View::Process("Panel.Admin.Panel", $Viewbag);
     }
     
     
